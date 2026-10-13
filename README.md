@@ -4,6 +4,8 @@
 
 [Public source repository](https://github.com/AyushPaul26/speaktrace)
 
+[Open the hosted studio](https://speaktrace-amber.vercel.app) · Free cloud CPU demo, up to 30 seconds per recording. Hosted uploads are sent to Vercel; use local mode to keep audio on your computer.
+
 Compare a reference recording and a participant reading of the same English transcript. SpeakTrace aligns actual speech to words, measures local pacing, pause and energy differences, and links every detected interval to audible evidence and a reproducible rubric.
 
 ## Run on Windows

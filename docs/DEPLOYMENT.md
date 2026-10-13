@@ -1,6 +1,6 @@
 # Publishing SpeakTrace
 
-The public source repository is https://github.com/AyushPaul26/speaktrace. The Vercel project is `speaktrace` in the owner's Hobby workspace and is connected to this repository. Deployments build on Vercel; the laptop does not need another Python environment or another model download.
+The public source repository is https://github.com/AyushPaul26/speaktrace and the production site is https://speaktrace-amber.vercel.app. The Vercel project is `speaktrace` in the owner's Hobby workspace and is connected to this repository. Deployments build on Vercel; the laptop does not need another Python environment or another model download.
 
 ## Two execution modes
 
@@ -32,5 +32,9 @@ The first remote build completed a 60-second stress analysis but exceeded the pr
 ## Verification
 
 Run `scripts/verify.py` with the local virtual environment. `web/hosted.browser.test.cjs` tests actual browser audio conversion and transport against explicitly marked fixture responses; it does not replace live inference verification. The deployed site must separately complete an actual demo and upload analysis, play the returned evidence and export a report.
+
+That live check passed all 11 steps on 2026-10-13 at 18:45 UTC against `https://speaktrace-amber.vercel.app`, running application commit `fc6bedf`. The uncached public demo took 13.613 seconds end to end and the upload took 13.495 seconds. Both used the pinned CPU model and measured the expected 1.79-second extra pause, with score 94.5. These observed timings are not a service-level guarantee. Static JavaScript, CSS and WAV requests also returned HTTP 200 with CDN cache hits.
+
+`reports/hosted-deployment.json` records the successful real responses and browser checks; `reports/hosted-deployment.jpg` shows the uploaded comparison. Run `scripts/hosted_smoke.cjs` with `SPEAKTRACE_DEPLOYMENT_URL` explicitly set to the project URL to reproduce the check. The two `*-harness-failure.json` files preserve earlier incomplete checks: analysis succeeded, but the harness incorrectly expected Chromium to expose a binary request body and expected archive provenance on user uploads. Those assumptions were corrected before the successful full rerun; no inference responses were replaced.
 
 The hosted adapter retains the existing model revision and comparison rubric. The included technical PDF describes the original local evaluation; deployment changes do not establish new speech-assessment accuracy. Pacing/energy limitations and lack of independent human validation still apply.

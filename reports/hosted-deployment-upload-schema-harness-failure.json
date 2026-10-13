@@ -1,0 +1,262 @@
+{
+  "started_at": "2026-10-13T18:42:28.062Z",
+  "target": "https://speaktrace-amber.vercel.app",
+  "passed": false,
+  "browser": "Installed headless Chrome, fresh nonpersistent context, no personal browser profile",
+  "method": "Real unmodified network responses. At most two analysis POSTs: public-domain JFK severe-pause demo, then the same included pair through upload UI.",
+  "steps": [
+    {
+      "name": "Hosted health reports installed CPU model and synchronous API",
+      "passed": true,
+      "seconds": 0.634
+    },
+    {
+      "name": "Public studio, scripts, styles and both archive WAVs are reachable",
+      "passed": true
+    },
+    {
+      "name": "Real hosted demo performs fresh CPU alignment and displays measured pause",
+      "passed": true,
+      "seconds": 18.473,
+      "score": 94.5,
+      "excess_seconds": 1.79
+    },
+    {
+      "name": "Demo reference evidence playback honors actual interval",
+      "passed": true,
+      "start": 7.7351,
+      "end": 8.2351
+    },
+    {
+      "name": "Demo participant evidence playback honors actual interval",
+      "passed": true,
+      "start": 7.8646899999999995,
+      "end": 10.15469
+    },
+    {
+      "name": "Transcript seeks each recording to its own word timestamp",
+      "passed": true,
+      "reference": 14.169,
+      "participant": 15.9694
+    },
+    {
+      "name": "Demo: stateless JSON and printable HTML exports",
+      "passed": true,
+      "id": "b06c50d6a8164059a380aea6d9329c62",
+      "has_browser_preparation": false
+    },
+    {
+      "name": "390 px layout has no horizontal overflow and acoustic toggle works",
+      "passed": true,
+      "width": 390,
+      "scrollWidth": 380
+    },
+    {
+      "name": "Actual upload converts to bounded canonical WAVs with byte-identical playback",
+      "passed": true,
+      "body_bytes": 1467425,
+      "seconds": 15.143,
+      "score": 94.5
+    }
+  ],
+  "analyses": {
+    "demo": {
+      "id": "b06c50d6a8164059a380aea6d9329c62",
+      "mode": "demo",
+      "score": 94.5,
+      "seconds": 18.473,
+      "rubric": "reference-relative-1.1.0",
+      "compute": {
+        "requested_device": "cpu",
+        "device": "cpu",
+        "device_name": "CPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cpu",
+        "cuda_version": null,
+        "fallback_reason": null,
+        "warnings": [],
+        "runtime_device": "cpu",
+        "alignment_runs": {
+          "reference": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          },
+          "participant": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          }
+        },
+        "feature_device": "cpu",
+        "alignment": "wav2vec2-ctc",
+        "seconds": 13.66,
+        "model": "facebook/wav2vec2-base-960h",
+        "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+        "cached_alignment": false
+      },
+      "audio_processing": {
+        "sample_rate": 16000,
+        "encoding": "PCM_16",
+        "reference_gain": 1,
+        "participant_gain": 1,
+        "note": "Measurements use the exact stored playback samples. Uniform gain prevents clipping or excessive quantization loss."
+      },
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.11469,
+          "end": 9.90469,
+          "reference_start": 7.9851,
+          "reference_end": 7.9851,
+          "evidence": {
+            "measurement": "Longest quiet interval between reliable word anchors",
+            "reference": 0,
+            "participant": 1.79,
+            "unit": "s"
+          }
+        }
+      ]
+    },
+    "upload": {
+      "id": "e6f0e9b27fe141a1b3ff3d579866f6f9",
+      "mode": "upload",
+      "score": 94.5,
+      "seconds": 15.143,
+      "rubric": "reference-relative-1.1.0",
+      "compute": {
+        "requested_device": "cpu",
+        "device": "cpu",
+        "device_name": "CPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cpu",
+        "cuda_version": null,
+        "fallback_reason": null,
+        "warnings": [],
+        "runtime_device": "cpu",
+        "alignment_runs": {
+          "reference": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          },
+          "participant": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          }
+        },
+        "feature_device": "cpu",
+        "alignment": "wav2vec2-ctc",
+        "seconds": 11.71,
+        "model": "facebook/wav2vec2-base-960h",
+        "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+        "cached_alignment": false
+      },
+      "audio_processing": {
+        "sample_rate": 16000,
+        "encoding": "PCM_16",
+        "reference_gain": 1,
+        "participant_gain": 1,
+        "note": "Measurements use the exact stored playback samples. Uniform gain prevents clipping or excessive quantization loss."
+      },
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.11469,
+          "end": 9.90469,
+          "reference_start": 7.9851,
+          "reference_end": 7.9851,
+          "evidence": {
+            "measurement": "Longest quiet interval between reliable word anchors",
+            "reference": 0,
+            "participant": 1.79,
+            "unit": "s"
+          }
+        }
+      ],
+      "reference_pcm": {
+        "bytes": 704492,
+        "sha256": "2863b1578495143678a3ded9306b791936abb064e358572a2a28a2ab1ec54c71",
+        "playback_identical": true
+      },
+      "participant_pcm": {
+        "bytes": 762092,
+        "sha256": "9bc8ed4b1f54fbb8d7a6d010a6d96d627c63471ec3f028e516dae1b76bbfb361",
+        "playback_identical": true
+      }
+    }
+  },
+  "page_errors": [],
+  "console_errors": [],
+  "request_failures": [],
+  "expected_media_cancellations": [
+    {
+      "path": "/data/variants/jfk-welcome/pauses-severe.wav",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/data/variants/jfk-welcome/pauses-severe.wav",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "[browser playback blob]",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "[browser playback blob]",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "artifacts": [
+    "reports/hosted-deployment-failure.jpg"
+  ],
+  "limitations": [
+    "Functional deployment smoke check, not a load test or independent model-quality evaluation."
+  ],
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "requested_device": "cpu",
+    "device": "cpu",
+    "device_name": "CPU",
+    "precision": "float32",
+    "torch_version": "2.8.0+cpu",
+    "cuda_version": null,
+    "fallback_reason": null,
+    "warnings": [],
+    "version": "0.1.0",
+    "demo_count": 4,
+    "deployment": "vercel",
+    "synchronous": true,
+    "upload_max_bytes": 4200000,
+    "upload_encoding": "WAV PCM16 mono 16000 Hz",
+    "max_seconds": 30
+  },
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(exported.id && exported.rubric && exported.provenance && exported.compute)\n\n    at checkExports (C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\scripts\\hosted_smoke.cjs:58:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async main (C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\scripts\\hosted_smoke.cjs:148:26)",
+  "finished_at": "2026-10-13T18:43:25.101Z"
+}

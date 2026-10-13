@@ -40,4 +40,4 @@ Python, PyTorch, Hugging Face Transformers, wav2vec2, NumPy, SciPy, librosa, Sou
 OpenAI Codex/ChatGPT assisted with research, architecture, implementation, tests, design and documentation. The entrant must review the work, understand the method and include this disclosure in the public README and Built With fields. No human participant study is claimed.
 
 ## Account fields to complete
-Public source repository: https://github.com/AyushPaul26/speaktrace . The entrant still needs to supply actual team members and Devpost accounts, and the recorded YouTube demo URL. Upload the PDF technical report and link the included dataset. Check the organizer's current submission form and deadline before submitting.
+Try it out: https://speaktrace-amber.vercel.app . Public source repository: https://github.com/AyushPaul26/speaktrace . The entrant still needs to supply actual team members and Devpost accounts, and the recorded YouTube demo URL. Upload the PDF technical report and link the included dataset. Check the organizer's current submission form and deadline before submitting.

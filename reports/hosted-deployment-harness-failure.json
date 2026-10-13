@@ -1,0 +1,244 @@
+{
+  "started_at": "2026-10-13T18:40:36.632Z",
+  "target": "https://speaktrace-ayush-pauls-projects-bd0a7c11.vercel.app",
+  "passed": false,
+  "browser": "Installed headless Chrome, fresh nonpersistent context, no personal browser profile",
+  "method": "Real unmodified network responses. At most two analysis POSTs: public-domain JFK severe-pause demo, then the same included pair through upload UI.",
+  "steps": [
+    {
+      "name": "Hosted health reports installed CPU model and synchronous API",
+      "passed": true,
+      "seconds": 2.481
+    },
+    {
+      "name": "Public studio, scripts, styles and both archive WAVs are reachable",
+      "passed": true
+    },
+    {
+      "name": "Real hosted demo performs fresh CPU alignment and displays measured pause",
+      "passed": true,
+      "seconds": 15.536,
+      "score": 94.5,
+      "excess_seconds": 1.79
+    },
+    {
+      "name": "Demo reference evidence playback honors actual interval",
+      "passed": true,
+      "start": 7.7351,
+      "end": 8.2351
+    },
+    {
+      "name": "Demo participant evidence playback honors actual interval",
+      "passed": true,
+      "start": 7.8646899999999995,
+      "end": 10.15469
+    },
+    {
+      "name": "Transcript seeks each recording to its own word timestamp",
+      "passed": true,
+      "reference": 14.169,
+      "participant": 15.9694
+    },
+    {
+      "name": "Demo: stateless JSON and printable HTML exports",
+      "passed": true,
+      "id": "8ba4579b621a411f833fa710484d6a8c",
+      "has_browser_preparation": false
+    },
+    {
+      "name": "390 px layout has no horizontal overflow and acoustic toggle works",
+      "passed": true,
+      "width": 390,
+      "scrollWidth": 380
+    }
+  ],
+  "analyses": {
+    "demo": {
+      "id": "8ba4579b621a411f833fa710484d6a8c",
+      "mode": "demo",
+      "score": 94.5,
+      "seconds": 15.536,
+      "rubric": "reference-relative-1.1.0",
+      "compute": {
+        "requested_device": "cpu",
+        "device": "cpu",
+        "device_name": "CPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cpu",
+        "cuda_version": null,
+        "fallback_reason": null,
+        "warnings": [],
+        "runtime_device": "cpu",
+        "alignment_runs": {
+          "reference": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          },
+          "participant": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          }
+        },
+        "feature_device": "cpu",
+        "alignment": "wav2vec2-ctc",
+        "seconds": 9.54,
+        "model": "facebook/wav2vec2-base-960h",
+        "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+        "cached_alignment": false
+      },
+      "audio_processing": {
+        "sample_rate": 16000,
+        "encoding": "PCM_16",
+        "reference_gain": 1,
+        "participant_gain": 1,
+        "note": "Measurements use the exact stored playback samples. Uniform gain prevents clipping or excessive quantization loss."
+      },
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.11469,
+          "end": 9.90469,
+          "reference_start": 7.9851,
+          "reference_end": 7.9851,
+          "evidence": {
+            "measurement": "Longest quiet interval between reliable word anchors",
+            "reference": 0,
+            "participant": 1.79,
+            "unit": "s"
+          }
+        }
+      ]
+    },
+    "upload": {
+      "id": "3eefb766f886468bae160d4891d6ea50",
+      "mode": "upload",
+      "score": 94.5,
+      "seconds": 20.657,
+      "rubric": "reference-relative-1.1.0",
+      "compute": {
+        "requested_device": "cpu",
+        "device": "cpu",
+        "device_name": "CPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cpu",
+        "cuda_version": null,
+        "fallback_reason": null,
+        "warnings": [],
+        "runtime_device": "cpu",
+        "alignment_runs": {
+          "reference": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          },
+          "participant": {
+            "requested_device": "cpu",
+            "device": "cpu",
+            "device_name": "CPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cpu",
+            "cuda_version": null,
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": false
+          }
+        },
+        "feature_device": "cpu",
+        "alignment": "wav2vec2-ctc",
+        "seconds": 12.42,
+        "model": "facebook/wav2vec2-base-960h",
+        "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+        "cached_alignment": false
+      },
+      "audio_processing": {
+        "sample_rate": 16000,
+        "encoding": "PCM_16",
+        "reference_gain": 1,
+        "participant_gain": 1,
+        "note": "Measurements use the exact stored playback samples. Uniform gain prevents clipping or excessive quantization loss."
+      },
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.11469,
+          "end": 9.90469,
+          "reference_start": 7.9851,
+          "reference_end": 7.9851,
+          "evidence": {
+            "measurement": "Longest quiet interval between reliable word anchors",
+            "reference": 0,
+            "participant": 1.79,
+            "unit": "s"
+          }
+        }
+      ]
+    }
+  },
+  "page_errors": [],
+  "console_errors": [],
+  "request_failures": [
+    {
+      "path": "/data/variants/jfk-welcome/pauses-severe.wav",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/data/variants/jfk-welcome/pauses-severe.wav",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "https://speaktrace-ayush-pauls-projects-bd0a7c11.vercel.app/4c96eef6-a914-432a-bc37-93963226be68",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "https://speaktrace-ayush-pauls-projects-bd0a7c11.vercel.app/05661e14-9c8c-47e7-a256-168d77355ca1",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "artifacts": [
+    "reports/hosted-deployment-failure.jpg"
+  ],
+  "limitations": [
+    "Functional deployment smoke check, not a load test or independent model-quality evaluation."
+  ],
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "requested_device": "cpu",
+    "device": "cpu",
+    "device_name": "CPU",
+    "precision": "float32",
+    "torch_version": "2.8.0+cpu",
+    "cuda_version": null,
+    "fallback_reason": null,
+    "warnings": [],
+    "version": "0.1.0",
+    "demo_count": 4,
+    "deployment": "vercel",
+    "synchronous": true,
+    "upload_max_bytes": 4200000,
+    "upload_encoding": "WAV PCM16 mono 16000 Hz",
+    "max_seconds": 30
+  },
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(bytes && bytes.length < 4200000)\n\n    at main (C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\scripts\\hosted_smoke.cjs:116:74)",
+  "finished_at": "2026-10-13T18:41:30.018Z"
+}

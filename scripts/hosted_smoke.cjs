@@ -23,7 +23,8 @@ const report = {
   started_at: new Date().toISOString(), target: ORIGIN, passed: false,
   browser: 'Installed headless Chrome, fresh nonpersistent context, no personal browser profile',
   method: 'Real unmodified network responses. At most two analysis POSTs: public-domain JFK severe-pause demo, then the same included pair through upload UI.',
-  steps: [], analyses: {}, page_errors: [], console_errors: [], request_failures: [], artifacts: [],
+  upload_observation: 'A read-only in-page observer hashes the actual multipart Blob before forwarding the original fetch arguments unchanged. No analysis response, score, finding, or request body is replaced.',
+  steps: [], analyses: {}, page_errors: [], console_errors: [], request_failures: [], expected_media_cancellations: [], artifacts: [],
   limitations: ['Functional deployment smoke check, not a load test or independent model-quality evaluation.'],
 };
 let browser, context, page;
@@ -55,7 +56,9 @@ async function checkExports(label) {
   const downloadPromise = page.waitForEvent('download'); await page.locator('#download-json').click(); const download = await downloadPromise;
   const stream = await download.createReadStream(); const chunks = []; for await (const chunk of stream) chunks.push(chunk);
   const exported = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-  assert(exported.id && exported.rubric && exported.provenance && exported.compute);
+  assert(exported.id && exported.rubric && exported.compute);
+  if (exported.mode === 'demo') assert(exported.provenance, 'Bundled demo exports include archive provenance');
+  else assert(exported.audio_processing?.browser_preparation, 'Upload exports include browser preparation provenance');
   for (const kind of ['reference', 'participant']) assert(!String(exported[kind].url).startsWith('blob:'), 'JSON must omit temporary playback handles');
   const popupPromise = page.waitForEvent('popup'); await page.locator('#print-report').click(); const popup = await popupPromise;
   await popup.waitForLoadState(); const text = await popup.locator('body').innerText();
@@ -70,7 +73,11 @@ async function main() {
   page = await context.newPage(); page.setDefaultTimeout(20000);
   page.on('pageerror', error => report.page_errors.push(error.message));
   page.on('console', item => { if (item.type() === 'error') report.console_errors.push(item.text()); });
-  page.on('requestfailed', request => report.request_failures.push({ path: new URL(request.url()).pathname, reason: request.failure()?.errorText }));
+  page.on('requestfailed', request => {
+    const url = new URL(request.url()), reason = request.failure()?.errorText;
+    const expectedMediaCancellation = reason === 'net::ERR_ABORTED' && request.resourceType() === 'media' && (url.protocol === 'blob:' || url.pathname.startsWith('/data/'));
+    (expectedMediaCancellation ? report.expected_media_cancellations : report.request_failures).push({ path: url.protocol === 'blob:' ? '[browser playback blob]' : url.pathname, reason });
+  });
   const started = Date.now(), health = await context.request.get(`${ORIGIN}/api/health`, { timeout: 120000 });
   assert(health.ok(), `Health returned HTTP ${health.status()}`); report.health = await health.json();
   assert.equal(report.health.deployment, 'vercel'); assert.equal(report.health.synchronous, true); assert.equal(report.health.device, 'cpu'); assert.equal(report.health.model_ready, true);
@@ -112,16 +119,35 @@ async function main() {
   await page.locator('#upload-mode').click(); assert.equal(await page.locator('#privacy-notice').isVisible(), true);
   assert.match(await page.locator('#privacy-notice').innerText(), /sends both recordings and the transcript/);
   await page.locator('#reference-file').setInputFiles(path.join(ROOT, reference.audio)); await page.locator('#participant-file').setInputFiles(path.join(ROOT, variant.audio)); await page.locator('#transcript-input').fill(reference.transcript);
+  // Chromium's request.postDataBuffer() omits binary Blob bodies. Observe the
+  // submitted body in-page without modifying it, routing it, or faking replies.
+  await page.evaluate(() => {
+    const originalFetch = window.fetch;
+    window.fetch = async function (input, options) {
+      if (input === '/api/hosted/analyze' && options?.method === 'POST') {
+        const body = options.body;
+        if (!(body instanceof Blob)) throw new Error('Smoke test expected the prepared multipart Blob.');
+        const form = await new Response(body, { headers: options.headers }).formData();
+        const recordings = {};
+        for (const kind of ['reference', 'participant']) {
+          const bytes = await form.get(kind).arrayBuffer(), view = new DataView(bytes);
+          const hash = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), value => value.toString(16).padStart(2, '0')).join('');
+          recordings[kind] = { bytes: bytes.byteLength, sha256: hash, format: view.getUint16(20, true), channels: view.getUint16(22, true), sample_rate: view.getUint32(24, true), bits: view.getUint16(34, true) };
+        }
+        window.__speaktraceObservedUpload = { body_bytes: body.size, recordings };
+      }
+      return originalFetch.apply(this, arguments);
+    };
+  });
   const upload = await analyze('/api/hosted/analyze'); report.analyses.upload = resultEvidence(upload.result, upload.seconds); verifyPause(upload.result);
-  const sent = upload.response.request(), bytes = sent.postDataBuffer(); assert(bytes && bytes.length < 4200000);
-  const multipart = await new Request(`${ORIGIN}/api/hosted/analyze`, { method: 'POST', headers: { 'content-type': sent.headers()['content-type'] }, body: bytes, duplex: 'half' }).formData();
+  const observed = await page.evaluate(() => window.__speaktraceObservedUpload); assert(observed && observed.body_bytes < 4200000);
   for (const kind of ['reference', 'participant']) {
-    const uploaded = Buffer.from(await multipart.get(kind).arrayBuffer()); assert.equal(uploaded.readUInt16LE(20), 1); assert.equal(uploaded.readUInt16LE(22), 1); assert.equal(uploaded.readUInt32LE(24), 16000); assert.equal(uploaded.readUInt16LE(34), 16);
+    const uploaded = observed.recordings[kind]; assert.equal(uploaded.format, 1); assert.equal(uploaded.channels, 1); assert.equal(uploaded.sample_rate, 16000); assert.equal(uploaded.bits, 16);
     const audioURL = await page.locator(`#${kind}-track audio`).getAttribute('src'); assert(audioURL.startsWith('blob:'));
-    const playback = Buffer.from(await page.locator(`#${kind}-track audio`).evaluate(async audio => Array.from(new Uint8Array(await (await fetch(audio.src)).arrayBuffer())))); assert.deepEqual(playback, uploaded);
-    report.analyses.upload[`${kind}_pcm`] = { bytes: uploaded.length, sha256: digest(uploaded), playback_identical: true };
+    const playback = Buffer.from(await page.locator(`#${kind}-track audio`).evaluate(async audio => Array.from(new Uint8Array(await (await fetch(audio.src)).arrayBuffer())))); assert.equal(playback.length, uploaded.bytes); assert.equal(digest(playback), uploaded.sha256);
+    report.analyses.upload[`${kind}_pcm`] = { bytes: uploaded.bytes, sha256: uploaded.sha256, playback_identical: true };
   }
-  pass('Actual upload converts to bounded canonical WAVs with byte-identical playback', { body_bytes: bytes.length, seconds: upload.seconds, score: upload.result.summary.score });
+  pass('Actual upload converts to bounded canonical WAVs with byte-identical playback', { body_bytes: observed.body_bytes, seconds: upload.seconds, score: upload.result.summary.score });
   const exportedUpload = await checkExports('Upload'); assert.equal(exportedUpload.audio_processing.browser_preparation.reference.encoding, 'WAV PCM16 mono');
   assert.match(await page.locator('#result-meta').innerText(), /CPU alignment/); assert(!(await page.locator('#result-meta').innerText()).includes('includes cached alignment'));
   await page.locator('.finding').filter({ hasText: /pause/i }).first().click(); await page.evaluate(() => window.scrollTo(0, 0));

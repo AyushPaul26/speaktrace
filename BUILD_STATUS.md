@@ -21,7 +21,7 @@ User approved the Track C concept and requested an end-to-end, free build on 202
 - Measured warm alignment on a 22.012-second clip: CPU median 1.7921 seconds, GPU median 0.1842 seconds (9.73x). A separate 60-second inference memory stress test peaked at 1122.7 MiB allocated. These are alignment measurements, not whole-app speed or accuracy claims.
 - The six-page PDF report was generated and every page visually checked. Source/data packaging, Devpost text and a video narration script are prepared. No participant study is claimed.
 - The public repository [AyushPaul26/speaktrace](https://github.com/AyushPaul26/speaktrace) is published on `main`. Anonymous GitHub access and the reviewed commit were verified; installed environments, models, caches and private runtime uploads are excluded.
-- The Vercel adapter uses synchronous CPU analysis, request-scoped temporary files and a 30-second limit per recording. Local mode retains its 60-second limit. Live deployment verification is pending; a build or reserved production address alone is not evidence that hosted analysis works.
+- The live Vercel studio is [speaktrace-amber.vercel.app](https://speaktrace-amber.vercel.app), connected to the public repository. It uses synchronous CPU analysis, request-scoped temporary files and a 30-second limit per recording. Local mode retains its 60-second limit. The live browser smoke passed 11 checks on 2026-10-13 at 18:45 UTC: real uncached demo and upload inference, playback, transcript seeking, narrow layout, upload/playback byte identity and JSON/HTML exports. Both analyses found the expected 1.79-second extra pause and scored 94.5. Evidence is in `reports/hosted-deployment.json`; the screenshot was visually inspected.
 
 ## Remaining submission actions
 
