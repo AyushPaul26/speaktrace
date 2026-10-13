@@ -18,6 +18,7 @@ node_modules/
 public/
 tmp/
 reports/browser-smoke-failure.jpg
+reports/hosted-deployment-failure.jpg
 reports/tests-current.txt
 
 .vercel

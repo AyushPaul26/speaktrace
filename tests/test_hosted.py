@@ -97,6 +97,32 @@ def test_hosted_serves_studio_when_static_cdn_does_not_handle_root(tmp_path):
         assert response.headers["content-type"].startswith("text/html")
 
 
+def test_hosted_static_mounts_serve_public_assets_without_private_paths(tmp_path):
+    assets = {
+        "web/hosted.js": (b"window.SpeakTraceHosted = {};", "javascript"),
+        "web/styles.css": (b"body { color: teal; }", "text/css"),
+        "data/references/example.wav": (wav_bytes(), "audio/"),
+        "data/variants/example/clean.wav": (wav_bytes(), "audio/"),
+    }
+    for relative, (content, _) in assets.items():
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+    for relative in (".models/private.bin", ".runtime/upload.wav", "data/manifest.json"):
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(b"not a public asset")
+    with TestClient(create_app(tmp_path)) as client:
+        for relative, (content, mime) in assets.items():
+            response = client.get("/" + relative)
+            assert response.status_code == 200
+            assert response.content == content
+            assert mime in response.headers["content-type"]
+        for path in ("/.models/private.bin", "/.runtime/upload.wav", "/data/manifest.json",
+                     "/web/%2e%2e/.models/private.bin", "/data/references/%2e%2e/manifest.json"):
+            assert client.get(path).status_code == 404
+
+
 def test_hosted_preparation_lowers_threads_after_model_loader(monkeypatch):
     import torch
     import api.hosted as hosted

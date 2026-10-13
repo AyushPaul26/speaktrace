@@ -1,6 +1,6 @@
 # SpeakTrace
 
-**Hear it. See it. Refine it.** A speech comparison studio for Track C of the Multimodal AI Hackathon 2026. Run locally for free with CPU or optional NVIDIA acceleration, or try the Vercel-hosted CPU version.
+**Hear it. See it. Refine it.** A speech comparison studio for Track C of the Multimodal AI Hackathon 2026. Supports free local CPU or optional NVIDIA inference and a Vercel CPU deployment adapter.
 
 [Public source repository](https://github.com/AyushPaul26/speaktrace)
 
@@ -39,7 +39,7 @@ Python 3.11–3.13 is supported by the setup script; Python 3.12 on Windows is t
 - Configurable rubric weights; downloadable JSON and a printable standalone HTML report.
 - Local job progress, bounded queue, recoverable errors and session-result resume.
 
-Keep each recording between 2 and 60 seconds, no larger than 20 MB, with one speaker and the exact same transcript (up to 150 words/1600 characters). Start with 20–30-second clips. Write numbers as spoken words. Noisy recordings, music, overlapping speakers and substantially different transcripts are outside the prototype's validated scope.
+Keep each recording between **2 and 30 seconds in hosted mode**, or **2 and 60 seconds in local mode**, no larger than 20 MB, with one speaker and the exact same transcript (up to 150 words/1600 characters). Start with 20–30-second clips. Write numbers as spoken words. Noisy recordings, music, overlapping speakers and substantially different transcripts are outside the prototype's validated scope.
 
 Measurements use the exact PCM16 samples served for playback. Over-range floating WAVs and very quiet accepted files receive a uniform gain adjustment before quantization; its factor is recorded in the exported `audio_processing` metadata. Relative-energy measurements remove recording-wide gain.
 
@@ -125,7 +125,7 @@ Bundled public-domain demo alignment caches may remain in `.cache/alignments/`. 
 - [Dataset card and provenance](docs/DATASET_CARD.md)
 - [Human validation protocol](docs/HUMAN_VALIDATION.md)
 
-Publishing the repository, recording/uploading the YouTube demo and adding real team members to Devpost are separate account actions. This local build does not claim those actions have happened.
+The [public GitHub repository](https://github.com/AyushPaul26/speaktrace) has been published. Recording/uploading the YouTube demo, adding real team members and submitting through Devpost remain separate submission steps. Deployment verification is documented in [the deployment guide](docs/DEPLOYMENT.md).
 
 To rebuild the PDF, install the optional `requirements-report.txt` dependencies and run `scripts/build_report.py`. To create a checked source/data archive, run `scripts/package_submission.py`. The archive excludes models, virtual environments, full raw source recordings and all runtime user uploads. Setup downloads the model separately.
 

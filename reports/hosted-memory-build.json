@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-10-14T00:00:55.688607+05:30",
+  "platform": "linux",
+  "python": "3.12.14",
+  "limits": {
+    "peak_rss_mib": 1900,
+    "cold_seconds": 300
+  },
+  "scope": "Isolated full-pipeline CPU workers. Build-host timings are not runtime latency guarantees.",
+  "measurements": [
+    {
+      "case": "real-pair",
+      "status": "complete",
+      "scope": "Real public-domain reference and its unchanged control; full analysis.",
+      "source": "reagan-families",
+      "audio_seconds": [
+        22.0121,
+        22.0121
+      ],
+      "torch_version": "2.8.0+cpu",
+      "torch_cuda_version": null,
+      "torch_threads": 1,
+      "device": "cpu",
+      "cached_alignment": false,
+      "peak_rss_mib": 1293.039,
+      "imports_and_model_load_seconds": 23.584,
+      "pipeline_and_serialization_seconds": 14.866,
+      "cold_total_seconds": 40.252,
+      "result_bytes": 147168,
+      "worker_wall_seconds": 40.252,
+      "checks": {
+        "completed": true,
+        "cpu_only": true,
+        "uncached": true,
+        "memory_fits": true,
+        "duration_fits": true
+      },
+      "passed": true
+    },
+    {
+      "case": "30s-stress-pair",
+      "status": "complete",
+      "scope": "Two 30-second tiled clips at the hosted duration limit; full-pipeline resource stress only, not accuracy validation.",
+      "source": "reagan-families",
+      "audio_seconds": [
+        30.0,
+        30.0
+      ],
+      "torch_version": "2.8.0+cpu",
+      "torch_cuda_version": null,
+      "torch_threads": 1,
+      "device": "cpu",
+      "cached_alignment": false,
+      "peak_rss_mib": 1355.426,
+      "imports_and_model_load_seconds": 7.606,
+      "pipeline_and_serialization_seconds": 17.438,
+      "cold_total_seconds": 26.276,
+      "result_bytes": 151886,
+      "worker_wall_seconds": 26.276,
+      "checks": {
+        "completed": true,
+        "cpu_only": true,
+        "uncached": true,
+        "memory_fits": true,
+        "duration_fits": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "build_url": "https://speaktrace-nk0c0he67-ayush-pauls-projects-bd0a7c11.vercel.app",
+  "commit": "31c00be"
+}

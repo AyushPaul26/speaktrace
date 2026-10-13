@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T18:28:50.491037+00:00",
+  "generated_at": "2026-10-13T18:36:45.408881+00:00",
   "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
   "status": "passed",
   "checks": [
@@ -12,10 +12,10 @@
         "-q",
         "--tb=short",
         "--basetemp",
-        ".runtime/pytest-verification-98d16a0c"
+        ".runtime/pytest-verification-29ae1e15"
       ],
       "exit_code": 0,
-      "output": "........................................................................ [ 58%]\n...................................................                      [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:51\n  C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Lib\\site-packages\\starlette\\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n123 passed, 1 warning in 11.02s\n"
+      "output": "........................................................................ [ 58%]\n....................................................                     [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:51\n  C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Lib\\site-packages\\starlette\\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n124 passed, 1 warning in 11.56s\n"
     },
     {
       "name": "Frontend behavior tests",
@@ -27,7 +27,7 @@
         "web/hosted.test.cjs"
       ],
       "exit_code": 0,
-      "output": "\u2714 audio validation rejects empty, oversized and unsupported files (1.1412ms)\n\u2714 transcript validation catches limits, numerals and unsupported text (0.3722ms)\n\u2714 weights normalize and reject meaningless totals (0.8164ms)\n\u2714 evidence intervals use each recording\u2019s own coordinates (0.1795ms)\n\u2714 evidence replay adds audible context without changing measured intervals (0.2247ms)\n\u2714 evidence replay context clips to the beginning and end of each recording (0.889ms)\n\u2714 playback word detection does not highlight words during silence (0.2094ms)\n\u2714 media URLs cannot send recordings to external or executable URLs (0.3581ms)\n\u2714 elapsed time formatting preserves audio precision (0.2365ms)\n\u2714 word contours use actual frame times and robust medians (1.9319ms)\n\u2714 unvoiced pitch and weak alignment remain missing, never fabricated zero (0.1864ms)\n\u2714 numeric zero is a real value and missing arrays leave gaps (0.1896ms)\n\u2714 canonical WAV has PCM16 mono 16k header and exact sample count (11.9715ms)\n\u2714 quiet and overrange floating samples receive uniform gain before PCM quantization (15.2025ms)\n\u2714 duration, silence, invalid samples and invalid amplitude reject before upload (155.0284ms)\n\u2714 hosted duration cap accepts 30 seconds and rejects longer clips (1.5801ms)\n\u2714 two maximum hosted-duration WAVs plus real multipart encoding fit request limit (170.7184ms)\n\u2714 media only accepts exact same-origin demo paths and explicitly minted blobs (0.9024ms)\n\u2714 JSON export removes transient blob handles without mutating displayed result (0.3048ms)\n\u2714 printable report escapes every user value and carries evidence, provenance and rubric (0.5801ms)\n\u2139 tests 20\n\u2139 suites 0\n\u2139 pass 20\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 589.2273\n"
+      "output": "\u2714 audio validation rejects empty, oversized and unsupported files (1.0076ms)\n\u2714 transcript validation catches limits, numerals and unsupported text (0.3522ms)\n\u2714 weights normalize and reject meaningless totals (0.7511ms)\n\u2714 evidence intervals use each recording\u2019s own coordinates (0.1802ms)\n\u2714 evidence replay adds audible context without changing measured intervals (0.2111ms)\n\u2714 evidence replay context clips to the beginning and end of each recording (1.2586ms)\n\u2714 playback word detection does not highlight words during silence (0.4128ms)\n\u2714 media URLs cannot send recordings to external or executable URLs (0.3189ms)\n\u2714 elapsed time formatting preserves audio precision (0.2051ms)\n\u2714 word contours use actual frame times and robust medians (1.8009ms)\n\u2714 unvoiced pitch and weak alignment remain missing, never fabricated zero (0.1522ms)\n\u2714 numeric zero is a real value and missing arrays leave gaps (0.1476ms)\n\u2714 canonical WAV has PCM16 mono 16k header and exact sample count (10.5653ms)\n\u2714 quiet and overrange floating samples receive uniform gain before PCM quantization (14.8542ms)\n\u2714 duration, silence, invalid samples and invalid amplitude reject before upload (90.8766ms)\n\u2714 hosted duration cap accepts 30 seconds and rejects longer clips (0.5079ms)\n\u2714 two maximum hosted-duration WAVs plus real multipart encoding fit request limit (101.6492ms)\n\u2714 media only accepts exact same-origin demo paths and explicitly minted blobs (1.1907ms)\n\u2714 JSON export removes transient blob handles without mutating displayed result (0.5512ms)\n\u2714 printable report escapes every user value and carries evidence, provenance and rubric (1.0483ms)\n\u2139 tests 20\n\u2139 suites 0\n\u2139 pass 20\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 409.2402\n"
     },
     {
       "name": "Frontend markup and tokens",
@@ -114,24 +114,24 @@
     "tests/test_dataset.py": "5b305bfc73b1c848d418626305bede0ac92a38ebf27ce620aa0ac1470b079ff9",
     "tests/test_devices.py": "b2c7bdec27eea42a21de8b465185dfa3368ddb62b19e92365d889ccdf5dcdc4c",
     "tests/test_features.py": "ac3caa50c60a1c09930c182f1df426caedc135bb1fd07587008e962ac0a1d900",
-    "tests/test_hosted.py": "49097558365d92709cdbf5d54dae398041b54a56a0ef9330238f39792971ef1d",
+    "tests/test_hosted.py": "96aec01507f96ea63b9c9700bfada8a73b059f3c934323e45cbda332ffe3a6d0",
     "tests/test_jobs.py": "38859a46cd3990ac5f18593eb98818674dcb874a30874461a7a9be7dba77824f",
     "tests/test_pipeline.py": "d2eb7778ea0645585884d71e69df6b5fe10a07a1fb9f6b0baf3558fd4db1af67",
     "tests/test_setup.py": "16400dff1c80d36ccaeeb30f1c33296131ee02a71d190990e3036b6dedfac701",
     "scripts/benchmark_devices.py": "bed8d1b684111c1398b65d55fd6305a8f1d9872b6388c185d08d8eaa43e7c461",
     "scripts/browser_smoke.cjs": "938d5e0bd1644324db7c796a0a93abbd7078ddd42339c7df85c4916b84dec754",
     "scripts/build_dataset.py": "bed94d20233d4cdc6aa6db4a00dca63dd24415b8807be1b04f8484570019008f",
-    "scripts/build_hosted.py": "ccdc3c3c9c5aed8be437d19e028a41e8c550b5c414ca2cb394aa60d640d8a198",
+    "scripts/build_hosted.py": "b5cf19d9f471c43a4f2a074689f9cd1bcd3cef3eb1d85ab0a08e27890dd367b9",
     "scripts/build_report.py": "8b7e4d148b775200d3f48f110872d4eaf81c02712af5c9a17813bf9b9aaa7065",
     "scripts/download_model.py": "f0edce7ddd7674c8569e9fce1b16df38f841600d26d4546d7be2587f43b7a061",
     "scripts/evaluate.py": "8ef4002afe9eec5f8a67059c863b23a7f432d363d54381911c984f26ecf0b453",
     "scripts/hosted_smoke.cjs": "cfbc99fef015c2297a994e63f6e2fb63f5dd34b2041936f9692fa632e133db5a",
-    "scripts/package_submission.py": "021d67465d81753d796efed77d04df25b53416b938e0545bf3b8708cc74e7762",
+    "scripts/package_submission.py": "a8f374abec907074a7cb5fee886a0d071b8f7033ee7126418036a0caf4d92044",
     "scripts/probe_hosted_memory.py": "22401f51902ae9a80532062bcdbb1ebef3d1131ce87b0dc9a56ed576c9c38515",
     "scripts/setup.py": "1807f5b61dc7dcf374767ffe763de70ba198e0cf906c1f96cc8851f09dbdf859",
     "scripts/verify.py": "1f8a78e6109e96caae4035aa82dbfcd14edacfdc56da2cfd831cc9695147f694",
     "scripts/verify_package.py": "014b8405b78ada2b016480c051b6d615725f9bfba14633dba043e7edda73cd34",
-    "api/hosted.py": "1c7bd8c287531fd74bf293198d939045436297ebc2c87ec3f286776ec54864a5",
+    "api/hosted.py": "564ffd5fea2d593d2c015f55aebc7e1a86439694123141e53143d2c7d0783cb1",
     "api/index.py": "e34b6e7f2159085486f78742afa31c13400666bd87acc5317d7f697de3f4ca86"
   },
   "browser_evidence": "docs/frontend-verification.md",

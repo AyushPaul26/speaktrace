@@ -14,7 +14,7 @@ def main():
     destination.parent.mkdir(exist_ok=True)
     allowed_roots = {'speaktrace', 'api', 'web', 'scripts', 'tests', 'docs', 'data', 'reports', 'output'}
     forbidden_parts = {'__pycache__', '.pytest_cache', '.runtime', '.venv', '.models', '.cache', 'raw', 'runtime'}
-    excluded_artifacts = {'reports/browser-smoke-failure.jpg', 'reports/tests-current.txt'}
+    excluded_artifacts = {'reports/browser-smoke-failure.jpg', 'reports/hosted-deployment-failure.jpg', 'reports/tests-current.txt'}
     files = []
     for path in ROOT.rglob('*'):
         relative = path.relative_to(ROOT)

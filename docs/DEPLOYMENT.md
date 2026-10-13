@@ -15,7 +15,7 @@ The frontend reads `/api/health` to select the correct transport and privacy tex
 2. Vercel uses Python 3.12 and the dependencies in `pyproject.toml`. PyTorch is resolved from the explicit CPU-only package index, avoiding CUDA downloads.
 3. `scripts/build_hosted.py` downloads the existing pinned acoustic model into the remote build directory.
 4. `scripts/probe_hosted_memory.py` runs isolated, complete CPU analyses on a real short pair and a 30-second tiled stress pair. It rejects a build exceeding 1900 MiB peak process RSS or 300 seconds per worker. Build-host timings are not guarantees of deployed runtime speed; public inference must also be tested.
-5. Static web files and the included public demo audio are copied to `public/` and served by the CDN. The model remains in the Python function bundle.
+5. FastAPI mounts the source `web/`, `data/references/` and `data/variants/` directories at their matching URL prefixes. Vercel's static integration promotes these public assets to its CDN (`tool.vercel.fastapi.static.cdn = true`) while retaining them in the function for demo inference and fallback serving. The model remains in the Python function bundle. The root HTML page is served by the app.
 
 The entrypoint is `api.index:app`; `vercel.json` configures its 300-second limit and includes `.models/**`. Large Functions beta is enabled through `VERCEL_SUPPORT_LARGE_FUNCTIONS=1`; the project requires Fluid compute. Neither `.venv`, `.cache`, `.runtime`, raw full-length archive downloads nor credentials are uploaded.
 

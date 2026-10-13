@@ -1,6 +1,10 @@
 # SpeakTrace API contract v1
 
-All endpoints are same-origin on the local server. All timing values are seconds. Data is JSON except audio uploads and media files.
+All timing values are seconds. Data is JSON except audio uploads and media files. Local and hosted modes use different analysis transports, described below.
+
+## Local endpoints
+
+These endpoints are same-origin on the local server started by `run.py`.
 
 - `GET /api/health`: `{status:"ok", model_ready:bool, device:"cpu"|"cuda", requested_device:"auto"|"cpu"|"cuda", device_name, precision:"float32", torch_version, cuda_version, fallback_reason:string|null, warnings:string[], demo_count:int, version:string}`. Device is the selected runtime backend; a CUDA memory fallback persists on CPU until restart.
 - `GET /api/demos`: `{demos:[{id,title,speaker,description,transcript,duration,source_url,license,variants:[{id,label,flaw,severity}]}]}`.
@@ -12,7 +16,22 @@ All endpoints are same-origin on the local server. All timing values are seconds
 - `/media/...`: actual local result or demo audio. The server determines URLs; the client must never construct arbitrary filesystem paths.
 - `GET /api/methodology`: versioned rubric/source/limitation metadata.
 
-Errors are JSON `{detail:"actionable message"}` with appropriate 4xx/5xx codes. User uploads need not be preserved on errors. Local result media is retained for at most 24 hours; cleanup runs on startup and job creation. Demo media persists. There is no cloud upload.
+Errors use JSON `detail` with appropriate 4xx/5xx codes. User uploads need not be preserved on errors. Local result media expires after 24 hours; cleanup runs on startup, new jobs and result access. Demo media persists. This local transport does not send recordings to the cloud.
+
+## Hosted endpoints
+
+The Vercel adapter exposes a synchronous CPU API. Browser POSTs require an `Origin` matching the request host; missing or cross-origin origins are rejected. This check is not user authentication.
+
+- `GET /api/health`: adds `deployment:"vercel"`, `synchronous:true`, `max_seconds:30`, `upload_max_bytes:4200000` and `upload_encoding:"WAV PCM16 mono 16000 Hz"` to the runtime metadata. The frontend uses these fields to select cloud transport and disclose remote processing.
+- `GET /api/demos` and `GET /api/methodology`: return the public example library and hosted processing/rubric information.
+- `POST /api/hosted/analyze`: multipart `reference`, `participant`, `transcript` and optional JSON `weights`. Both files must be mono 16 kHz PCM16 WAV, **2–30 seconds each**, prepared by the browser from the selected recordings. The full multipart body must not exceed **4,200,000 bytes**. Success returns **200 with the complete Analysis**, rather than a job identifier.
+- `POST /api/hosted/demos/{demo_id}/analyze`: JSON `{variant_id, weights?}`. Runs the same uncached pipeline on the selected public audio and returns 200 with the complete Analysis.
+
+Hosted results add `deployment:"vercel"` and `retention`. Uploaded recordings have `url:null` in the server response; the browser attaches its own temporary object URLs to the exact prepared WAVs for playback. Demo recordings use public `/data/...wav` URLs served through the CDN. JSON export removes upload object URLs, and printable reports are generated in the browser. There are no hosted job-polling, saved-report or uploaded-media endpoints; reloading the page discards the current result.
+
+The server permits one analysis at a time per function instance and returns 429 when that instance is busy. Invalid input returns 422, an oversized request returns 413, and unavailable model/runtime resources return 503. This is not a global queue or rate limit. The platform also imposes execution and usage limits; the client must handle timeouts and platform errors.
+
+Hosted audio and transcripts are sent to Vercel. Request-scoped audio files are removed after normal completion or handled errors, but platform termination can interrupt cleanup. The application creates no persistent upload store or alignment cache for hosted requests. See [deployment scope and verification](DEPLOYMENT.md).
 
 ## Analysis
 

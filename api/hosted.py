@@ -16,6 +16,7 @@ from uuid import uuid4
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 import numpy as np
 from pydantic import BaseModel, ConfigDict, Field, FiniteFloat, ValidationError, field_validator
 import soundfile as sf
@@ -247,5 +248,15 @@ def create_app(project_root: Path = PROJECT_ROOT) -> FastAPI:
             playback_urls={"reference": "/" + reference["audio"], "participant": "/" + variant["audio"]},
             provenance={"source_url": reference["source_url"], "license": reference["license"],
                 "synthetic": variant.get("flaw") not in ("clean", None), "variant": variant["label"], "split": reference.get("split")})
+
+    # Vercel promotes these explicit public directories to the CDN. Keeping
+    # the mounts also makes the same paths work in a direct ASGI deployment.
+    # Do not mount the project/data roots: uploads, models and manifest labels
+    # are not part of the public asset surface.
+    for prefix, relative in (("/web", "web"), ("/data/references", "data/references"),
+                             ("/data/variants", "data/variants")):
+        directory = root / relative
+        if directory.is_dir():
+            app.mount(prefix, StaticFiles(directory=directory), name=relative.replace("/", "-"))
 
     return app

@@ -37,3 +37,9 @@ entrypoint = "api.index:app"
 
 [tool.vercel.scripts]
 build = "python scripts/build_hosted.py"
+
+[tool.vercel.fastapi.static]
+# Only public source assets are mounted. Request guards still apply to API routes.
+cdn = true
+# Demo inference reads the same WAV files from the function bundle.
+exclude = false
