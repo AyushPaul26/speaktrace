@@ -42,7 +42,11 @@
     return { bytes, gain, sampleRate, duration: pcm.length / sampleRate };
   }
 
-  async function prepareAudio(file, signal) {
+  function validateDuration(duration, maxSeconds = 30) {
+    if (!Number.isFinite(duration) || duration < 2 || duration > maxSeconds) throw new Error(`Choose a recording between 2 and ${maxSeconds} seconds long for cloud analysis.`);
+  }
+
+  async function prepareAudio(file, signal, maxSeconds = 30) {
     if (!file || file.size > 20 * 1024 * 1024 || file.size === 0) throw new Error('Choose a nonempty recording no larger than 20 MB.');
     const checkCancelled = () => { if (signal?.aborted) throw new DOMException('Cancelled', 'AbortError'); };
     checkCancelled();
@@ -54,7 +58,7 @@
     catch { throw new Error('This browser could not decode the recording. Export it as PCM WAV and try again.'); }
     checkCancelled();
     if (![1, 2].includes(decoded.numberOfChannels)) throw new Error('Choose a mono or stereo audio recording.');
-    if (decoded.duration < 2 || decoded.duration > 60) throw new Error('Choose a recording between 2 and 60 seconds long.');
+    validateDuration(decoded.duration, Math.min(30, maxSeconds));
     const channels = Array.from({ length: decoded.numberOfChannels }, (_, index) => decoded.getChannelData(index));
     const mono = new Float32Array(decoded.length);
     for (let i = 0; i < mono.length; i++) mono[i] = channels.length === 1 ? channels[0][i] : Math.fround(channels[0][i] + channels[1][i]) / 2;
@@ -88,5 +92,5 @@
     const findings = (result.findings || []).map(item => `<article><h3>${esc(item.title)}</h3><p>Participant ${number(item.start)}–${number(item.end)}s · Reference ${number(item.reference_start)}–${number(item.reference_end)}s</p><p>${esc(item.explanation)}</p><p>Reference: ${number(item.evidence?.reference)} · Participant: ${number(item.evidence?.participant)} ${esc(item.evidence?.unit)}</p><p>${esc(item.evidence?.measurement)}</p><p><strong>Practice:</strong> ${esc(item.advice)}</p><p>${esc(item.severity)} · Alignment quality ${number((item.confidence || 0) * 100)}%</p></article>`).join('');
     return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><title>SpeakTrace comparison report</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#172e40;max-width:900px;margin:48px auto;padding:0 28px}h1{font-size:40px}h2{margin-top:30px}.score{font-size:32px;color:#087d70}article{border-top:1px solid #d8e2e7;padding:12px 0}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:9px;border-bottom:1px solid #d8e2e7}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}blockquote{margin:0;padding:16px;background:#f2f6f8}@media print{body{margin:12px;font-size:11pt}article{break-inside:avoid}}</style></head><body><p><strong>SpeakTrace</strong> · Hosted speech comparison</p><h1>${esc(result.title)}</h1><p>${esc(result.created_at)} · Report ${esc(result.id)}</p><p class="score">${Number.isFinite(summary.score) ? `${Math.round(summary.score)} / 100` : 'Score withheld'}</p><p>${esc(summary.caption)}</p><p>Assessed ${esc(summary.assessed_word_count)} of ${esc(summary.total_word_count)} words.</p><h2>Rubric scores</h2><table><thead><tr><th>Dimension</th><th>Score / 100</th><th>Weight</th></tr></thead><tbody>${dimensions}</tbody></table><h2>Evidence</h2>${findings || '<p>No scored deviations were found, or scoring was withheld. Check the status above.</p>'}<h2>Transcript</h2><blockquote>${esc(result.transcript)}</blockquote><h2>Limitations and provenance</h2><ul>${(result.warnings || []).map(item => `<li>${esc(item)}</li>`).join('')}</ul><p>Scores compare measured delivery against this reference and rubric; they are not universal speaking-quality ratings. Synthetic evaluation does not establish performance on independent human recordings.</p><pre>${esc(JSON.stringify(result.provenance || {}, null, 2))}</pre><h2>Processing and rubric</h2><p>Model: ${esc(compute.model)} · revision ${esc(compute.revision)}<br>Alignment device: ${esc(compute.device)} · ${esc(compute.precision)} · ${esc(compute.seconds)} seconds · Cached alignment: ${esc(compute.cached_alignment)}</p><pre>${esc(JSON.stringify(result.rubric || {}, null, 2))}</pre><pre>${esc(JSON.stringify(result.audio_processing || {}, null, 2))}</pre><p>Use your browser’s Print command to save this report as PDF. Audio is not embedded in this report.</p></body></html>`;
   }
-  return { SAMPLE_RATE, MAX_BODY_BYTES, canonicalWav, prepareAudio, safeMediaURL, exportableResult, printableReport };
+  return { SAMPLE_RATE, MAX_BODY_BYTES, canonicalWav, validateDuration, prepareAudio, safeMediaURL, exportableResult, printableReport };
 });

@@ -28,7 +28,8 @@ from speaktrace.core.comparison import rubric_metadata
 from speaktrace.pipeline import run_analysis
 
 MAX_REQUEST_BYTES = 4_200_000
-MAX_AUDIO_BYTES = 1_920_128
+MAX_SECONDS = 30
+MAX_AUDIO_BYTES = MAX_SECONDS * 16000 * 2 + 128
 _analysis_slot = threading.BoundedSemaphore(1)
 
 
@@ -61,7 +62,7 @@ class HostedBoundary:
             except ValueError:
                 return await JSONResponse({"detail": "Invalid request size."}, status_code=400)(scope, receive, send)
             if size > MAX_REQUEST_BYTES:
-                return await JSONResponse({"detail": "The hosted request must fit within 4.2 MB. Use two recordings of at most 60 seconds."}, status_code=413)(scope, receive, send)
+                return await JSONResponse({"detail": "The hosted request must fit within 4.2 MB. Use two recordings of at most 30 seconds."}, status_code=413)(scope, receive, send)
             body = bytearray()
             while True:
                 message = await receive()
@@ -122,11 +123,13 @@ def _weights(value: dict) -> dict:
 def _canonical_upload(content: bytes) -> np.ndarray:
     """Accept browser-produced PCM whose samples remain identical in playback."""
     if len(content) > MAX_AUDIO_BYTES:
-        raise ValueError("Each converted audio file must be at most 60 seconds long.")
+        raise ValueError("Each hosted recording must be at most 30 seconds long. The local app supports up to 60 seconds.")
     try:
         with sf.SoundFile(io.BytesIO(content)) as sound:
             if (sound.format != "WAV" or sound.subtype != "PCM_16" or sound.channels != 1 or sound.samplerate != 16000):
                 raise ValueError("The hosted upload must be mono 16 kHz PCM16 WAV. Let the website prepare your recordings.")
+            if not 2 <= len(sound) / sound.samplerate <= MAX_SECONDS:
+                raise ValueError("Each hosted recording must be between 2 and 30 seconds long. The local app supports up to 60 seconds.")
     except (RuntimeError, sf.LibsndfileError) as error:
         raise ValueError("The converted audio could not be read. Select your recording again.") from error
     audio, _ = decode_audio(content)
@@ -151,6 +154,8 @@ def create_app(project_root: Path = PROJECT_ROOT) -> FastAPI:
         return path
 
     def execute(*, playback_urls=None, **arguments):
+        if any(len(arguments[role + "_audio"]) > MAX_SECONDS * 16000 for role in ("reference", "participant")):
+            raise HTTPException(422, "Each hosted recording must be at most 30 seconds long. The local app supports up to 60 seconds.")
         if not model_ready():
             raise HTTPException(503, "The hosted speech model is unavailable. Please retry later or use the local app.")
         if not _analysis_slot.acquire(blocking=False):
@@ -183,7 +188,7 @@ def create_app(project_root: Path = PROJECT_ROOT) -> FastAPI:
     def health():
         return {"status": "ok", "model_ready": model_ready(), **runtime_metadata(), "version": __version__,
                 "demo_count": len(references()), "deployment": "vercel", "synchronous": True,
-                "upload_max_bytes": MAX_REQUEST_BYTES, "upload_encoding": "WAV PCM16 mono 16000 Hz", "max_seconds": 60}
+                "upload_max_bytes": MAX_REQUEST_BYTES, "upload_encoding": "WAV PCM16 mono 16000 Hz", "max_seconds": MAX_SECONDS}
 
     @app.get("/api/demos")
     def demos():
@@ -195,7 +200,7 @@ def create_app(project_root: Path = PROJECT_ROOT) -> FastAPI:
     @app.get("/api/methodology")
     def methodology():
         return {"rubric": rubric_metadata(), "model": "facebook/wav2vec2-base-960h", **runtime_metadata(),
-            "scope": "English, one speaker, same supplied transcript; 2–60 seconds per recording; at most 150 words.",
+            "scope": "English, one speaker, same supplied transcript; 2–30 seconds per hosted recording; at most 150 words. The local app supports up to 60 seconds.",
             "retention": "Audio is sent to this server for analysis. Request files are removed when analysis finishes. No persistent jobs or audio/report URLs are stored; your current result remains in the browser.",
             "limitations": ["Reference differences are not universal delivery flaws.", "CTC alignment quality is a heuristic, not a calibrated probability.",
                 "Microphone movement can change relative energy.", "Synthetic benchmark performance is not independent human validation.",

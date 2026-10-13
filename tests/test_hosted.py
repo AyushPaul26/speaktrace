@@ -63,6 +63,14 @@ def test_hosted_requires_bounded_canonical_audio(client, options):
     assert response.status_code == 422
 
 
+@pytest.mark.parametrize("seconds", [30 + 1 / 16000, 31])
+def test_hosted_rejects_audio_over_thirty_seconds_before_inference(client, seconds, monkeypatch):
+    monkeypatch.setattr("api.hosted.model_ready", lambda: False)
+    response = upload(client, wav_bytes(seconds=seconds))
+    assert response.status_code == 422
+    assert "30 seconds" in response.json()["detail"]
+
+
 def test_hosted_rejects_invalid_transcript_and_weights(client):
     assert upload(client, transcript="123").status_code == 422
     assert upload(client, weights='{"pacing":0,"pauses":0,"energy":0}').status_code == 422
@@ -73,6 +81,7 @@ def test_hosted_health_and_method_explain_remote_processing(client):
     data = client.get("/api/health").json()
     assert data["deployment"] == "vercel"
     assert data["synchronous"] is True
+    assert data["max_seconds"] == 30
     method = client.get("/api/methodology").json()
     assert "server" in method["retention"].lower()
     assert method["rubric"]["version"] == "reference-relative-1.1.0"
@@ -138,6 +147,13 @@ def test_hosted_uses_real_rubric_and_removes_request_audio(client, aligned_pipel
     assert len(aligned_pipeline) == 2
     assert not any(directory.exists() for directory in aligned_pipeline)
     assert client.get("/api/jobs/" + result["id"]).status_code == 404
+
+
+def test_hosted_accepts_exactly_thirty_seconds(client, aligned_pipeline):
+    response = upload(client, wav_bytes(seconds=30))
+    assert response.status_code == 200, response.text
+    assert response.json()["reference"]["duration"] == 30
+    assert not any(directory.exists() for directory in aligned_pipeline)
 
 
 def test_hosted_cleans_up_after_alignment_error(client, aligned_pipeline, monkeypatch):

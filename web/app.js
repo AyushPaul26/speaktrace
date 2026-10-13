@@ -12,7 +12,7 @@
     busy: false, generation: 0, controller: null, jobId: null, jobGeneration: 0,
     started: 0, elapsedTimer: null, players: {}, libraryController: null,
     healthController: null, methodologyController: null, modelReady: false, serverReady: false,
-    hosted: false, objectURLs: new Set(), uploadMaxBytes: H.MAX_BODY_BYTES
+    hosted: false, objectURLs: new Set(), uploadMaxBytes: H.MAX_BODY_BYTES, maxSeconds: 60
   };
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -112,8 +112,9 @@
       state.modelReady = Boolean(data.model_ready); state.serverReady = true;
       state.hosted = data.deployment === 'vercel' && data.synchronous === true;
       state.uploadMaxBytes = Math.min(H.MAX_BODY_BYTES, Number(data.upload_max_bytes) || H.MAX_BODY_BYTES);
+      state.maxSeconds = state.hosted ? Math.min(30, Number(data.max_seconds) || 30) : 60;
       applyDeploymentCopy();
-      $('connection-status').replaceChildren(el('span', 'status-dot'), document.createTextNode(state.hosted ? `Cloud CPU · ${data.model_ready ? 'model ready' : 'starts on first analysis'}` : data.model_ready ? `Model ready · local ${deviceLabel(data.device)}` : 'Connected · model setup needed'));
+      $('connection-status').replaceChildren(el('span', 'status-dot'), document.createTextNode(state.hosted ? `Cloud CPU · ${data.model_ready ? 'model ready' : 'model unavailable'}` : data.model_ready ? `Model ready · local ${deviceLabel(data.device)}` : 'Connected · model setup needed'));
       $('connection-status').dataset.state = 'ready';
       $('device-badge').textContent = state.hosted ? 'CPU · CLOUD' : `${deviceLabel(data.device)} · LOCAL`;
       $('device-badge').title = data.device_name || deviceLabel(data.device);
@@ -135,7 +136,7 @@
     $('method-privacy-title').textContent = state.hosted ? 'How cloud uploads are handled' : 'Your recordings stay local';
     $('method-privacy-text').textContent = state.hosted ? 'Your browser converts each recording to 16 kHz mono PCM WAV before sending audio and the transcript to this Vercel service. The service analyzes on CPU and removes its temporary audio after the request; it does not create a saved job or audio database. Results and playback remain in this browser tab until you change the selection or leave. Hosting infrastructure may retain operational logs. Only upload audio you have permission to share. Use the local app for private, offline analysis.' : 'Inference does not send your audio to a service. Initial setup downloads the free model; analysis then runs locally. Local uploaded media and reports are retained for at most 24 hours, with cleanup at server startup and new job creation. Bundled demo media persists.';
     $('deployment-footer').textContent = `English · Reference-relative · ${state.hosted ? 'Cloud CPU' : 'Local compute'}`;
-    $('audio-help').textContent = `WAV, FLAC, OGG, or MP3 · 2–60 seconds · up to 20 MB each.${state.hosted ? ' Converted in your browser to mono WAV before upload (under 4.2 MB combined).' : ' You can also drop a file onto either field.'}`;
+    $('audio-help').textContent = `WAV, FLAC, OGG, or MP3 · 2–${state.maxSeconds} seconds · up to 20 MB each.${state.hosted ? ' Converted in your browser to mono WAV before upload (under 4.2 MB combined). Use the local app for recordings up to 60 seconds.' : ' You can also drop a file onto either field.'}`;
   }
   async function loadLibrary() {
     state.libraryController?.abort(); state.libraryController = new AbortController();
@@ -257,7 +258,7 @@
         for (const kind of ['reference', 'participant']) {
           if (state.hosted) {
             $('job-stage').textContent = `Preparing ${kind} audio in your browser…`;
-            prepared[kind] = await H.prepareAudio(state.files[kind], signal);
+            prepared[kind] = await H.prepareAudio(state.files[kind], signal, state.maxSeconds);
             if (generation !== state.generation || signal.aborted) return;
             body.append(kind, prepared[kind].blob, `${kind}.wav`);
           } else body.append(kind, state.files[kind]);

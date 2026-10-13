@@ -18,7 +18,7 @@ import time
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CASES = ("real-pair", "60s-stress-pair")
+CASES = ("real-pair", "30s-stress-pair")
 PREFIX = "SPEAKTRACE_MEMORY_WORKER "
 
 
@@ -62,10 +62,10 @@ def measure(case: str) -> dict:
     participant_audio, participant_rate = decode_audio(ROOT / control["audio"])
     if rate != participant_rate or rate != 16000:
         raise RuntimeError("Probe expects the same 16 kHz decoding as production.")
-    if case == "60s-stress-pair":
+    if case == "30s-stress-pair":
         # The original transcript intentionally does not describe the tiled clip.
         # This exercises full-size inference/features; resulting scores are ignored.
-        samples = 60 * rate
+        samples = 30 * rate
         reference_audio = np.tile(reference_audio, int(np.ceil(samples / len(reference_audio))))[:samples]
         participant_audio = reference_audio.copy()
 
@@ -87,7 +87,7 @@ def measure(case: str) -> dict:
         "case": case, "status": "complete",
         "scope": ("Real public-domain reference and its unchanged control; full analysis."
                   if case == "real-pair" else
-                  "Two 60-second tiled clips; full-pipeline resource stress only, not accuracy validation."),
+                  "Two 30-second tiled clips at the hosted duration limit; full-pipeline resource stress only, not accuracy validation."),
         "source": reference["id"],
         "audio_seconds": [round(len(reference_audio) / rate, 4), round(len(participant_audio) / rate, 4)],
         "torch_version": str(torch.__version__), "torch_cuda_version": torch.version.cuda,

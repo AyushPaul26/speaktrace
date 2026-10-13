@@ -1,6 +1,6 @@
 # SpeakTrace
 
-**Hear it. See it. Refine it.** A free, local speech comparison studio for Track C of the Multimodal AI Hackathon 2026. It supports CPU inference and optional NVIDIA acceleration.
+**Hear it. See it. Refine it.** A speech comparison studio for Track C of the Multimodal AI Hackathon 2026. Run locally for free with CPU or optional NVIDIA acceleration, or try the Vercel-hosted CPU version.
 
 [Public source repository](https://github.com/AyushPaul26/speaktrace)
 
@@ -27,7 +27,7 @@ For NVIDIA support, use `py -3.12 scripts/setup.py --gpu`. The default launcher 
 
 **Measured on this laptop:** RTX 3050 A, 4 GB, PyTorch 2.8.0/CUDA 12.6, float32. A 22.012-second reference aligned in a median 0.184 seconds on GPU versus 1.792 seconds on CPU across three warm, uncached runs (9.73x for alignment). The compared word boundaries and rounded confidence values agreed. Cold initialization took 15.49 seconds on GPU. A 60-second tiled-audio inference stress test completed on GPU with 1122.7 MiB peak allocated / 1566.0 MiB reserved memory. These are one-clip alignment measurements, not an end-to-end speed or population accuracy claim. See `reports/device-benchmark.json`; reproduce with `scripts/benchmark_devices.py` while the studio is stopped.
 
-Python 3.11–3.13 is supported by the setup script; Python 3.12 on Windows is the tested target. On Linux/macOS run `python3 scripts/setup.py`, then `.venv/bin/python run.py`. Cross-platform execution has not been verified in this submission.
+Python 3.11–3.13 is supported by the setup script; Python 3.12 on Windows is the tested local target. On Linux/macOS run `python3 scripts/setup.py`, then `.venv/bin/python run.py`. The hosted build separately checks Linux CPU execution; Linux/macOS desktop setup has not been verified.
 
 ## What works
 
@@ -47,9 +47,9 @@ Measurements use the exact PCM16 samples served for playback. Over-range floatin
 
 ### Hosted deployment
 
-The Vercel adapter uses the same analysis pipeline with CPU inference and synchronous requests. The browser prepares mono 16 kHz PCM16 audio to fit the 4.2 MB combined request limit. Uploaded audio is sent to the hosted server; temporary request files are removed when the request finishes normally, and results and playback remain in the browser. Closing or reloading the page discards the hosted result. There is no persistent cloud job store.
+The Vercel adapter uses the same analysis pipeline with CPU inference and synchronous requests, with a **30-second limit per recording** to fit the free cloud runtime. Local mode keeps its 60-second limit. The browser prepares mono 16 kHz PCM16 audio to fit the 4.2 MB combined request limit. Uploaded audio is sent to the hosted server; temporary request files are removed when the request finishes normally, and results and playback remain in the browser. Closing or reloading the page discards the hosted result. There is no persistent cloud job store.
 
-The interface identifies hosted processing before enabling analysis. For private processing entirely on your own computer, use the local launcher below. Local mode retains its existing job recovery and optional GPU support. Vercel Hobby quotas and cold starts can limit availability; this is a hackathon prototype rather than an unlimited production service.
+The interface identifies hosted processing before enabling analysis. For private processing entirely on your own computer, use the local launcher described above. Local mode retains its existing job recovery and optional GPU support. Vercel Hobby quotas and cold starts can limit availability; this is a hackathon prototype rather than an unlimited production service.
 
 See [deployment instructions](docs/DEPLOYMENT.md) for the CPU-only cloud dependencies, build-time model setup, memory checks and GitHub integration.
 

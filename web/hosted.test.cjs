@@ -32,14 +32,20 @@ test('duration, silence, invalid samples and invalid amplitude reject before upl
   assert.throws(() => H.canonicalWav(signal(), 48000));
 });
 
-test('two maximum duration WAVs plus real multipart encoding fit request limit', async () => {
-  const body = new FormData(), wav = H.canonicalWav(signal(60));
+test('hosted duration cap accepts 30 seconds and rejects longer clips', () => {
+  H.validateDuration(2); H.validateDuration(30); H.validateDuration(60, 60);
+  for (const duration of [1.99, 30.0001, 31, 60, NaN]) assert.throws(() => H.validateDuration(duration), /2 and 30 seconds/);
+  assert.throws(() => H.validateDuration(21, 20), /2 and 20 seconds/);
+});
+
+test('two maximum hosted-duration WAVs plus real multipart encoding fit request limit', async () => {
+  const body = new FormData(), wav = H.canonicalWav(signal(30));
   body.append('reference', new Blob([wav.bytes]), 'reference.wav');
   body.append('participant', new Blob([wav.bytes]), 'participant.wav');
   body.append('transcript', 'a'.repeat(1600)); body.append('weights', JSON.stringify({ pacing: 40, pauses: 35, energy: 25 }));
   const payload = await new Response(body).blob();
   assert.ok(payload.size < H.MAX_BODY_BYTES);
-  assert.ok(payload.size > 3840000);
+  assert.ok(payload.size > 1920000);
 });
 
 test('media only accepts exact same-origin demo paths and explicitly minted blobs', () => {

@@ -5,7 +5,7 @@ The public source repository is https://github.com/AyushPaul26/speaktrace. The V
 ## Two execution modes
 
 - Local: `start.bat` runs the original queued API, optional NVIDIA inference, local recordings and job recovery.
-- Hosted: `api/index.py` runs a synchronous CPU API. The browser converts uploaded recordings to mono 16 kHz PCM16 WAV, sends at most 4.2 MB per request and retains those exact WAVs for playback through temporary browser URLs. Reports are exported from the current browser result.
+- Hosted: `api/index.py` runs a synchronous CPU API with a 30-second limit per recording. The browser converts uploaded recordings to mono 16 kHz PCM16 WAV, sends at most 4.2 MB per request and retains those exact WAVs for playback through temporary browser URLs. Reports are exported from the current browser result. Local mode retains its 60-second limit.
 
 The frontend reads `/api/health` to select the correct transport and privacy text. Hosted processing sends audio to the cloud. Local processing stays on the user's machine. No paid model API is used.
 
@@ -14,7 +14,7 @@ The frontend reads `/api/health` to select the correct transport and privacy tex
 1. Push the reviewed code to `main` in GitHub. The connected Vercel project builds that commit.
 2. Vercel uses Python 3.12 and the dependencies in `pyproject.toml`. PyTorch is resolved from the explicit CPU-only package index, avoiding CUDA downloads.
 3. `scripts/build_hosted.py` downloads the existing pinned acoustic model into the remote build directory.
-4. `scripts/probe_hosted_memory.py` runs isolated, complete CPU analyses on a real short pair and a 60-second tiled stress pair. It rejects a build exceeding 1900 MiB peak process RSS or 300 seconds per worker. Build-host timings are not guarantees of deployed runtime speed; public inference must also be tested.
+4. `scripts/probe_hosted_memory.py` runs isolated, complete CPU analyses on a real short pair and a 30-second tiled stress pair. It rejects a build exceeding 1900 MiB peak process RSS or 300 seconds per worker. Build-host timings are not guarantees of deployed runtime speed; public inference must also be tested.
 5. Static web files and the included public demo audio are copied to `public/` and served by the CDN. The model remains in the Python function bundle.
 
 The entrypoint is `api.index:app`; `vercel.json` configures its 300-second limit and includes `.models/**`. Large Functions beta is enabled through `VERCEL_SUPPORT_LARGE_FUNCTIONS=1`; the project requires Fluid compute. Neither `.venv`, `.cache`, `.runtime`, raw full-length archive downloads nor credentials are uploaded.
@@ -26,6 +26,8 @@ At preparation time, Vercel documents a 5 GB large-function beta, with Hobby lim
 Sources: https://vercel.com/docs/functions/limitations and https://vercel.com/docs/frameworks/backend/fastapi .
 
 The API accepts only same-origin browser POSTs and permits one analysis at a time per function instance. That is a resource guard, not user authentication or a global rate limit. The public demo is intended for light hackathon use.
+
+The first remote build completed a 60-second stress analysis but exceeded the project's 1900 MiB memory gate (1928.488 MiB). The gate rejected that build. Hosted recordings were subsequently limited to 30 seconds to leave room within Hobby's 2 GB runtime; the original local limit is unchanged. The initial measurements are recorded in `reports/hosted-memory-initial.json`.
 
 ## Verification
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T18:18:03.979935+00:00",
+  "generated_at": "2026-10-13T18:28:50.491037+00:00",
   "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
   "status": "passed",
   "checks": [
@@ -12,10 +12,10 @@
         "-q",
         "--tb=short",
         "--basetemp",
-        ".runtime/pytest-verification-59d0e3e9"
+        ".runtime/pytest-verification-98d16a0c"
       ],
       "exit_code": 0,
-      "output": "........................................................................ [ 60%]\n................................................                         [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:51\n  C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Lib\\site-packages\\starlette\\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n120 passed, 1 warning in 8.68s\n"
+      "output": "........................................................................ [ 58%]\n...................................................                      [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:51\n  C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Lib\\site-packages\\starlette\\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n123 passed, 1 warning in 11.02s\n"
     },
     {
       "name": "Frontend behavior tests",
@@ -27,7 +27,7 @@
         "web/hosted.test.cjs"
       ],
       "exit_code": 0,
-      "output": "\u2714 audio validation rejects empty, oversized and unsupported files (2.4808ms)\n\u2714 transcript validation catches limits, numerals and unsupported text (0.6062ms)\n\u2714 weights normalize and reject meaningless totals (2.0354ms)\n\u2714 evidence intervals use each recording\u2019s own coordinates (1.0414ms)\n\u2714 evidence replay adds audible context without changing measured intervals (0.6125ms)\n\u2714 evidence replay context clips to the beginning and end of each recording (2.4296ms)\n\u2714 playback word detection does not highlight words during silence (0.5064ms)\n\u2714 media URLs cannot send recordings to external or executable URLs (0.8063ms)\n\u2714 elapsed time formatting preserves audio precision (0.6766ms)\n\u2714 word contours use actual frame times and robust medians (2.7472ms)\n\u2714 unvoiced pitch and weak alignment remain missing, never fabricated zero (0.2107ms)\n\u2714 numeric zero is a real value and missing arrays leave gaps (0.1633ms)\n\u2714 canonical WAV has PCM16 mono 16k header and exact sample count (13.028ms)\n\u2714 quiet and overrange floating samples receive uniform gain before PCM quantization (13.9497ms)\n\u2714 duration, silence, invalid samples and invalid amplitude reject before upload (147.6347ms)\n\u2714 two maximum duration WAVs plus real multipart encoding fit request limit (275.8621ms)\n\u2714 media only accepts exact same-origin demo paths and explicitly minted blobs (0.978ms)\n\u2714 JSON export removes transient blob handles without mutating displayed result (0.4047ms)\n\u2714 printable report escapes every user value and carries evidence, provenance and rubric (1.0086ms)\n\u2139 tests 19\n\u2139 suites 0\n\u2139 pass 19\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 654.082\n"
+      "output": "\u2714 audio validation rejects empty, oversized and unsupported files (1.1412ms)\n\u2714 transcript validation catches limits, numerals and unsupported text (0.3722ms)\n\u2714 weights normalize and reject meaningless totals (0.8164ms)\n\u2714 evidence intervals use each recording\u2019s own coordinates (0.1795ms)\n\u2714 evidence replay adds audible context without changing measured intervals (0.2247ms)\n\u2714 evidence replay context clips to the beginning and end of each recording (0.889ms)\n\u2714 playback word detection does not highlight words during silence (0.2094ms)\n\u2714 media URLs cannot send recordings to external or executable URLs (0.3581ms)\n\u2714 elapsed time formatting preserves audio precision (0.2365ms)\n\u2714 word contours use actual frame times and robust medians (1.9319ms)\n\u2714 unvoiced pitch and weak alignment remain missing, never fabricated zero (0.1864ms)\n\u2714 numeric zero is a real value and missing arrays leave gaps (0.1896ms)\n\u2714 canonical WAV has PCM16 mono 16k header and exact sample count (11.9715ms)\n\u2714 quiet and overrange floating samples receive uniform gain before PCM quantization (15.2025ms)\n\u2714 duration, silence, invalid samples and invalid amplitude reject before upload (155.0284ms)\n\u2714 hosted duration cap accepts 30 seconds and rejects longer clips (1.5801ms)\n\u2714 two maximum hosted-duration WAVs plus real multipart encoding fit request limit (170.7184ms)\n\u2714 media only accepts exact same-origin demo paths and explicitly minted blobs (0.9024ms)\n\u2714 JSON export removes transient blob handles without mutating displayed result (0.3048ms)\n\u2714 printable report escapes every user value and carries evidence, provenance and rubric (0.5801ms)\n\u2139 tests 20\n\u2139 suites 0\n\u2139 pass 20\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 589.2273\n"
     },
     {
       "name": "Frontend markup and tokens",
@@ -95,15 +95,15 @@
     "speaktrace/core/comparison.py": "2442577fbae0266a92b5c92bca6d9e9b17160e15976bd9bf9c24d51b96d68d18",
     "speaktrace/core/features.py": "23f00e0e55417ac59bf6a8f6f93199a666a3b98c379cc146ca8f8e507d8c1df9",
     "speaktrace/core/__init__.py": "245705bbb9348cd6714517b35a1a1682b3bacaa39aa278a7df8cbb861913edfa",
-    "web/app.js": "e8de835b94a8b5ca9e911237b24208924d5ffe814ffc7f88a7d734291a693798",
+    "web/app.js": "f3259729b9d0aff6b9d386375f5513d66f608b7b68fd403c67758c69c97deedf",
     "web/check_ui.py": "c3db2fa8ee52c04fec1545225122800414d046b638760284927cadef17365d9e",
     "web/core.js": "75828914abde44d5752256161c754769c4ad80688c89e697f08cb770e2394cde",
     "web/core.test.cjs": "fac7a69bff4b2d068d1459175784e3d888e304bd9cb03e2e960fd94008a84779",
     "web/diagnostics.js": "8dd7334982bbeba334cfb5407e57a67e26f7ea6e342b1b9f9b9015f07a7ac91d",
     "web/diagnostics.test.cjs": "4610999e111631bd657a4107f2f7aa056c36d294a0b7fb98e8f1df074b85808b",
-    "web/hosted.browser.test.cjs": "bbd7442908dadf0f9ad23d172660e1bd0baf8d4c24468add0f9344fba800faae",
-    "web/hosted.js": "92bda16039eaac300f4e06a1cefbe76071e26d34fbf8b145643dbe7778c2424d",
-    "web/hosted.test.cjs": "a4a05aa443895887851b66b835b657a7cac3c13ed355740043e4c9d6547b8c33",
+    "web/hosted.browser.test.cjs": "e3ae95c89c99896da2ae4548476d3050dd11846acd56edb31c500ec9dfb64d7c",
+    "web/hosted.js": "0502253fc32e1aef701f96fba6cb62875a8f06d37fe453294a5f0dc6a2b0ccd1",
+    "web/hosted.test.cjs": "5a87ec68d59101955cd6ab899ab37aad28479d6e57eeebb64bb8c835616f1ea8",
     "web/index.html": "92fb609159c5bd4c490181ac345fbf721199f2a589054436ea9129dd16a49b8d",
     "web/styles.css": "f2daaa622da144bca0d4c60a733e5c4a37c01bf55a0b7ad75f897af3ef3aeb43",
     "web/tokens.css": "65929db4fd50c3a1ac4149515c006352ae5a2ff7f7a8bd1f8a9d34b85dd72d84",
@@ -114,7 +114,7 @@
     "tests/test_dataset.py": "5b305bfc73b1c848d418626305bede0ac92a38ebf27ce620aa0ac1470b079ff9",
     "tests/test_devices.py": "b2c7bdec27eea42a21de8b465185dfa3368ddb62b19e92365d889ccdf5dcdc4c",
     "tests/test_features.py": "ac3caa50c60a1c09930c182f1df426caedc135bb1fd07587008e962ac0a1d900",
-    "tests/test_hosted.py": "9945dc13734f2c10261cb5859e77fa0a9c061596a8f52bb3537991104cfcfee4",
+    "tests/test_hosted.py": "49097558365d92709cdbf5d54dae398041b54a56a0ef9330238f39792971ef1d",
     "tests/test_jobs.py": "38859a46cd3990ac5f18593eb98818674dcb874a30874461a7a9be7dba77824f",
     "tests/test_pipeline.py": "d2eb7778ea0645585884d71e69df6b5fe10a07a1fb9f6b0baf3558fd4db1af67",
     "tests/test_setup.py": "16400dff1c80d36ccaeeb30f1c33296131ee02a71d190990e3036b6dedfac701",
@@ -125,12 +125,13 @@
     "scripts/build_report.py": "8b7e4d148b775200d3f48f110872d4eaf81c02712af5c9a17813bf9b9aaa7065",
     "scripts/download_model.py": "f0edce7ddd7674c8569e9fce1b16df38f841600d26d4546d7be2587f43b7a061",
     "scripts/evaluate.py": "8ef4002afe9eec5f8a67059c863b23a7f432d363d54381911c984f26ecf0b453",
-    "scripts/package_submission.py": "76c8f2f863beb077022259087ea67f5042c409054da75f6bdb9eeac978aa4653",
-    "scripts/probe_hosted_memory.py": "a19282c6988a848bbbf54bdacadb6d3913ef179fb75e81da1e42ed3f9f8397a0",
+    "scripts/hosted_smoke.cjs": "cfbc99fef015c2297a994e63f6e2fb63f5dd34b2041936f9692fa632e133db5a",
+    "scripts/package_submission.py": "021d67465d81753d796efed77d04df25b53416b938e0545bf3b8708cc74e7762",
+    "scripts/probe_hosted_memory.py": "22401f51902ae9a80532062bcdbb1ebef3d1131ce87b0dc9a56ed576c9c38515",
     "scripts/setup.py": "1807f5b61dc7dcf374767ffe763de70ba198e0cf906c1f96cc8851f09dbdf859",
     "scripts/verify.py": "1f8a78e6109e96caae4035aa82dbfcd14edacfdc56da2cfd831cc9695147f694",
     "scripts/verify_package.py": "014b8405b78ada2b016480c051b6d615725f9bfba14633dba043e7edda73cd34",
-    "api/hosted.py": "305a5fca2907fbad1ae56fd0fbdb7fc54e3a7a71e4d868fdb4efae8415959cba",
+    "api/hosted.py": "1c7bd8c287531fd74bf293198d939045436297ebc2c87ec3f286776ec54864a5",
     "api/index.py": "e34b6e7f2159085486f78742afa31c13400666bd87acc5317d7f697de3f4ca86"
   },
   "browser_evidence": "docs/frontend-verification.md",

@@ -1,0 +1,45 @@
+{
+  "source": "Measurements reported by the initial Vercel Linux build resource probe",
+  "build_url": "https://speaktrace-drhp2uuph-ayush-pauls-projects-bd0a7c11.vercel.app",
+  "commit": "be424e8",
+  "platform": "linux",
+  "torch_version": "2.8.0+cpu",
+  "device": "cpu",
+  "torch_threads": 1,
+  "cached_alignment": false,
+  "limits": {
+    "peak_rss_mib": 1900,
+    "cold_seconds": 300
+  },
+  "measurements": [
+    {
+      "case": "real-pair",
+      "audio_seconds": [22.012, 22.012],
+      "status": "complete",
+      "peak_rss_mib": 1289.121,
+      "cold_total_seconds": 29.802,
+      "reported_analysis_seconds": 10.177,
+      "memory_fits": true,
+      "duration_fits": true
+    },
+    {
+      "case": "60s-stress-pair",
+      "audio_seconds": [60, 60],
+      "status": "complete",
+      "peak_rss_mib": 1928.488,
+      "cold_total_seconds": 42.901,
+      "reported_analysis_seconds": 36.453,
+      "memory_fits": false,
+      "duration_fits": true,
+      "scope": "Tiled audio and the original transcript exercise full-pipeline resources only; this is not speech-accuracy validation."
+    }
+  ],
+  "passed": false,
+  "failure_reason": "The 60-second worker completed but exceeded the conservative 1900 MiB build gate. This is a gate failure, not an observed out-of-memory crash.",
+  "decision": {
+    "hosted_max_seconds": 30,
+    "local_max_seconds": 60,
+    "validation_required": "A new isolated 30-second stress pair must pass the unchanged 1900 MiB gate before deployment."
+  },
+  "scope": "Compact transcription of observed build measurements. Linux build-host timing and memory do not guarantee function-runtime behavior or general speech accuracy."
+}

@@ -35,7 +35,7 @@ function stereoFloatWav(seconds) {
   const server = http.createServer(async (req, res) => {
     try {
       const json = data => { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(data)); };
-      if (req.url === '/api/health') return json({ deployment: 'vercel', synchronous: true, model_ready: true, device: 'cpu', upload_max_bytes: 4200000 });
+      if (req.url === '/api/health') return json({ deployment: 'vercel', synchronous: true, model_ready: true, device: 'cpu', upload_max_bytes: 4200000, max_seconds: 30 });
       if (req.url === '/api/demos') return json({ demos: [] });
       if (req.url === '/api/hosted/analyze') {
         const chunks = []; for await (const chunk of req) chunks.push(chunk);
@@ -59,6 +59,12 @@ function stereoFloatWav(seconds) {
     assert.equal(await page.locator('#privacy-heading').innerText(), 'Cloud processing, explained.');
     await page.locator('#upload-mode').click();
     assert.equal(await page.locator('#privacy-notice').isVisible(), true);
+    assert.match(await page.locator('#audio-help').innerText(), /2–30 seconds/);
+    const tooLong = { name: 'long.wav', mimeType: 'audio/wav', buffer: stereoFloatWav(31) };
+    await page.locator('#reference-file').setInputFiles(tooLong); await page.locator('#participant-file').setInputFiles(tooLong);
+    await page.locator('#transcript-input').fill('Hello world'); await page.locator('#analyze-button').click();
+    await page.waitForFunction(() => document.getElementById('analysis-notice-text').textContent.includes('2 and 30 seconds'));
+    assert.equal(received, undefined, 'Over-limit recording must not reach the server');
     const file = { name: 'stereo.wav', mimeType: 'audio/wav', buffer: stereoFloatWav(3) };
     await page.locator('#reference-file').setInputFiles(file); await page.locator('#participant-file').setInputFiles(file);
     await page.locator('#transcript-input').fill('Hello world');
