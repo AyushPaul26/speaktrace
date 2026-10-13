@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-10-13T18:18:03.979935+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Python behavior tests",
+      "command": [
+        "C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--basetemp",
+        ".runtime/pytest-verification-59d0e3e9"
+      ],
+      "exit_code": 0,
+      "output": "........................................................................ [ 60%]\n................................................                         [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\starlette\\testclient.py:51\n  C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Lib\\site-packages\\starlette\\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.\n    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n120 passed, 1 warning in 8.68s\n"
+    },
+    {
+      "name": "Frontend behavior tests",
+      "command": [
+        "node",
+        "--test",
+        "web/core.test.cjs",
+        "web/diagnostics.test.cjs",
+        "web/hosted.test.cjs"
+      ],
+      "exit_code": 0,
+      "output": "\u2714 audio validation rejects empty, oversized and unsupported files (2.4808ms)\n\u2714 transcript validation catches limits, numerals and unsupported text (0.6062ms)\n\u2714 weights normalize and reject meaningless totals (2.0354ms)\n\u2714 evidence intervals use each recording\u2019s own coordinates (1.0414ms)\n\u2714 evidence replay adds audible context without changing measured intervals (0.6125ms)\n\u2714 evidence replay context clips to the beginning and end of each recording (2.4296ms)\n\u2714 playback word detection does not highlight words during silence (0.5064ms)\n\u2714 media URLs cannot send recordings to external or executable URLs (0.8063ms)\n\u2714 elapsed time formatting preserves audio precision (0.6766ms)\n\u2714 word contours use actual frame times and robust medians (2.7472ms)\n\u2714 unvoiced pitch and weak alignment remain missing, never fabricated zero (0.2107ms)\n\u2714 numeric zero is a real value and missing arrays leave gaps (0.1633ms)\n\u2714 canonical WAV has PCM16 mono 16k header and exact sample count (13.028ms)\n\u2714 quiet and overrange floating samples receive uniform gain before PCM quantization (13.9497ms)\n\u2714 duration, silence, invalid samples and invalid amplitude reject before upload (147.6347ms)\n\u2714 two maximum duration WAVs plus real multipart encoding fit request limit (275.8621ms)\n\u2714 media only accepts exact same-origin demo paths and explicitly minted blobs (0.978ms)\n\u2714 JSON export removes transient blob handles without mutating displayed result (0.4047ms)\n\u2714 printable report escapes every user value and carries evidence, provenance and rubric (1.0086ms)\n\u2139 tests 19\n\u2139 suites 0\n\u2139 pass 19\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 654.082\n"
+    },
+    {
+      "name": "Frontend markup and tokens",
+      "command": [
+        "C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Scripts\\python.exe",
+        "web/check_ui.py"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"check\": \"frontend-static-contract\",\n  \"passed\": true,\n  \"errors\": [],\n  \"tokens\": 27,\n  \"static_ids\": 96,\n  \"scope\": \"Static markup, token drift, accessibility structure and async invariants; browser behavior requires separate QA.\"\n}\n"
+    },
+    {
+      "name": "Frontend syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/app.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Diagnostic chart syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/diagnostics.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Hosted transport syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/hosted.js"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Python compilation",
+      "command": [
+        "C:\\Users\\Ayush Paul\\Desktop\\new model making\\speaktrace\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "speaktrace",
+        "scripts",
+        "api",
+        "run.py"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "source_sha256": {
+    "speaktrace/alignment.py": "736af1d64b19965ebec8de04d28542cd74634e9eac0867df3687879a83706f91",
+    "speaktrace/api.py": "dd435906a066c378942507eb65b35c4488e1fe9920626de6e7952eeb655430f9",
+    "speaktrace/audio.py": "7f9be2f25d2fa6b22962bf971ca42eb22475c227d0bb9188c20aa7307ebbdc50",
+    "speaktrace/jobs.py": "2922a1152794d138cdff60bd25322b8fa9ce08e5dec09a006f35826426aa7971",
+    "speaktrace/pipeline.py": "46e0ce10318872a1160ae20abc38e96e5190914505f05815007136fd746a41b5",
+    "speaktrace/reports.py": "eb153cd35c1c8d89c72d8db586c1613678bfa16f449dbd6b050e4891dccd406a",
+    "speaktrace/__init__.py": "692409ea9d815be0f47ae7c890ec4600fd4e389b99efc14e378545f644ad2a9c",
+    "speaktrace/core/comparison.py": "2442577fbae0266a92b5c92bca6d9e9b17160e15976bd9bf9c24d51b96d68d18",
+    "speaktrace/core/features.py": "23f00e0e55417ac59bf6a8f6f93199a666a3b98c379cc146ca8f8e507d8c1df9",
+    "speaktrace/core/__init__.py": "245705bbb9348cd6714517b35a1a1682b3bacaa39aa278a7df8cbb861913edfa",
+    "web/app.js": "e8de835b94a8b5ca9e911237b24208924d5ffe814ffc7f88a7d734291a693798",
+    "web/check_ui.py": "c3db2fa8ee52c04fec1545225122800414d046b638760284927cadef17365d9e",
+    "web/core.js": "75828914abde44d5752256161c754769c4ad80688c89e697f08cb770e2394cde",
+    "web/core.test.cjs": "fac7a69bff4b2d068d1459175784e3d888e304bd9cb03e2e960fd94008a84779",
+    "web/diagnostics.js": "8dd7334982bbeba334cfb5407e57a67e26f7ea6e342b1b9f9b9015f07a7ac91d",
+    "web/diagnostics.test.cjs": "4610999e111631bd657a4107f2f7aa056c36d294a0b7fb98e8f1df074b85808b",
+    "web/hosted.browser.test.cjs": "bbd7442908dadf0f9ad23d172660e1bd0baf8d4c24468add0f9344fba800faae",
+    "web/hosted.js": "92bda16039eaac300f4e06a1cefbe76071e26d34fbf8b145643dbe7778c2424d",
+    "web/hosted.test.cjs": "a4a05aa443895887851b66b835b657a7cac3c13ed355740043e4c9d6547b8c33",
+    "web/index.html": "92fb609159c5bd4c490181ac345fbf721199f2a589054436ea9129dd16a49b8d",
+    "web/styles.css": "f2daaa622da144bca0d4c60a733e5c4a37c01bf55a0b7ad75f897af3ef3aeb43",
+    "web/tokens.css": "65929db4fd50c3a1ac4149515c006352ae5a2ff7f7a8bd1f8a9d34b85dd72d84",
+    "tests/test_alignment.py": "42787d7615b4b41e4241abe92b9093fd2af6f868c44956d4cb1481dbf05e3f3b",
+    "tests/test_api.py": "3394d82592ed3477d02f6a996c9fda103abfb52f54c1b498c364f9a8dd085164",
+    "tests/test_audio.py": "02fbeb2862fc547aeb159aa80e3689d8220d1a2b5bdca77985e90f70c15f8a38",
+    "tests/test_comparison.py": "d829b7e0e3f58977934424f838471e42be9ad519a348231222e93ef049dcfa45",
+    "tests/test_dataset.py": "5b305bfc73b1c848d418626305bede0ac92a38ebf27ce620aa0ac1470b079ff9",
+    "tests/test_devices.py": "b2c7bdec27eea42a21de8b465185dfa3368ddb62b19e92365d889ccdf5dcdc4c",
+    "tests/test_features.py": "ac3caa50c60a1c09930c182f1df426caedc135bb1fd07587008e962ac0a1d900",
+    "tests/test_hosted.py": "9945dc13734f2c10261cb5859e77fa0a9c061596a8f52bb3537991104cfcfee4",
+    "tests/test_jobs.py": "38859a46cd3990ac5f18593eb98818674dcb874a30874461a7a9be7dba77824f",
+    "tests/test_pipeline.py": "d2eb7778ea0645585884d71e69df6b5fe10a07a1fb9f6b0baf3558fd4db1af67",
+    "tests/test_setup.py": "16400dff1c80d36ccaeeb30f1c33296131ee02a71d190990e3036b6dedfac701",
+    "scripts/benchmark_devices.py": "bed8d1b684111c1398b65d55fd6305a8f1d9872b6388c185d08d8eaa43e7c461",
+    "scripts/browser_smoke.cjs": "938d5e0bd1644324db7c796a0a93abbd7078ddd42339c7df85c4916b84dec754",
+    "scripts/build_dataset.py": "bed94d20233d4cdc6aa6db4a00dca63dd24415b8807be1b04f8484570019008f",
+    "scripts/build_hosted.py": "ccdc3c3c9c5aed8be437d19e028a41e8c550b5c414ca2cb394aa60d640d8a198",
+    "scripts/build_report.py": "8b7e4d148b775200d3f48f110872d4eaf81c02712af5c9a17813bf9b9aaa7065",
+    "scripts/download_model.py": "f0edce7ddd7674c8569e9fce1b16df38f841600d26d4546d7be2587f43b7a061",
+    "scripts/evaluate.py": "8ef4002afe9eec5f8a67059c863b23a7f432d363d54381911c984f26ecf0b453",
+    "scripts/package_submission.py": "76c8f2f863beb077022259087ea67f5042c409054da75f6bdb9eeac978aa4653",
+    "scripts/probe_hosted_memory.py": "a19282c6988a848bbbf54bdacadb6d3913ef179fb75e81da1e42ed3f9f8397a0",
+    "scripts/setup.py": "1807f5b61dc7dcf374767ffe763de70ba198e0cf906c1f96cc8851f09dbdf859",
+    "scripts/verify.py": "1f8a78e6109e96caae4035aa82dbfcd14edacfdc56da2cfd831cc9695147f694",
+    "scripts/verify_package.py": "014b8405b78ada2b016480c051b6d615725f9bfba14633dba043e7edda73cd34",
+    "api/hosted.py": "305a5fca2907fbad1ae56fd0fbdb7fc54e3a7a71e4d868fdb4efae8415959cba",
+    "api/index.py": "e34b6e7f2159085486f78742afa31c13400666bd87acc5317d7f697de3f4ca86"
+  },
+  "browser_evidence": "docs/frontend-verification.md",
+  "scope": "Automated code checks; real audio inference and human listening validation are separate evidence."
+}

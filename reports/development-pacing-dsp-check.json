@@ -1,0 +1,30 @@
+[
+  {
+    "reference_id": "jfk-welcome",
+    "rate": 1.35,
+    "actual_sample_ratio": 1.3499934466337542,
+    "before_equal": true,
+    "after_equal": true,
+    "rms_change_db": -3.543970823287964,
+    "original_median_f0_hz": 119.30885085810569,
+    "changed_median_f0_hz": 86.33601480064921,
+    "crop_source_decode_agreement": 0.8,
+    "crop_changed_decode_agreement": 0.09999999999999998,
+    "samples_reference": 61800,
+    "samples_changed": 45778
+  },
+  {
+    "reference_id": "jfk-learning",
+    "rate": 1.35,
+    "actual_sample_ratio": 1.3500062545792455,
+    "before_equal": true,
+    "after_equal": true,
+    "rms_change_db": -3.2136127948760986,
+    "original_median_f0_hz": 124.2317908609653,
+    "changed_median_f0_hz": 120.0,
+    "crop_source_decode_agreement": 0.8,
+    "crop_changed_decode_agreement": 0.09999999999999998,
+    "samples_reference": 75545,
+    "samples_changed": 55959
+  }
+]

@@ -1,0 +1,212 @@
+{
+  "started_at": "2026-10-13T18:18:37.583Z",
+  "target": "http://127.0.0.1:8765",
+  "passed": true,
+  "browser": "Headless installed Chrome; fresh nonpersistent context; no personal profile",
+  "controls": [
+    "For stopped-job regression tests only, GET /api/jobs/* requests are held before forwarding, then released after editing. All POSTs create real local analyses. No analysis values, findings, or scores are stubbed."
+  ],
+  "steps": [
+    {
+      "name": "Initial no-result state and disabled diagnostics",
+      "passed": true
+    },
+    {
+      "name": "Real severe-pause demo displays a measured excess pause",
+      "passed": true,
+      "excess_seconds": 1.79,
+      "score": 94.5,
+      "rubric": "reference-relative-1.1.0"
+    },
+    {
+      "name": "reference evidence context plays and stops at its padded endpoint",
+      "passed": true,
+      "start": 7.7351,
+      "end": 8.2351
+    },
+    {
+      "name": "participant evidence context plays and stops at its padded endpoint",
+      "passed": true,
+      "start": 7.8646899999999995,
+      "end": 10.15469
+    },
+    {
+      "name": "Energy toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Pitch toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Spectrum toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Diagnostic table seeks each recording to its own word timestamp",
+      "passed": true,
+      "reference": 14.169,
+      "participant": 15.9694
+    },
+    {
+      "name": "390 px responsive diagnostics, table seek and wrapping",
+      "passed": true,
+      "width": 390,
+      "scrollWidth": 380,
+      "captionWidth": 306
+    },
+    {
+      "name": "Stop watching then edit transcript invalidates the old job",
+      "passed": true,
+      "real_job_id": "112e3f161d764c75819727b25b8cc994",
+      "polling_control": "GET held, then aborted/released; real POST and completed server result"
+    },
+    {
+      "name": "Stop watching then edit file invalidates the old job",
+      "passed": true,
+      "real_job_id": "9dd13bc248554cd9b8e8cfd0b483c9b4",
+      "polling_control": "GET held, then aborted/released; real POST and completed server result"
+    },
+    {
+      "name": "Displayed devices and cache disclosure agree with actual runtime/result metadata",
+      "passed": true,
+      "text": "Model ready · local GPU",
+      "device": "cuda",
+      "result_text": "1 measured intervals\n\nAlignment confidence 94.79%\n\nAssessed 35 of 41 words (85%)\n\n0.3s total · GPU alignment · includes cached alignment\n\nRubric reference-relative-1.1.0\n\nGenerated demo variation",
+      "result_compute": {
+        "requested_device": "auto",
+        "device": "cuda",
+        "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cu126",
+        "cuda_version": "12.6",
+        "fallback_reason": null,
+        "warnings": [],
+        "runtime_device": "cuda",
+        "alignment_runs": {
+          "reference": {
+            "requested_device": "auto",
+            "device": "cuda",
+            "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cu126",
+            "cuda_version": "12.6",
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": true
+          },
+          "participant": {
+            "requested_device": "auto",
+            "device": "cuda",
+            "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+            "precision": "float32",
+            "torch_version": "2.8.0+cu126",
+            "cuda_version": "12.6",
+            "fallback_reason": null,
+            "warnings": [],
+            "cached": true
+          }
+        },
+        "feature_device": "cpu",
+        "alignment": "wav2vec2-ctc",
+        "seconds": 0.3,
+        "model": "facebook/wav2vec2-base-960h",
+        "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+        "cached_alignment": true
+      }
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "artifacts": [
+    "reports/studio-final-narrow.jpg",
+    "reports/studio-final.jpg"
+  ],
+  "limitations": [
+    "Device labels are checked against actual server and result metadata, including cache provenance. This browser check does not benchmark hardware performance."
+  ],
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "requested_device": "auto",
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+    "precision": "float32",
+    "torch_version": "2.8.0+cu126",
+    "cuda_version": "12.6",
+    "fallback_reason": null,
+    "warnings": [],
+    "demo_count": 4,
+    "version": "0.1.0"
+  },
+  "pause_result": {
+    "id": "16b620f724574b718b3737048bb0cdd7",
+    "rubric": "reference-relative-1.1.0",
+    "score": 94.5,
+    "compute": {
+      "requested_device": "auto",
+      "device": "cuda",
+      "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+      "precision": "float32",
+      "torch_version": "2.8.0+cu126",
+      "cuda_version": "12.6",
+      "fallback_reason": null,
+      "warnings": [],
+      "runtime_device": "cuda",
+      "alignment_runs": {
+        "reference": {
+          "requested_device": "auto",
+          "device": "cuda",
+          "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cu126",
+          "cuda_version": "12.6",
+          "fallback_reason": null,
+          "warnings": [],
+          "cached": true
+        },
+        "participant": {
+          "requested_device": "auto",
+          "device": "cuda",
+          "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cu126",
+          "cuda_version": "12.6",
+          "fallback_reason": null,
+          "warnings": [],
+          "cached": true
+        }
+      },
+      "feature_device": "cpu",
+      "alignment": "wav2vec2-ctc",
+      "seconds": 0.35,
+      "model": "facebook/wav2vec2-base-960h",
+      "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+      "cached_alignment": true
+    },
+    "findings": [
+      {
+        "type": "pauses",
+        "start": 8.11469,
+        "end": 9.90469,
+        "evidence": {
+          "measurement": "Longest quiet interval between reliable word anchors",
+          "reference": 0,
+          "participant": 1.79,
+          "unit": "s"
+        }
+      }
+    ]
+  },
+  "finished_at": "2026-10-13T18:18:49.670Z"
+}

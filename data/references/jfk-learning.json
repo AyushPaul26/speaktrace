@@ -1,0 +1,26 @@
+{
+  "id": "jfk-learning",
+  "title": "Learning and public service",
+  "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+  "speaker": "John F. Kennedy",
+  "source_group": "jfk-american-university-19630610",
+  "split": "dev",
+  "source_offset_seconds": 80.8879,
+  "source_end_seconds": 108.4373,
+  "transcript": "By sponsoring this institution of higher learning for all who wish to learn, whatever their color or their creed, the Methodists of this area and the Nation deserve the Nation's thanks, and I commend all those who are today graduating. Professor Woodrow Wilson once said that every man sent out from a university should be a man of his nation as well as a man of his time.",
+  "source_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+  "transcript_url": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/american-university-19630610",
+  "download_url": "https://static.jfklibrary.org/0y71h7t40eul01xc4g8yx8438jpj1gg3.mp3",
+  "license": "Public domain (United States federal government work)",
+  "license_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+  "duration": 27.5494375,
+  "audio": "data/references/jfk-learning.wav",
+  "sha256": "625788c4f6cd9aeee072766f2146e7066ab318a12caa60c08c9902b63bf7b67c",
+  "alignment_validation": {
+    "confidence": 0.9707,
+    "coverage": 1.0,
+    "transcript_agreement": 0.913,
+    "recognized_text": "BY PONSERING THIS INSTITUTION OF HIGHR LEARNING FOR ALL WHO WISH TO LEARN WHATEVER THEIR COLOR OR THEIR CREED THE METHODISTS OF THIS AREA AND THE NATION DESERVE THE NATION'S THANKS AND I COMMAND ALL THOSE WHO ARE TO DAY GRADUATING PROFESSOR WOODRILL WILSON ONCE SAID THAT EVERY MAN SENT OUT FROM A UNIVERSITY SHOULD BE A MAN OF HIS NATION AS WELL AS A MAN OF HIS TIME"
+  },
+  "synthetic": false
+}

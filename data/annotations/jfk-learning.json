@@ -1,0 +1,421 @@
+{
+  "purpose": "Generator region selection only; never inference input",
+  "words": [
+    {
+      "word": "by",
+      "start": 0.14,
+      "end": 0.2601,
+      "score": 0.999
+    },
+    {
+      "word": "sponsoring",
+      "start": 0.3401,
+      "end": 0.9203,
+      "score": 0.7282
+    },
+    {
+      "word": "this",
+      "start": 1.0804,
+      "end": 1.2204,
+      "score": 0.968
+    },
+    {
+      "word": "institution",
+      "start": 1.3004,
+      "end": 1.9007,
+      "score": 0.9962
+    },
+    {
+      "word": "of",
+      "start": 2.1207,
+      "end": 2.1607,
+      "score": 0.9993
+    },
+    {
+      "word": "higher",
+      "start": 2.2408,
+      "end": 2.5009,
+      "score": 0.7989
+    },
+    {
+      "word": "learning",
+      "start": 2.5409,
+      "end": 2.861,
+      "score": 0.9952
+    },
+    {
+      "word": "for",
+      "start": 4.1614,
+      "end": 4.2615,
+      "score": 0.9996
+    },
+    {
+      "word": "all",
+      "start": 4.4215,
+      "end": 4.5616,
+      "score": 0.9788
+    },
+    {
+      "word": "who",
+      "start": 4.6416,
+      "end": 4.7416,
+      "score": 0.9983
+    },
+    {
+      "word": "wish",
+      "start": 4.8016,
+      "end": 4.9617,
+      "score": 0.9834
+    },
+    {
+      "word": "to",
+      "start": 5.0417,
+      "end": 5.1218,
+      "score": 0.9423
+    },
+    {
+      "word": "learn",
+      "start": 5.1618,
+      "end": 5.4819,
+      "score": 0.9539
+    },
+    {
+      "word": "whatever",
+      "start": 6.6823,
+      "end": 6.9624,
+      "score": 0.9995
+    },
+    {
+      "word": "their",
+      "start": 7.0024,
+      "end": 7.1625,
+      "score": 0.99
+    },
+    {
+      "word": "color",
+      "start": 7.2425,
+      "end": 7.5226,
+      "score": 0.9072
+    },
+    {
+      "word": "or",
+      "start": 7.9427,
+      "end": 7.9827,
+      "score": 0.9997
+    },
+    {
+      "word": "their",
+      "start": 8.0428,
+      "end": 8.1828,
+      "score": 0.9929
+    },
+    {
+      "word": "creed",
+      "start": 8.2628,
+      "end": 8.6029,
+      "score": 0.9995
+    },
+    {
+      "word": "the",
+      "start": 9.7233,
+      "end": 9.8234,
+      "score": 0.9561
+    },
+    {
+      "word": "methodists",
+      "start": 9.8834,
+      "end": 10.3435,
+      "score": 0.9959
+    },
+    {
+      "word": "of",
+      "start": 10.4236,
+      "end": 10.4636,
+      "score": 0.9995
+    },
+    {
+      "word": "this",
+      "start": 10.5236,
+      "end": 10.6436,
+      "score": 0.9568
+    },
+    {
+      "word": "area",
+      "start": 10.7837,
+      "end": 11.0038,
+      "score": 0.9629
+    },
+    {
+      "word": "and",
+      "start": 11.1038,
+      "end": 11.1638,
+      "score": 0.9436
+    },
+    {
+      "word": "the",
+      "start": 11.2038,
+      "end": 11.2639,
+      "score": 0.9934
+    },
+    {
+      "word": "nation",
+      "start": 11.3039,
+      "end": 11.584,
+      "score": 0.99
+    },
+    {
+      "word": "deserve",
+      "start": 12.6843,
+      "end": 13.0445,
+      "score": 0.9957
+    },
+    {
+      "word": "the",
+      "start": 13.1045,
+      "end": 13.1645,
+      "score": 0.9949
+    },
+    {
+      "word": "nation's",
+      "start": 13.2245,
+      "end": 13.5646,
+      "score": 0.947
+    },
+    {
+      "word": "thanks",
+      "start": 13.6647,
+      "end": 14.0448,
+      "score": 0.9461
+    },
+    {
+      "word": "and",
+      "start": 15.1852,
+      "end": 15.2452,
+      "score": 0.997
+    },
+    {
+      "word": "i",
+      "start": 15.3252,
+      "end": 15.3453,
+      "score": 0.9998
+    },
+    {
+      "word": "commend",
+      "start": 15.4453,
+      "end": 15.7254,
+      "score": 0.8806
+    },
+    {
+      "word": "all",
+      "start": 15.8254,
+      "end": 15.9455,
+      "score": 0.9996
+    },
+    {
+      "word": "those",
+      "start": 16.0055,
+      "end": 16.3056,
+      "score": 0.9999
+    },
+    {
+      "word": "who",
+      "start": 16.3856,
+      "end": 16.4656,
+      "score": 0.9998
+    },
+    {
+      "word": "are",
+      "start": 16.5857,
+      "end": 16.6857,
+      "score": 0.9917
+    },
+    {
+      "word": "today",
+      "start": 16.7457,
+      "end": 16.9658,
+      "score": 0.9507
+    },
+    {
+      "word": "graduating",
+      "start": 17.0458,
+      "end": 17.626,
+      "score": 0.9791
+    },
+    {
+      "word": "professor",
+      "start": 19.3266,
+      "end": 19.7268,
+      "score": 0.9999
+    },
+    {
+      "word": "woodrow",
+      "start": 19.7668,
+      "end": 20.0069,
+      "score": 0.6607
+    },
+    {
+      "word": "wilson",
+      "start": 20.0869,
+      "end": 20.407,
+      "score": 0.9987
+    },
+    {
+      "word": "once",
+      "start": 20.527,
+      "end": 20.6671,
+      "score": 0.9924
+    },
+    {
+      "word": "said",
+      "start": 20.7271,
+      "end": 20.9072,
+      "score": 0.9752
+    },
+    {
+      "word": "that",
+      "start": 20.9672,
+      "end": 21.0672,
+      "score": 0.998
+    },
+    {
+      "word": "every",
+      "start": 21.1272,
+      "end": 21.2873,
+      "score": 0.998
+    },
+    {
+      "word": "man",
+      "start": 21.3473,
+      "end": 21.5474,
+      "score": 0.9999
+    },
+    {
+      "word": "sent",
+      "start": 21.6674,
+      "end": 21.8075,
+      "score": 0.9902
+    },
+    {
+      "word": "out",
+      "start": 21.8875,
+      "end": 21.9875,
+      "score": 0.9993
+    },
+    {
+      "word": "from",
+      "start": 22.0476,
+      "end": 22.1676,
+      "score": 0.9907
+    },
+    {
+      "word": "a",
+      "start": 22.2076,
+      "end": 22.2276,
+      "score": 0.9163
+    },
+    {
+      "word": "university",
+      "start": 22.3076,
+      "end": 22.8478,
+      "score": 0.9543
+    },
+    {
+      "word": "should",
+      "start": 23.7281,
+      "end": 23.9082,
+      "score": 0.9928
+    },
+    {
+      "word": "be",
+      "start": 23.9282,
+      "end": 23.9882,
+      "score": 0.9999
+    },
+    {
+      "word": "a",
+      "start": 24.0482,
+      "end": 24.0682,
+      "score": 0.9925
+    },
+    {
+      "word": "man",
+      "start": 24.1083,
+      "end": 24.2683,
+      "score": 0.981
+    },
+    {
+      "word": "of",
+      "start": 24.3283,
+      "end": 24.3683,
+      "score": 0.9995
+    },
+    {
+      "word": "his",
+      "start": 24.4084,
+      "end": 24.5084,
+      "score": 0.9781
+    },
+    {
+      "word": "nation",
+      "start": 24.5684,
+      "end": 24.8685,
+      "score": 0.9999
+    },
+    {
+      "word": "as",
+      "start": 26.0889,
+      "end": 26.149,
+      "score": 0.9893
+    },
+    {
+      "word": "well",
+      "start": 26.209,
+      "end": 26.349,
+      "score": 1.0
+    },
+    {
+      "word": "as",
+      "start": 26.389,
+      "end": 26.4491,
+      "score": 0.9016
+    },
+    {
+      "word": "a",
+      "start": 26.5091,
+      "end": 26.5291,
+      "score": 0.991
+    },
+    {
+      "word": "man",
+      "start": 26.5691,
+      "end": 26.7292,
+      "score": 0.9976
+    },
+    {
+      "word": "of",
+      "start": 26.7892,
+      "end": 26.8292,
+      "score": 0.9995
+    },
+    {
+      "word": "his",
+      "start": 26.8692,
+      "end": 26.9692,
+      "score": 0.9991
+    },
+    {
+      "word": "time",
+      "start": 27.0293,
+      "end": 27.3494,
+      "score": 0.9998
+    }
+  ],
+  "confidence": 0.9707,
+  "coverage": 1.0,
+  "recognized_text": "BY PONSERING THIS INSTITUTION OF HIGHR LEARNING FOR ALL WHO WISH TO LEARN WHATEVER THEIR COLOR OR THEIR CREED THE METHODISTS OF THIS AREA AND THE NATION DESERVE THE NATION'S THANKS AND I COMMAND ALL THOSE WHO ARE TO DAY GRADUATING PROFESSOR WOODRILL WILSON ONCE SAID THAT EVERY MAN SENT OUT FROM A UNIVERSITY SHOULD BE A MAN OF HIS NATION AS WELL AS A MAN OF HIS TIME",
+  "transcript_agreement": 0.913,
+  "model": "facebook/wav2vec2-base-960h",
+  "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "alignment_version": "ctc-viterbi-1",
+  "cached": false
+}

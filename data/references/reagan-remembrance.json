@@ -1,0 +1,26 @@
+{
+  "id": "reagan-remembrance",
+  "title": "A moment of remembrance",
+  "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+  "speaker": "Ronald Reagan",
+  "source_group": "reagan-challenger-19860128",
+  "split": "test",
+  "source_offset_seconds": 0.4802,
+  "source_end_seconds": 24.4297,
+  "transcript": "Ladies and gentlemen, I'd planned to speak to you tonight to report on the state of the Union, but the events of earlier today have led me to change those plans. Today is a day for mourning and remembering. Nancy and I are pained to the core by the tragedy of the shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss.",
+  "source_url": "https://docsteach.org/document/reagan-challenger/",
+  "transcript_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+  "license": "Public domain (United States federal government work)",
+  "license_url": "https://docsteach.org/document/reagan-challenger/",
+  "duration": 23.9495,
+  "audio": "data/references/reagan-remembrance.wav",
+  "sha256": "f4834e762262ebb31246c06bbb41c1b5d32f693321b8c0f2879b84a66dcf63df",
+  "alignment_validation": {
+    "confidence": 0.889,
+    "coverage": 0.9595,
+    "transcript_agreement": 0.7632,
+    "recognized_text": "THAT ISN'T GENTLEMEN I'D PLAN TO SPEAK TO YOU TO NI TO REPORT ON THE STATE OF THE UNION FOR THE EVENTS OF EARLIER TO DAY HAVE LED ME TO CHANGE THOSE PLANS TO DAY IS A DAY FOR MORNING AND REMEMBERY NANCY AND I ARE PAYING TO THE CORPS IT THE TRAGEDY OF THE SHUTTLE CHALLENGER WE KNOW WE SHARE THIS PAIN WITH ALL THE PEOPLE OF OUR COUNTRY THIS IS TRULY U NATIONAL LAWS"
+  },
+  "synthetic": false
+}

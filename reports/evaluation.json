@@ -1,0 +1,2808 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-10-13T11:33:45.887550+00:00",
+  "dataset_version": "1.0.0",
+  "manifest_sha256": "aefc007bd5d562ae2ca302fde6db6a33141481a8ffdc47d41781651ff392e874",
+  "model": "facebook/wav2vec2-base-960h",
+  "model_revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "alignment_code_sha256": "736af1d64b19965ebec8de04d28542cd74634e9eac0867df3687879a83706f91",
+  "rubric": {
+    "version": "reference-relative-1.1.0",
+    "weights": {
+      "pacing": 0.4,
+      "pauses": 0.35,
+      "energy": 0.25
+    },
+    "thresholds": {
+      "min_word_quality": 0.35,
+      "min_region_quality": 0.55,
+      "min_recording_quality": 0.55,
+      "min_reliable_word_fraction": 0.7,
+      "min_assessed_word_fraction": 0.5,
+      "min_clip_seconds": 2.0,
+      "min_word_power_relative_to_peak": 1e-12,
+      "min_region_words": 5,
+      "max_region_words": 8,
+      "target_region_words": 6,
+      "rush_ratio": 1.25,
+      "rush_min_seconds_saved": 0.25,
+      "pause_extra_seconds": 0.3,
+      "pause_min_seconds": 0.35,
+      "pause_ratio": 1.8,
+      "pause_reference_floor_seconds": 0.12,
+      "pause_misplaced_reference_seconds": 0.18,
+      "pause_quiet_below_word_median_db": 25.0,
+      "pause_max_uncertain_words": 2,
+      "pause_context_words_each_side": 2,
+      "energy_drop_db": 5.0
+    }
+  },
+  "comparison_code_sha256": "2442577fbae0266a92b5c92bca6d9e9b17160e15976bd9bf9c24d51b96d68d18",
+  "alignment_policy_code_sha256": "46e0ce10318872a1160ae20abc38e96e5190914505f05815007136fd746a41b5",
+  "device": "cpu",
+  "compute": {
+    "requested_device": "cpu",
+    "device": "cpu",
+    "device_name": "CPU",
+    "precision": "float32",
+    "torch_version": "2.8.0+cpu",
+    "cuda_version": null,
+    "fallback_reason": null,
+    "warnings": []
+  },
+  "alignment_devices": {
+    "cpu": 44
+  },
+  "cache_requested": true,
+  "alignment_cache_hits": 44,
+  "fresh_alignment_calls": 0,
+  "elapsed_seconds": 10.24,
+  "matching": "Maximum-cardinality one-to-one same-type event matching at interval IoU >= 0.30; unmatched detections are FP, unmatched labels are FN.",
+  "source_splits": {
+    "jfk-american-university-19630610": [
+      "dev"
+    ],
+    "reagan-challenger-19860128": [
+      "test"
+    ]
+  },
+  "splits": {
+    "dev": {
+      "overall": {
+        "examples": 20,
+        "tp": 8,
+        "fp": 1,
+        "fn": 10,
+        "event_precision": 0.8888888888888888,
+        "event_recall": 0.4444444444444444,
+        "event_f1": 0.5925925925925926,
+        "matched_mean_iou": 0.8606481066414657,
+        "matched_boundary_mae_seconds": 0.1375046875000001,
+        "clean_controls": 2,
+        "clean_controls_with_flags": 0,
+        "clean_control_false_positive_rate": 0.0,
+        "withheld_or_failed": 0
+      },
+      "by_flaw": {
+        "pacing": {
+          "examples": 20,
+          "tp": 0,
+          "fp": 0,
+          "fn": 6,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "matched_mean_iou": null,
+          "matched_boundary_mae_seconds": null,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        },
+        "pauses": {
+          "examples": 20,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": 1.0,
+          "event_recall": 1.0,
+          "event_f1": 1.0,
+          "matched_mean_iou": 0.9891220290271244,
+          "matched_boundary_mae_seconds": 0.0065520833333333845,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        },
+        "energy": {
+          "examples": 20,
+          "tp": 2,
+          "fp": 1,
+          "fn": 4,
+          "event_precision": 0.6666666666666666,
+          "event_recall": 0.3333333333333333,
+          "event_f1": 0.4444444444444444,
+          "matched_mean_iou": 0.47522633948448967,
+          "matched_boundary_mae_seconds": 0.5303625000000003,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        }
+      },
+      "severity_ordering": {
+        "triples": 6,
+        "scorable_triples": 6,
+        "nonincreasing_count": 6,
+        "strictly_decreasing_count": 3,
+        "details": [
+          {
+            "reference_id": "jfk-welcome",
+            "flaw": "energy",
+            "scores_mild_to_severe": [
+              100.0,
+              98.9,
+              98.3
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": true
+          },
+          {
+            "reference_id": "jfk-welcome",
+            "flaw": "pauses",
+            "scores_mild_to_severe": [
+              97.7,
+              96.2,
+              94.5
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": true
+          },
+          {
+            "reference_id": "jfk-welcome",
+            "flaw": "pacing",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          },
+          {
+            "reference_id": "jfk-learning",
+            "flaw": "energy",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              99.1
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          },
+          {
+            "reference_id": "jfk-learning",
+            "flaw": "pauses",
+            "scores_mild_to_severe": [
+              98.7,
+              97.7,
+              96.8
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": true
+          },
+          {
+            "reference_id": "jfk-learning",
+            "flaw": "pacing",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          }
+        ]
+      }
+    },
+    "test": {
+      "overall": {
+        "examples": 20,
+        "tp": 7,
+        "fp": 1,
+        "fn": 11,
+        "event_precision": 0.875,
+        "event_recall": 0.3888888888888889,
+        "event_f1": 0.5384615384615384,
+        "matched_mean_iou": 0.9178635396140449,
+        "matched_boundary_mae_seconds": 0.06457214285714276,
+        "clean_controls": 2,
+        "clean_controls_with_flags": 0,
+        "clean_control_false_positive_rate": 0.0,
+        "withheld_or_failed": 0
+      },
+      "by_flaw": {
+        "pacing": {
+          "examples": 20,
+          "tp": 0,
+          "fp": 0,
+          "fn": 6,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "matched_mean_iou": null,
+          "matched_boundary_mae_seconds": null,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        },
+        "pauses": {
+          "examples": 20,
+          "tp": 6,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": 1.0,
+          "event_recall": 1.0,
+          "event_f1": 1.0,
+          "matched_mean_iou": 0.9391534106075676,
+          "matched_boundary_mae_seconds": 0.04698520833333316,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        },
+        "energy": {
+          "examples": 20,
+          "tp": 1,
+          "fp": 1,
+          "fn": 5,
+          "event_precision": 0.5,
+          "event_recall": 0.16666666666666666,
+          "event_f1": 0.25,
+          "matched_mean_iou": 0.7901243136529085,
+          "matched_boundary_mae_seconds": 0.17009375000000038,
+          "clean_controls": 2,
+          "clean_controls_with_flags": 0,
+          "clean_control_false_positive_rate": 0.0,
+          "withheld_or_failed": 0
+        }
+      },
+      "severity_ordering": {
+        "triples": 6,
+        "scorable_triples": 6,
+        "nonincreasing_count": 5,
+        "strictly_decreasing_count": 2,
+        "details": [
+          {
+            "reference_id": "reagan-remembrance",
+            "flaw": "energy",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              98.6
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          },
+          {
+            "reference_id": "reagan-remembrance",
+            "flaw": "pauses",
+            "scores_mild_to_severe": [
+              98.6,
+              97.6,
+              96.7
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": true
+          },
+          {
+            "reference_id": "reagan-remembrance",
+            "flaw": "pacing",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          },
+          {
+            "reference_id": "reagan-families",
+            "flaw": "energy",
+            "scores_mild_to_severe": [
+              100.0,
+              99.0,
+              100.0
+            ],
+            "available": true,
+            "nonincreasing": false,
+            "strictly_decreasing": false
+          },
+          {
+            "reference_id": "reagan-families",
+            "flaw": "pauses",
+            "scores_mild_to_severe": [
+              98.4,
+              97.3,
+              96.4
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": true
+          },
+          {
+            "reference_id": "reagan-families",
+            "flaw": "pacing",
+            "scores_mild_to_severe": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "available": true,
+            "nonincreasing": true,
+            "strictly_decreasing": false
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic perturbation benchmark, not independent human-delivery validation.",
+    "Only two male US presidential speakers and two archive recording conditions; results do not estimate population performance.",
+    "Reference word boundaries used to place edits are model estimates, not human-annotated word timestamps.",
+    "Ground-truth spans describe actual waveform operations; detector phrase windows need not exactly coincide.",
+    "Human perceptual quality and usefulness remain unvalidated."
+  ],
+  "examples": [
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "clean",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "clean",
+      "severity": "control",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9702,
+      "transcript_agreement": 0.9512,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "energy-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9712,
+      "transcript_agreement": 0.9512,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.045125,
+          "end": 9.386
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.018
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "energy-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 98.9,
+      "findings": [
+        {
+          "type": "energy",
+          "start": 7.3647,
+          "end": 9.0057,
+          "severity": "mild",
+          "severity_value": 0.3094
+        }
+      ],
+      "alignment_confidence": 0.971,
+      "transcript_agreement": 0.9512,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.045125,
+          "end": 9.386
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.47522633948448967
+        ],
+        "boundary_errors_seconds": [
+          0.5303625000000003
+        ]
+      },
+      "seconds": 0.018
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "energy-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "severe",
+      "status": "complete",
+      "score": 98.3,
+      "findings": [
+        {
+          "type": "energy",
+          "start": 7.3647,
+          "end": 9.0057,
+          "severity": "moderate",
+          "severity_value": 0.46443
+        }
+      ],
+      "alignment_confidence": 0.9515,
+      "transcript_agreement": 0.9268,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.045125,
+          "end": 9.386
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.47522633948448967
+        ],
+        "boundary_errors_seconds": [
+          0.5303625000000003
+        ]
+      },
+      "seconds": 0.019
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pauses-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "mild",
+      "status": "complete",
+      "score": 97.7,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.0886,
+          "end": 8.7893,
+          "severity": "moderate",
+          "severity_value": 0.4404
+        }
+      ],
+      "alignment_confidence": 0.9486,
+      "transcript_agreement": 0.9268,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.085125,
+          "end": 8.7751875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9750239642134396
+        ],
+        "boundary_errors_seconds": [
+          0.0087937500000006
+        ]
+      },
+      "seconds": 0.031
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pauses-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 96.2,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.0849,
+          "end": 9.2256,
+          "severity": "moderate",
+          "severity_value": 0.73373
+        }
+      ],
+      "alignment_confidence": 0.9547,
+      "transcript_agreement": 0.9268,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.085125,
+          "end": 9.2251875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9994411326378541
+        ],
+        "boundary_errors_seconds": [
+          0.00031874999999992326
+        ]
+      },
+      "seconds": 0.027
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pauses-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "severe",
+      "status": "complete",
+      "score": 94.5,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.11469,
+          "end": 9.90469,
+          "severity": "severe",
+          "severity_value": 1.0
+        }
+      ],
+      "alignment_confidence": 0.9514,
+      "transcript_agreement": 0.9268,
+      "warnings": [
+        "Skipped 1 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 35 of 41 words (85%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.085125,
+          "end": 9.9251875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9727930437145481
+        ],
+        "boundary_errors_seconds": [
+          0.025031249999999616
+        ]
+      },
+      "seconds": 0.021
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pacing-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8184,
+      "transcript_agreement": 0.7805,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 29 of 41 words (71%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.045125,
+          "end": 10.90625
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pacing-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.7912,
+      "transcript_agreement": 0.7561,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 29 of 41 words (71%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.045125,
+          "end": 10.3860625
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    },
+    {
+      "reference_id": "jfk-welcome",
+      "variant_id": "pacing-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "severe",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.7613,
+      "transcript_agreement": 0.7317,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 29 of 41 words (71%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match.",
+        "Some spoken words differ from the transcript or were unclear. Review the highlighted words before interpreting the scores."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.045125,
+          "end": 9.976375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "clean",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "clean",
+      "severity": "control",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9707,
+      "transcript_agreement": 0.913,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.023
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "energy-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9647,
+      "transcript_agreement": 0.8986,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 10.523625,
+          "end": 13.0445
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.022
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "energy-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9674,
+      "transcript_agreement": 0.8986,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 10.523625,
+          "end": 13.0445
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.033
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "energy-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "energy",
+      "severity": "severe",
+      "status": "complete",
+      "score": 99.1,
+      "findings": [
+        {
+          "type": "energy",
+          "start": 9.8834,
+          "end": 11.2439,
+          "severity": "mild",
+          "severity_value": 0.39639
+        }
+      ],
+      "alignment_confidence": 0.9674,
+      "transcript_agreement": 0.8986,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 10.523625,
+          "end": 13.0445
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.026
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pauses-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "mild",
+      "status": "complete",
+      "score": 98.7,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 10.6473,
+          "end": 11.4279,
+          "severity": "moderate",
+          "severity_value": 0.427
+        }
+      ],
+      "alignment_confidence": 0.956,
+      "transcript_agreement": 0.8696,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 10.643625,
+          "end": 11.4336875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9880230994383359
+        ],
+        "boundary_errors_seconds": [
+          0.004731249999999854
+        ]
+      },
+      "seconds": 0.02
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pauses-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 97.7,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 10.6435,
+          "end": 11.8839,
+          "severity": "moderate",
+          "severity_value": 0.73353
+        }
+      ],
+      "alignment_confidence": 0.9556,
+      "transcript_agreement": 0.8841,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 10.643625,
+          "end": 11.8836875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9997279103514991
+        ],
+        "boundary_errors_seconds": [
+          0.00016875000000027285
+        ]
+      },
+      "seconds": 0.019
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pauses-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pauses",
+      "severity": "severe",
+      "status": "complete",
+      "score": 96.8,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 10.6434,
+          "end": 12.584,
+          "severity": "severe",
+          "severity_value": 1.0
+        }
+      ],
+      "alignment_confidence": 0.9572,
+      "transcript_agreement": 0.8986,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 10.643625,
+          "end": 12.5836875
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9997230238070699
+        ],
+        "boundary_errors_seconds": [
+          0.0002687500000000398
+        ]
+      },
+      "seconds": 0.02
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pacing-mild",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8689,
+      "transcript_agreement": 0.7941,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 56 of 68 words (82%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 10.523625,
+          "end": 14.0210625
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.019
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pacing-moderate",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.86,
+      "transcript_agreement": 0.7941,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 56 of 68 words (82%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 10.523625,
+          "end": 13.3851875
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.022
+    },
+    {
+      "reference_id": "jfk-learning",
+      "variant_id": "pacing-severe",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "flaw": "pacing",
+      "severity": "severe",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8561,
+      "transcript_agreement": 0.7941,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 56 of 68 words (82%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 10.523625,
+          "end": 12.884375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.022
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "clean",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "clean",
+      "severity": "control",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.889,
+      "transcript_agreement": 0.7632,
+      "warnings": [
+        "Skipped 3 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 55 of 74 words (74%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.031
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "energy-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8865,
+      "transcript_agreement": 0.7632,
+      "warnings": [
+        "Skipped 3 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 55 of 74 words (74%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 6.9026875,
+          "end": 8.483375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.035
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "energy-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8823,
+      "transcript_agreement": 0.7632,
+      "warnings": [
+        "Skipped 3 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 55 of 74 words (74%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 6.9026875,
+          "end": 8.483375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.025
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "energy-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "severe",
+      "status": "complete",
+      "score": 98.6,
+      "findings": [
+        {
+          "type": "energy",
+          "start": 7.7631,
+          "end": 10.4441,
+          "severity": "moderate",
+          "severity_value": 0.45047
+        }
+      ],
+      "alignment_confidence": 0.8766,
+      "transcript_agreement": 0.7532,
+      "warnings": [
+        "Skipped 4 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 49 of 74 words (66%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 6.9026875,
+          "end": 8.483375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.027
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pauses-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "mild",
+      "status": "complete",
+      "score": 98.6,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 7.18537,
+          "end": 8.23537,
+          "severity": "moderate",
+          "severity_value": 0.42
+        }
+      ],
+      "alignment_confidence": 0.8721,
+      "transcript_agreement": 0.72,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match.",
+        "Some spoken words differ from the transcript or were unclear. Review the highlighted words before interpreting the scores."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 7.0228125,
+          "end": 8.253
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.8535284255448861
+        ],
+        "boundary_errors_seconds": [
+          0.0900937500000003
+        ]
+      },
+      "seconds": 0.04
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pauses-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 97.6,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 7.17263,
+          "end": 8.68262,
+          "severity": "moderate",
+          "severity_value": 0.72667
+        }
+      ],
+      "alignment_confidence": 0.8737,
+      "transcript_agreement": 0.75,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 7.0228125,
+          "end": 8.703
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.8987032697243613
+        ],
+        "boundary_errors_seconds": [
+          0.08509874999999978
+        ]
+      },
+      "seconds": 0.03
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pauses-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "severe",
+      "status": "complete",
+      "score": 96.7,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 7.1725,
+          "end": 9.3825,
+          "severity": "severe",
+          "severity_value": 1.0
+        }
+      ],
+      "alignment_confidence": 0.8742,
+      "transcript_agreement": 0.75,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 7.0228125,
+          "end": 9.403
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9284982800724729
+        ],
+        "boundary_errors_seconds": [
+          0.08509375000000041
+        ]
+      },
+      "seconds": 0.044
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pacing-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8085,
+      "transcript_agreement": 0.7162,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match.",
+        "Some spoken words differ from the transcript or were unclear. Review the highlighted words before interpreting the scores."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 6.9026875,
+          "end": 9.8816875
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.028
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pacing-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8129,
+      "transcript_agreement": 0.7027,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match.",
+        "Some spoken words differ from the transcript or were unclear. Review the highlighted words before interpreting the scores."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 6.9026875,
+          "end": 9.3400625
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.026
+    },
+    {
+      "reference_id": "reagan-remembrance",
+      "variant_id": "pacing-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "severe",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.797,
+      "transcript_agreement": 0.6892,
+      "warnings": [
+        "Skipped 5 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 43 of 74 words (58%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match.",
+        "Some spoken words differ from the transcript or were unclear. Review the highlighted words before interpreting the scores."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 6.9026875,
+          "end": 8.9135
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.032
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "clean",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "clean",
+      "severity": "control",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9746,
+      "transcript_agreement": 0.9667,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.026
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "energy-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9765,
+      "transcript_agreement": 0.9667,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.5846875,
+          "end": 10.0455
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.028
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "energy-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 99.0,
+      "findings": [
+        {
+          "type": "energy",
+          "start": 8.4246,
+          "end": 9.8654,
+          "severity": "mild",
+          "severity_value": 0.39143
+        }
+      ],
+      "alignment_confidence": 0.9734,
+      "transcript_agreement": 0.9667,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.5846875,
+          "end": 10.0455
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.7901243136529085
+        ],
+        "boundary_errors_seconds": [
+          0.17009375000000038
+        ]
+      },
+      "seconds": 0.037
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "energy-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "energy",
+      "severity": "severe",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.9515,
+      "transcript_agreement": 0.9153,
+      "warnings": [
+        "Skipped 1 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 53 of 59 words (90%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "energy",
+          "start": 8.5846875,
+          "end": 10.0455
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.035
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pauses-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "mild",
+      "status": "complete",
+      "score": 98.4,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.6484,
+          "end": 9.4092,
+          "severity": "moderate",
+          "severity_value": 0.44047
+        }
+      ],
+      "alignment_confidence": 0.9644,
+      "transcript_agreement": 0.95,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.6646875,
+          "end": 9.4148125
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9714253094776002
+        ],
+        "boundary_errors_seconds": [
+          0.01094999999999935
+        ]
+      },
+      "seconds": 0.029
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pauses-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 97.3,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.6445,
+          "end": 9.8651,
+          "severity": "moderate",
+          "severity_value": 0.747
+        }
+      ],
+      "alignment_confidence": 0.9692,
+      "transcript_agreement": 0.9333,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.6646875,
+          "end": 9.8648125
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9832254628871052
+        ],
+        "boundary_errors_seconds": [
+          0.010237499999999677
+        ]
+      },
+      "seconds": 0.021
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pauses-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pauses",
+      "severity": "severe",
+      "status": "complete",
+      "score": 96.4,
+      "findings": [
+        {
+          "type": "pauses",
+          "start": 8.6644,
+          "end": 10.5654,
+          "severity": "severe",
+          "severity_value": 1.0
+        }
+      ],
+      "alignment_confidence": 0.9668,
+      "transcript_agreement": 0.95,
+      "warnings": [],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pauses",
+          "start": 8.6646875,
+          "end": 10.5648125
+        }
+      ],
+      "matching": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "matched_ious": [
+          0.9995397159389801
+        ],
+        "boundary_errors_seconds": [
+          0.00043749999999942446
+        ]
+      },
+      "seconds": 0.017
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pacing-mild",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "mild",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8762,
+      "transcript_agreement": 0.8305,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 47 of 59 words (80%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.5846875,
+          "end": 10.5265
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pacing-moderate",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "moderate",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.844,
+      "transcript_agreement": 0.8136,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 47 of 59 words (80%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.5846875,
+          "end": 10.1734375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.017
+    },
+    {
+      "reference_id": "reagan-families",
+      "variant_id": "pacing-severe",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "flaw": "pacing",
+      "severity": "severe",
+      "status": "complete",
+      "score": 100.0,
+      "findings": [],
+      "alignment_confidence": 0.8413,
+      "transcript_agreement": 0.7966,
+      "warnings": [
+        "Skipped 2 phrase region(s) with weak alignment or no measurable word audio. Word probabilities are heuristic quality signals, not calibrated confidence.",
+        "Phrase scores cover 47 of 59 words (80%). Unassessed phrases may contain differences; a full score on the assessed words is not a full-recording match."
+      ],
+      "compute": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": []
+        }
+      },
+      "alignment_cached": {
+        "reference": true,
+        "participant": true
+      },
+      "labels": [
+        {
+          "type": "pacing",
+          "start": 8.5846875,
+          "end": 9.8954375
+        }
+      ],
+      "matching": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "matched_ious": [],
+        "boundary_errors_seconds": []
+      },
+      "seconds": 0.016
+    }
+  ]
+}

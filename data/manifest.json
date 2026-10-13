@@ -1,0 +1,1196 @@
+{
+  "version": "1.0.0",
+  "sample_rate": 16000,
+  "description": "Real public-domain archive excerpts; isolated generated delivery changes.",
+  "generator": "scripts/build_dataset.py",
+  "references": [
+    {
+      "id": "jfk-welcome",
+      "title": "A university welcome",
+      "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+      "speaker": "John F. Kennedy",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "source_offset_seconds": 39.0446,
+      "source_end_seconds": 61.0586,
+      "transcript": "distinguished guests, ladies and gentlemen: It is with great pride that I participate in this ceremony of the American University, sponsored by the Methodist Church, founded by Bishop John Fletcher Hurst, and first opened by President Woodrow Wilson in nineteen fourteen.",
+      "source_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+      "transcript_url": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/american-university-19630610",
+      "download_url": "https://static.jfklibrary.org/0y71h7t40eul01xc4g8yx8438jpj1gg3.mp3",
+      "license": "Public domain (United States federal government work)",
+      "license_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+      "duration": 22.014,
+      "audio": "data/references/jfk-welcome.wav",
+      "sha256": "2863b1578495143678a3ded9306b791936abb064e358572a2a28a2ab1ec54c71",
+      "alignment_validation": {
+        "confidence": 0.9702,
+        "coverage": 1.0,
+        "transcript_agreement": 0.9512,
+        "recognized_text": "DISTINGUISHED GUESTS LADIES AND GENTLEMEN IT IS WITH GREAT PRIDE THAT I PARTICIPATE IN THIS CEREMONY OF THE AMERICAN UNIVERSITY RESPONSEED BY THE METHODIST CHURCH FOUNDED BY BISHOP JOHN FLETCHER HURST AND FIRST OPENED BY PRESIDENT WOODRO WILSON IN NINETEEN FOURTEEN"
+      },
+      "synthetic": false,
+      "variants": [
+        {
+          "id": "clean",
+          "label": "Original clean control",
+          "flaw": "clean",
+          "severity": "control",
+          "synthetic": false,
+          "audio": "data/variants/jfk-welcome/clean.wav",
+          "sha256": "2863b1578495143678a3ded9306b791936abb064e358572a2a28a2ab1ec54c71",
+          "duration": 22.014,
+          "labels": [],
+          "transform": {
+            "operation": "identity"
+          }
+        },
+        {
+          "id": "energy-mild",
+          "label": "Generated mild energy",
+          "flaw": "energy",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/energy-mild.wav",
+          "sha256": "5c6e4eafe014debc9ad7aee299abf515c1a81da46cd589f47bbf130c36f26901",
+          "duration": 22.014,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.045125,
+              "end": 9.386
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "local_gain",
+            "reduction_db": 5.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-moderate",
+          "label": "Generated moderate energy",
+          "flaw": "energy",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/energy-moderate.wav",
+          "sha256": "be7c6473dd3aa063fa9f10b422a5bfa654cf586d766bb1819adf3500b45ee80f",
+          "duration": 22.014,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.045125,
+              "end": 9.386
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "local_gain",
+            "reduction_db": 9.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-severe",
+          "label": "Generated severe energy",
+          "flaw": "energy",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/energy-severe.wav",
+          "sha256": "5a0ed296d62e5d217966c6bb58ed40d7bf25f926e2167774680353b71ac03e4d",
+          "duration": 22.014,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.045125,
+              "end": 9.386
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "local_gain",
+            "reduction_db": 14.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "pauses-mild",
+          "label": "Generated mild pauses",
+          "flaw": "pauses",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pauses-mild.wav",
+          "sha256": "309553cd82b015c99ec06ef9e55ffd6e80b888ddd6c82ec0808ab273f48e7054",
+          "duration": 22.664,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.085125,
+              "end": 8.7751875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "insert_silence",
+            "inserted_seconds": 0.65,
+            "insertion_seconds": 8.105125
+          }
+        },
+        {
+          "id": "pauses-moderate",
+          "label": "Generated moderate pauses",
+          "flaw": "pauses",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pauses-moderate.wav",
+          "sha256": "60db75123d23c2e80e259fe67fb08236dea29ccedc39b65090d4c65edda51575",
+          "duration": 23.114,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.085125,
+              "end": 9.2251875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.1,
+            "insertion_seconds": 8.105125
+          }
+        },
+        {
+          "id": "pauses-severe",
+          "label": "Generated severe pauses",
+          "flaw": "pauses",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pauses-severe.wav",
+          "sha256": "9bc8ed4b1f54fbb8d7a6d010a6d96d627c63471ec3f028e516dae1b76bbfb361",
+          "duration": 23.814,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.085125,
+              "end": 9.9251875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              18
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 9.386,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.8,
+            "insertion_seconds": 8.105125
+          }
+        },
+        {
+          "id": "pacing-mild",
+          "label": "Generated mild pacing",
+          "flaw": "pacing",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pacing-mild.wav",
+          "sha256": "39d2fa96851effaddd0fada70581ee58ca1d17dfcd47f7c40d753c324704188a",
+          "duration": 21.012625,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.045125,
+              "end": 10.90625
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              22
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 11.907625,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.35,
+            "pitch_preserving": true,
+            "output_segment_samples": 45778
+          }
+        },
+        {
+          "id": "pacing-moderate",
+          "label": "Generated moderate pacing",
+          "flaw": "pacing",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pacing-moderate.wav",
+          "sha256": "92257b64ea791bb301d71d55e9e8864a6de70b8f6299e970b5a78c931bba4a4f",
+          "duration": 20.4924375,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.045125,
+              "end": 10.3860625
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              22
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 11.907625,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.65,
+            "pitch_preserving": true,
+            "output_segment_samples": 37455
+          }
+        },
+        {
+          "id": "pacing-severe",
+          "label": "Generated severe pacing",
+          "flaw": "pacing",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-welcome/pacing-severe.wav",
+          "sha256": "b1b99f05058f80aa9b909c7f59643efefc76cc8faa2fa472757fefd2758a56ac",
+          "duration": 20.08275,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.045125,
+              "end": 9.976375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              13,
+              22
+            ],
+            "reference_start": 8.045125,
+            "reference_end": 11.907625,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 2.0,
+            "pitch_preserving": true,
+            "output_segment_samples": 30900
+          }
+        }
+      ]
+    },
+    {
+      "id": "jfk-learning",
+      "title": "Learning and public service",
+      "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+      "speaker": "John F. Kennedy",
+      "source_group": "jfk-american-university-19630610",
+      "split": "dev",
+      "source_offset_seconds": 80.8879,
+      "source_end_seconds": 108.4373,
+      "transcript": "By sponsoring this institution of higher learning for all who wish to learn, whatever their color or their creed, the Methodists of this area and the Nation deserve the Nation's thanks, and I commend all those who are today graduating. Professor Woodrow Wilson once said that every man sent out from a university should be a man of his nation as well as a man of his time.",
+      "source_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+      "transcript_url": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/american-university-19630610",
+      "download_url": "https://static.jfklibrary.org/0y71h7t40eul01xc4g8yx8438jpj1gg3.mp3",
+      "license": "Public domain (United States federal government work)",
+      "license_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+      "duration": 27.5494375,
+      "audio": "data/references/jfk-learning.wav",
+      "sha256": "625788c4f6cd9aeee072766f2146e7066ab318a12caa60c08c9902b63bf7b67c",
+      "alignment_validation": {
+        "confidence": 0.9707,
+        "coverage": 1.0,
+        "transcript_agreement": 0.913,
+        "recognized_text": "BY PONSERING THIS INSTITUTION OF HIGHR LEARNING FOR ALL WHO WISH TO LEARN WHATEVER THEIR COLOR OR THEIR CREED THE METHODISTS OF THIS AREA AND THE NATION DESERVE THE NATION'S THANKS AND I COMMAND ALL THOSE WHO ARE TO DAY GRADUATING PROFESSOR WOODRILL WILSON ONCE SAID THAT EVERY MAN SENT OUT FROM A UNIVERSITY SHOULD BE A MAN OF HIS NATION AS WELL AS A MAN OF HIS TIME"
+      },
+      "synthetic": false,
+      "variants": [
+        {
+          "id": "clean",
+          "label": "Original clean control",
+          "flaw": "clean",
+          "severity": "control",
+          "synthetic": false,
+          "audio": "data/variants/jfk-learning/clean.wav",
+          "sha256": "625788c4f6cd9aeee072766f2146e7066ab318a12caa60c08c9902b63bf7b67c",
+          "duration": 27.5494375,
+          "labels": [],
+          "transform": {
+            "operation": "identity"
+          }
+        },
+        {
+          "id": "energy-mild",
+          "label": "Generated mild energy",
+          "flaw": "energy",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/energy-mild.wav",
+          "sha256": "d1a0079c92842ccbef696ed7886ff9b99cee91aa87de5bd1f61a55aa939d94bc",
+          "duration": 27.5494375,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 10.523625,
+              "end": 13.0445
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "local_gain",
+            "reduction_db": 5.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-moderate",
+          "label": "Generated moderate energy",
+          "flaw": "energy",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/energy-moderate.wav",
+          "sha256": "2d4423689db3e33b05fdb2f15b622d298903310b76073887710e50d2669389cf",
+          "duration": 27.5494375,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 10.523625,
+              "end": 13.0445
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "local_gain",
+            "reduction_db": 9.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-severe",
+          "label": "Generated severe energy",
+          "flaw": "energy",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/energy-severe.wav",
+          "sha256": "a9155712f67183726dc1ea59e4e24bfa5d948fb665c107049c4bc92f9c854a4c",
+          "duration": 27.5494375,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 10.523625,
+              "end": 13.0445
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "local_gain",
+            "reduction_db": 14.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "pauses-mild",
+          "label": "Generated mild pauses",
+          "flaw": "pauses",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pauses-mild.wav",
+          "sha256": "3035163ca2b8d5e68fd9e72117a66a00beba9f23303c93c2390f48d3fd0d36ff",
+          "duration": 28.1994375,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 10.643625,
+              "end": 11.4336875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "insert_silence",
+            "inserted_seconds": 0.65,
+            "insertion_seconds": 10.713625
+          }
+        },
+        {
+          "id": "pauses-moderate",
+          "label": "Generated moderate pauses",
+          "flaw": "pauses",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pauses-moderate.wav",
+          "sha256": "4407362497e644cd828a6ed1250614118987afca124bd8bf73f775147f420b17",
+          "duration": 28.6494375,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 10.643625,
+              "end": 11.8836875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.1,
+            "insertion_seconds": 10.713625
+          }
+        },
+        {
+          "id": "pauses-severe",
+          "label": "Generated severe pauses",
+          "flaw": "pauses",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pauses-severe.wav",
+          "sha256": "9762793fb7b34d557ad5c4ce7e509deb48ea31a3246a25f19b889d92058c0f12",
+          "duration": 29.3494375,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 10.643625,
+              "end": 12.5836875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              27
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 13.0445,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.8,
+            "insertion_seconds": 10.713625
+          }
+        },
+        {
+          "id": "pacing-mild",
+          "label": "Generated mild pacing",
+          "flaw": "pacing",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pacing-mild.wav",
+          "sha256": "173fce621f30c5e2c7df3d6234bb25d414238dfd18819e6b0db26b4c75f95477",
+          "duration": 26.3253125,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 10.523625,
+              "end": 14.0210625
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              31
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 15.2451875,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.35,
+            "pitch_preserving": true,
+            "output_segment_samples": 55959
+          }
+        },
+        {
+          "id": "pacing-moderate",
+          "label": "Generated moderate pacing",
+          "flaw": "pacing",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pacing-moderate.wav",
+          "sha256": "be7178208851985b8cb7d9d7f6d785b8a3daad88ed89098969b2bf662ea0bc25",
+          "duration": 25.6894375,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 10.523625,
+              "end": 13.3851875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              31
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 15.2451875,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.65,
+            "pitch_preserving": true,
+            "output_segment_samples": 45785
+          }
+        },
+        {
+          "id": "pacing-severe",
+          "label": "Generated severe pacing",
+          "flaw": "pacing",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/jfk-learning/pacing-severe.wav",
+          "sha256": "7ce0e723738810c8e0bb2b730d27156f600a22725d805aa2aa4fe5ce6fe81a2f",
+          "duration": 25.188625,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 10.523625,
+              "end": 12.884375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              22,
+              31
+            ],
+            "reference_start": 10.523625,
+            "reference_end": 15.2451875,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 2.0,
+            "pitch_preserving": true,
+            "output_segment_samples": 37772
+          }
+        }
+      ]
+    },
+    {
+      "id": "reagan-remembrance",
+      "title": "A moment of remembrance",
+      "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+      "speaker": "Ronald Reagan",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "source_offset_seconds": 0.4802,
+      "source_end_seconds": 24.4297,
+      "transcript": "Ladies and gentlemen, I'd planned to speak to you tonight to report on the state of the Union, but the events of earlier today have led me to change those plans. Today is a day for mourning and remembering. Nancy and I are pained to the core by the tragedy of the shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss.",
+      "source_url": "https://docsteach.org/document/reagan-challenger/",
+      "transcript_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+      "license": "Public domain (United States federal government work)",
+      "license_url": "https://docsteach.org/document/reagan-challenger/",
+      "duration": 23.9495,
+      "audio": "data/references/reagan-remembrance.wav",
+      "sha256": "f4834e762262ebb31246c06bbb41c1b5d32f693321b8c0f2879b84a66dcf63df",
+      "alignment_validation": {
+        "confidence": 0.889,
+        "coverage": 0.9595,
+        "transcript_agreement": 0.7632,
+        "recognized_text": "THAT ISN'T GENTLEMEN I'D PLAN TO SPEAK TO YOU TO NI TO REPORT ON THE STATE OF THE UNION FOR THE EVENTS OF EARLIER TO DAY HAVE LED ME TO CHANGE THOSE PLANS TO DAY IS A DAY FOR MORNING AND REMEMBERY NANCY AND I ARE PAYING TO THE CORPS IT THE TRAGEDY OF THE SHUTTLE CHALLENGER WE KNOW WE SHARE THIS PAIN WITH ALL THE PEOPLE OF OUR COUNTRY THIS IS TRULY U NATIONAL LAWS"
+      },
+      "synthetic": false,
+      "variants": [
+        {
+          "id": "clean",
+          "label": "Original clean control",
+          "flaw": "clean",
+          "severity": "control",
+          "synthetic": false,
+          "audio": "data/variants/reagan-remembrance/clean.wav",
+          "sha256": "f4834e762262ebb31246c06bbb41c1b5d32f693321b8c0f2879b84a66dcf63df",
+          "duration": 23.9495,
+          "labels": [],
+          "transform": {
+            "operation": "identity"
+          }
+        },
+        {
+          "id": "energy-mild",
+          "label": "Generated mild energy",
+          "flaw": "energy",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/energy-mild.wav",
+          "sha256": "5ebd6f17248d14ff8e8a06e09acb18317b45cf10fe011f6d9c79508b37962a0f",
+          "duration": 23.9495,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 6.9026875,
+              "end": 8.483375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "local_gain",
+            "reduction_db": 5.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-moderate",
+          "label": "Generated moderate energy",
+          "flaw": "energy",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/energy-moderate.wav",
+          "sha256": "dd5b8cc00e970293aac4af58023f193ad1d3a499807b29b5f5eca929307f5658",
+          "duration": 23.9495,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 6.9026875,
+              "end": 8.483375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "local_gain",
+            "reduction_db": 9.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-severe",
+          "label": "Generated severe energy",
+          "flaw": "energy",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/energy-severe.wav",
+          "sha256": "abb3cfaf24b0f47cc4a1d3b91358d8f8373bb895eada5c48505a23f565a6247e",
+          "duration": 23.9495,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 6.9026875,
+              "end": 8.483375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "local_gain",
+            "reduction_db": 14.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "pauses-mild",
+          "label": "Generated mild pauses",
+          "flaw": "pauses",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pauses-mild.wav",
+          "sha256": "fe76e85f8571ba8833ab8919ff40cb4351dec4925b4dd307e08364cd2032bfc2",
+          "duration": 24.5995,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 7.0228125,
+              "end": 8.253
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "insert_silence",
+            "inserted_seconds": 0.65,
+            "insertion_seconds": 7.312875
+          }
+        },
+        {
+          "id": "pauses-moderate",
+          "label": "Generated moderate pauses",
+          "flaw": "pauses",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pauses-moderate.wav",
+          "sha256": "d078032c35b0789c3ca969586e70c542c6e86c1385ac68a68a15379ae54fefc0",
+          "duration": 25.0495,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 7.0228125,
+              "end": 8.703
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.1,
+            "insertion_seconds": 7.312875
+          }
+        },
+        {
+          "id": "pauses-severe",
+          "label": "Generated severe pauses",
+          "flaw": "pauses",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pauses-severe.wav",
+          "sha256": "7503c99896578b59f1e9f4060ca880be887a672a8d22e2369d3d68b5391c33b9",
+          "duration": 25.7495,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 7.0228125,
+              "end": 9.403
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              29
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 8.483375,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.8,
+            "insertion_seconds": 7.312875
+          }
+        },
+        {
+          "id": "pacing-mild",
+          "label": "Generated mild pacing",
+          "flaw": "pacing",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pacing-mild.wav",
+          "sha256": "4a67aba38b9f52bef5b9fab2d2724621a4728538cacb06ca14ce9e6d59ead520",
+          "duration": 22.906875,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 6.9026875,
+              "end": 9.8816875
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              33
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 10.9243125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.35,
+            "pitch_preserving": true,
+            "output_segment_samples": 47664
+          }
+        },
+        {
+          "id": "pacing-moderate",
+          "label": "Generated moderate pacing",
+          "flaw": "pacing",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pacing-moderate.wav",
+          "sha256": "6218d00449bb48d5e08c60f9592e997d200f867c78eae381ee563a497d5f8bfd",
+          "duration": 22.36525,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 6.9026875,
+              "end": 9.3400625
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              33
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 10.9243125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.65,
+            "pitch_preserving": true,
+            "output_segment_samples": 38998
+          }
+        },
+        {
+          "id": "pacing-severe",
+          "label": "Generated severe pacing",
+          "flaw": "pacing",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-remembrance/pacing-severe.wav",
+          "sha256": "62ebf4bddad3b79bc30be8585b33b6c57df63ed917bcb531ab988ea6cdfa6bdd",
+          "duration": 21.9386875,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 6.9026875,
+              "end": 8.9135
+            }
+          ],
+          "transform": {
+            "word_range": [
+              24,
+              33
+            ],
+            "reference_start": 6.9026875,
+            "reference_end": 10.9243125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 2.0,
+            "pitch_preserving": true,
+            "output_segment_samples": 32173
+          }
+        }
+      ]
+    },
+    {
+      "id": "reagan-families",
+      "title": "Speaking to the families",
+      "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+      "speaker": "Ronald Reagan",
+      "source_group": "reagan-challenger-19860128",
+      "split": "test",
+      "source_offset_seconds": 64.4403,
+      "source_end_seconds": 86.4524,
+      "transcript": "For the families of the seven, we cannot bear, as you do, the full impact of this tragedy. But we feel the loss, and we're thinking about you so very much. Your loved ones were daring and brave, and they had that special grace, that special spirit that says, ``Give me a challenge, and I'll meet it with joy.",
+      "source_url": "https://docsteach.org/document/reagan-challenger/",
+      "transcript_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+      "license": "Public domain (United States federal government work)",
+      "license_url": "https://docsteach.org/document/reagan-challenger/",
+      "duration": 22.0120625,
+      "audio": "data/references/reagan-families.wav",
+      "sha256": "58f81f9c9a067a1658646bb0d31f630b3c7cc24dc9bbe9ee52e59e97011a0a66",
+      "alignment_validation": {
+        "confidence": 0.9746,
+        "coverage": 1.0,
+        "transcript_agreement": 0.9667,
+        "recognized_text": "TION TOGETHER THE FAMILIES OF THE SEVEN WE CANNOT BEAR AS YOU DO THE FULL IMPACT OF THIS TRAGEDY BUT WE FEEL THE LOSS AND WE'RE THINKING ABOUT YOU SO VERY MUCH YOUR LOVED ONES WERE DARING AND BRAVE AND THEY HAD THAT SPECIAL GRACE THAT SPECIAL SPIRIT THAT SAYS GIVE ME A CHALLENGE AND I'LL MEET IT WITH JOY"
+      },
+      "synthetic": false,
+      "variants": [
+        {
+          "id": "clean",
+          "label": "Original clean control",
+          "flaw": "clean",
+          "severity": "control",
+          "synthetic": false,
+          "audio": "data/variants/reagan-families/clean.wav",
+          "sha256": "58f81f9c9a067a1658646bb0d31f630b3c7cc24dc9bbe9ee52e59e97011a0a66",
+          "duration": 22.0120625,
+          "labels": [],
+          "transform": {
+            "operation": "identity"
+          }
+        },
+        {
+          "id": "energy-mild",
+          "label": "Generated mild energy",
+          "flaw": "energy",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/energy-mild.wav",
+          "sha256": "a74c01d578da5f8808102b6aace31809a22aea0b1d38bd38c2a3c7b3a2ea2e37",
+          "duration": 22.0120625,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.5846875,
+              "end": 10.0455
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "local_gain",
+            "reduction_db": 5.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-moderate",
+          "label": "Generated moderate energy",
+          "flaw": "energy",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/energy-moderate.wav",
+          "sha256": "2f21a62349eeff8e7b17c890d39f2fddcf40e1d412648fff1a33241783968611",
+          "duration": 22.0120625,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.5846875,
+              "end": 10.0455
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "local_gain",
+            "reduction_db": 9.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "energy-severe",
+          "label": "Generated severe energy",
+          "flaw": "energy",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/energy-severe.wav",
+          "sha256": "3c1b34fd082ab36286e961e217a88503dac912ad9e23eeaff72cdda2a1e99976",
+          "duration": 22.0120625,
+          "labels": [
+            {
+              "type": "energy",
+              "start": 8.5846875,
+              "end": 10.0455
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "local_gain",
+            "reduction_db": 14.0,
+            "ramp_seconds": 0.01
+          }
+        },
+        {
+          "id": "pauses-mild",
+          "label": "Generated mild pauses",
+          "flaw": "pauses",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pauses-mild.wav",
+          "sha256": "e6017d41fed87cc6172e00c942b4d070e500f65b292d2413832243c559ca1ad0",
+          "duration": 22.6620625,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.6646875,
+              "end": 9.4148125
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "insert_silence",
+            "inserted_seconds": 0.65,
+            "insertion_seconds": 8.71475
+          }
+        },
+        {
+          "id": "pauses-moderate",
+          "label": "Generated moderate pauses",
+          "flaw": "pauses",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pauses-moderate.wav",
+          "sha256": "338118198f459057f4f9999820180e19a0d9f0402c66495e4fac57d25063e4d5",
+          "duration": 23.1120625,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.6646875,
+              "end": 9.8648125
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.1,
+            "insertion_seconds": 8.71475
+          }
+        },
+        {
+          "id": "pauses-severe",
+          "label": "Generated severe pauses",
+          "flaw": "pauses",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pauses-severe.wav",
+          "sha256": "28a34b4df7ebadeef1fb813c7b61dec611d50b3fd6207b12056bbe0a528c4fcf",
+          "duration": 23.8120625,
+          "labels": [
+            {
+              "type": "pauses",
+              "start": 8.6646875,
+              "end": 10.5648125
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              24
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 10.0455,
+            "operation": "insert_silence",
+            "inserted_seconds": 1.8,
+            "insertion_seconds": 8.71475
+          }
+        },
+        {
+          "id": "pacing-mild",
+          "label": "Generated mild pacing",
+          "flaw": "pacing",
+          "severity": "mild",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pacing-mild.wav",
+          "sha256": "363fa1206bcbc2c77597b7225c9e79a709c630715e0e9f408769c5d4e14cdf22",
+          "duration": 21.3324375,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.5846875,
+              "end": 10.5265
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              28
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 11.206125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.35,
+            "pitch_preserving": true,
+            "output_segment_samples": 31069
+          }
+        },
+        {
+          "id": "pacing-moderate",
+          "label": "Generated moderate pacing",
+          "flaw": "pacing",
+          "severity": "moderate",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pacing-moderate.wav",
+          "sha256": "5bf7f102f86fe3ea4c3605f0fd74a3a50b9e51a68e88050ac9f14041fa422c23",
+          "duration": 20.979375,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.5846875,
+              "end": 10.1734375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              28
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 11.206125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 1.65,
+            "pitch_preserving": true,
+            "output_segment_samples": 25420
+          }
+        },
+        {
+          "id": "pacing-severe",
+          "label": "Generated severe pacing",
+          "flaw": "pacing",
+          "severity": "severe",
+          "synthetic": true,
+          "audio": "data/variants/reagan-families/pacing-severe.wav",
+          "sha256": "ba09741a8bb86546dbbb274a3319eeb236332cc3ad8027da802090f1ec37ee6d",
+          "duration": 20.701375,
+          "labels": [
+            {
+              "type": "pacing",
+              "start": 8.5846875,
+              "end": 9.8954375
+            }
+          ],
+          "transform": {
+            "word_range": [
+              19,
+              28
+            ],
+            "reference_start": 8.5846875,
+            "reference_end": 11.206125,
+            "operation": "phase_vocoder_time_stretch",
+            "rate": 2.0,
+            "pitch_preserving": true,
+            "output_segment_samples": 20972
+          }
+        }
+      ]
+    }
+  ]
+}

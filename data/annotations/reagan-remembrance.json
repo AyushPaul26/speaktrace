@@ -1,0 +1,457 @@
+{
+  "purpose": "Generator region selection only; never inference input",
+  "words": [
+    {
+      "word": "ladies",
+      "start": 0.1801,
+      "end": 0.4002,
+      "score": 0.497
+    },
+    {
+      "word": "and",
+      "start": 0.4202,
+      "end": 0.5002,
+      "score": 0.2915
+    },
+    {
+      "word": "gentlemen",
+      "start": 0.5402,
+      "end": 0.9204,
+      "score": 0.9659
+    },
+    {
+      "word": "i'd",
+      "start": 1.4406,
+      "end": 1.5406,
+      "score": 0.9111
+    },
+    {
+      "word": "planned",
+      "start": 1.6206,
+      "end": 1.9008,
+      "score": 0.6724
+    },
+    {
+      "word": "to",
+      "start": 1.9208,
+      "end": 1.9808,
+      "score": 0.9612
+    },
+    {
+      "word": "speak",
+      "start": 2.0408,
+      "end": 2.2609,
+      "score": 0.9999
+    },
+    {
+      "word": "to",
+      "start": 2.3409,
+      "end": 2.421,
+      "score": 0.9984
+    },
+    {
+      "word": "you",
+      "start": 2.481,
+      "end": 2.541,
+      "score": 0.9856
+    },
+    {
+      "word": "tonight",
+      "start": 2.601,
+      "end": 2.9212,
+      "score": 0.5931
+    },
+    {
+      "word": "to",
+      "start": 2.9612,
+      "end": 3.0612,
+      "score": 0.9931
+    },
+    {
+      "word": "report",
+      "start": 3.2813,
+      "end": 3.6214,
+      "score": 0.9785
+    },
+    {
+      "word": "on",
+      "start": 3.6615,
+      "end": 3.7015,
+      "score": 0.8664
+    },
+    {
+      "word": "the",
+      "start": 3.7615,
+      "end": 3.8215,
+      "score": 0.992
+    },
+    {
+      "word": "state",
+      "start": 3.8615,
+      "end": 4.0616,
+      "score": 0.9985
+    },
+    {
+      "word": "of",
+      "start": 4.1016,
+      "end": 4.1416,
+      "score": 0.9862
+    },
+    {
+      "word": "the",
+      "start": 4.1617,
+      "end": 4.2217,
+      "score": 0.9677
+    },
+    {
+      "word": "union",
+      "start": 4.3417,
+      "end": 4.5418,
+      "score": 0.9993
+    },
+    {
+      "word": "but",
+      "start": 5.5422,
+      "end": 5.6222,
+      "score": 0.3968
+    },
+    {
+      "word": "the",
+      "start": 5.6622,
+      "end": 5.7423,
+      "score": 0.9973
+    },
+    {
+      "word": "events",
+      "start": 5.7823,
+      "end": 6.0424,
+      "score": 0.9942
+    },
+    {
+      "word": "of",
+      "start": 6.1224,
+      "end": 6.1624,
+      "score": 0.9977
+    },
+    {
+      "word": "earlier",
+      "start": 6.2225,
+      "end": 6.4826,
+      "score": 0.9903
+    },
+    {
+      "word": "today",
+      "start": 6.5426,
+      "end": 6.8227,
+      "score": 0.9676
+    },
+    {
+      "word": "have",
+      "start": 6.9027,
+      "end": 7.0228,
+      "score": 0.9137
+    },
+    {
+      "word": "led",
+      "start": 7.603,
+      "end": 7.7231,
+      "score": 0.8395
+    },
+    {
+      "word": "me",
+      "start": 7.7631,
+      "end": 7.8031,
+      "score": 0.9967
+    },
+    {
+      "word": "to",
+      "start": 7.8631,
+      "end": 7.9231,
+      "score": 0.9458
+    },
+    {
+      "word": "change",
+      "start": 7.9832,
+      "end": 8.2433,
+      "score": 0.9892
+    },
+    {
+      "word": "those",
+      "start": 8.3233,
+      "end": 8.4834,
+      "score": 0.9994
+    },
+    {
+      "word": "plans",
+      "start": 8.5834,
+      "end": 8.9636,
+      "score": 0.9992
+    },
+    {
+      "word": "today",
+      "start": 10.104,
+      "end": 10.4241,
+      "score": 0.9984
+    },
+    {
+      "word": "is",
+      "start": 10.7643,
+      "end": 10.8243,
+      "score": 0.9921
+    },
+    {
+      "word": "a",
+      "start": 10.9043,
+      "end": 10.9243,
+      "score": 0.9935
+    },
+    {
+      "word": "day",
+      "start": 10.9643,
+      "end": 11.1244,
+      "score": 0.9814
+    },
+    {
+      "word": "for",
+      "start": 11.1844,
+      "end": 11.3045,
+      "score": 0.8615
+    },
+    {
+      "word": "mourning",
+      "start": 11.3845,
+      "end": 11.7046,
+      "score": 0.8763
+    },
+    {
+      "word": "and",
+      "start": 11.9848,
+      "end": 12.0648,
+      "score": 0.9306
+    },
+    {
+      "word": "remembering",
+      "start": 12.1048,
+      "end": 12.585,
+      "score": 0.6511
+    },
+    {
+      "word": "nancy",
+      "start": 13.7455,
+      "end": 14.0656,
+      "score": 0.9701
+    },
+    {
+      "word": "and",
+      "start": 14.1256,
+      "end": 14.2056,
+      "score": 0.9934
+    },
+    {
+      "word": "i",
+      "start": 14.3457,
+      "end": 14.3657,
+      "score": 0.9996
+    },
+    {
+      "word": "are",
+      "start": 14.4657,
+      "end": 14.5658,
+      "score": 0.994
+    },
+    {
+      "word": "pained",
+      "start": 14.7258,
+      "end": 14.9859,
+      "score": 0.5592
+    },
+    {
+      "word": "to",
+      "start": 15.006,
+      "end": 15.046,
+      "score": 0.9971
+    },
+    {
+      "word": "the",
+      "start": 15.106,
+      "end": 15.166,
+      "score": 0.9935
+    },
+    {
+      "word": "core",
+      "start": 15.206,
+      "end": 15.4461,
+      "score": 0.7431
+    },
+    {
+      "word": "by",
+      "start": 15.5062,
+      "end": 15.5462,
+      "score": 0.0566
+    },
+    {
+      "word": "the",
+      "start": 15.6262,
+      "end": 15.6862,
+      "score": 0.9637
+    },
+    {
+      "word": "tragedy",
+      "start": 15.7262,
+      "end": 16.1464,
+      "score": 0.9678
+    },
+    {
+      "word": "of",
+      "start": 16.1864,
+      "end": 16.2264,
+      "score": 0.9943
+    },
+    {
+      "word": "the",
+      "start": 16.2665,
+      "end": 16.3265,
+      "score": 0.9641
+    },
+    {
+      "word": "shuttle",
+      "start": 16.3665,
+      "end": 16.6266,
+      "score": 0.9793
+    },
+    {
+      "word": "challenger",
+      "start": 16.6866,
+      "end": 17.1268,
+      "score": 0.9512
+    },
+    {
+      "word": "we",
+      "start": 17.9271,
+      "end": 18.0071,
+      "score": 0.9998
+    },
+    {
+      "word": "know",
+      "start": 18.0472,
+      "end": 18.1672,
+      "score": 0.9908
+    },
+    {
+      "word": "we",
+      "start": 18.2472,
+      "end": 18.3473,
+      "score": 0.9375
+    },
+    {
+      "word": "share",
+      "start": 18.4473,
+      "end": 18.6874,
+      "score": 0.9677
+    },
+    {
+      "word": "this",
+      "start": 18.7674,
+      "end": 18.9075,
+      "score": 0.9497
+    },
+    {
+      "word": "pain",
+      "start": 18.9875,
+      "end": 19.2076,
+      "score": 0.9711
+    },
+    {
+      "word": "with",
+      "start": 19.3077,
+      "end": 19.4077,
+      "score": 0.987
+    },
+    {
+      "word": "all",
+      "start": 19.8479,
+      "end": 19.9679,
+      "score": 0.988
+    },
+    {
+      "word": "of",
+      "start": 19.9879,
+      "end": 20.0279,
+      "score": 0.1379
+    },
+    {
+      "word": "the",
+      "start": 20.048,
+      "end": 20.108,
+      "score": 0.9952
+    },
+    {
+      "word": "people",
+      "start": 20.168,
+      "end": 20.4081,
+      "score": 0.9998
+    },
+    {
+      "word": "of",
+      "start": 20.4481,
+      "end": 20.4881,
+      "score": 0.9994
+    },
+    {
+      "word": "our",
+      "start": 20.5882,
+      "end": 20.6682,
+      "score": 0.9993
+    },
+    {
+      "word": "country",
+      "start": 20.7282,
+      "end": 21.0283,
+      "score": 0.967
+    },
+    {
+      "word": "this",
+      "start": 21.8687,
+      "end": 22.0087,
+      "score": 0.9327
+    },
+    {
+      "word": "is",
+      "start": 22.1288,
+      "end": 22.1888,
+      "score": 0.8749
+    },
+    {
+      "word": "truly",
+      "start": 22.2688,
+      "end": 22.589,
+      "score": 0.9961
+    },
+    {
+      "word": "a",
+      "start": 22.8891,
+      "end": 22.9091,
+      "score": 0.4458
+    },
+    {
+      "word": "national",
+      "start": 23.0091,
+      "end": 23.4093,
+      "score": 0.9824
+    },
+    {
+      "word": "loss",
+      "start": 23.4893,
+      "end": 23.7694,
+      "score": 0.5654
+    }
+  ],
+  "confidence": 0.889,
+  "coverage": 0.9595,
+  "recognized_text": "THAT ISN'T GENTLEMEN I'D PLAN TO SPEAK TO YOU TO NI TO REPORT ON THE STATE OF THE UNION FOR THE EVENTS OF EARLIER TO DAY HAVE LED ME TO CHANGE THOSE PLANS TO DAY IS A DAY FOR MORNING AND REMEMBERY NANCY AND I ARE PAYING TO THE CORPS IT THE TRAGEDY OF THE SHUTTLE CHALLENGER WE KNOW WE SHARE THIS PAIN WITH ALL THE PEOPLE OF OUR COUNTRY THIS IS TRULY U NATIONAL LAWS",
+  "transcript_agreement": 0.7632,
+  "model": "facebook/wav2vec2-base-960h",
+  "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "alignment_version": "ctc-viterbi-1",
+  "cached": false
+}

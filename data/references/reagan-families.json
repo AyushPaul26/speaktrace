@@ -1,0 +1,26 @@
+{
+  "id": "reagan-families",
+  "title": "Speaking to the families",
+  "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+  "speaker": "Ronald Reagan",
+  "source_group": "reagan-challenger-19860128",
+  "split": "test",
+  "source_offset_seconds": 64.4403,
+  "source_end_seconds": 86.4524,
+  "transcript": "For the families of the seven, we cannot bear, as you do, the full impact of this tragedy. But we feel the loss, and we're thinking about you so very much. Your loved ones were daring and brave, and they had that special grace, that special spirit that says, ``Give me a challenge, and I'll meet it with joy.",
+  "source_url": "https://docsteach.org/document/reagan-challenger/",
+  "transcript_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+  "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+  "license": "Public domain (United States federal government work)",
+  "license_url": "https://docsteach.org/document/reagan-challenger/",
+  "duration": 22.0120625,
+  "audio": "data/references/reagan-families.wav",
+  "sha256": "58f81f9c9a067a1658646bb0d31f630b3c7cc24dc9bbe9ee52e59e97011a0a66",
+  "alignment_validation": {
+    "confidence": 0.9746,
+    "coverage": 1.0,
+    "transcript_agreement": 0.9667,
+    "recognized_text": "TION TOGETHER THE FAMILIES OF THE SEVEN WE CANNOT BEAR AS YOU DO THE FULL IMPACT OF THIS TRAGEDY BUT WE FEEL THE LOSS AND WE'RE THINKING ABOUT YOU SO VERY MUCH YOUR LOVED ONES WERE DARING AND BRAVE AND THEY HAD THAT SPECIAL GRACE THAT SPECIAL SPIRIT THAT SAYS GIVE ME A CHALLENGE AND I'LL MEET IT WITH JOY"
+  },
+  "synthetic": false
+}

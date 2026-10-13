@@ -1,0 +1,37 @@
+[
+  {
+    "id": "jfk-american-university-19630610",
+    "speaker": "John F. Kennedy",
+    "title": "Commencement Address at American University",
+    "date": "1963-06-10",
+    "source_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+    "transcript_url": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/american-university-19630610",
+    "license": "Public domain (United States federal government work)",
+    "license_url": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-190-002",
+    "rights_evidence": "Item JFKWHA-190-002, Copyright Status: Public Domain. Archival creator: Department of Defense, White House Communications Agency.",
+    "download_url": "https://static.jfklibrary.org/0y71h7t40eul01xc4g8yx8438jpj1gg3.mp3",
+    "downloaded_date": "2026-10-13",
+    "local_file": "data/raw/jfk-american-university.mp3",
+    "sha256": "546739606ee424590fbe757474084d18fd3d1f99b1e6f7ca4363ecb412ad38da",
+    "citation": "White House Audio Collection. Commencement Address at American University, Washington, D.C., 10 June 1963. John F. Kennedy Presidential Library and Museum. JFKWHA-190-002.",
+    "split": "dev"
+  },
+  {
+    "id": "reagan-challenger-19860128",
+    "speaker": "Ronald Reagan",
+    "title": "Address to the Nation on the Explosion of the Space Shuttle Challenger",
+    "date": "1986-01-28",
+    "source_url": "https://docsteach.org/document/reagan-challenger/",
+    "transcript_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+    "license": "Public domain (United States federal government work)",
+    "license_url": "https://docsteach.org/document/reagan-challenger/",
+    "rights_evidence": "DocsTeach item National Archives Identifier 6014714: Public Domain, Free of Known Copyright Restrictions. Commons audio file marked PD US Government and public domain mark.",
+    "audio_provenance_url": "https://commons.wikimedia.org/wiki/File:Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Ronald_Reagan_speaks_on_the_Challenger_Space_Shuttle_Disaster.ogg",
+    "downloaded_date": "2026-10-13",
+    "local_file": "data/raw/reagan-challenger.ogg",
+    "sha256": "ca211109d994b834e011c3e921778cee4a3db3c9338a8766ee06c4e9b276e514",
+    "citation": "Video Recording #242; President Ronald Reagan's Speech on Space Shuttle Challenger; 1/28/1986; Collection RR-WHTV, Records of the White House Television Office; Ronald Reagan Library; National Archives Identifier 6014714. Audio derivative via Wikimedia Commons from Reagan Library governmental channel.",
+    "split": "test"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "jfk-welcome",
+    "title": "A university welcome",
+    "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+    "speaker": "John F. Kennedy",
+    "source_group": "jfk-american-university-19630610",
+    "split": "dev",
+    "source_offset_seconds": 39.0446,
+    "source_end_seconds": 61.0586,
+    "transcript": "distinguished guests, ladies and gentlemen: It is with great pride that I participate in this ceremony of the American University, sponsored by the Methodist Church, founded by Bishop John Fletcher Hurst, and first opened by President Woodrow Wilson in nineteen fourteen."
+  },
+  {
+    "id": "jfk-learning",
+    "title": "Learning and public service",
+    "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+    "speaker": "John F. Kennedy",
+    "source_group": "jfk-american-university-19630610",
+    "split": "dev",
+    "source_offset_seconds": 80.8879,
+    "source_end_seconds": 108.4373,
+    "transcript": "By sponsoring this institution of higher learning for all who wish to learn, whatever their color or their creed, the Methodists of this area and the Nation deserve the Nation's thanks, and I commend all those who are today graduating. Professor Woodrow Wilson once said that every man sent out from a university should be a man of his nation as well as a man of his time."
+  },
+  {
+    "id": "reagan-remembrance",
+    "title": "A moment of remembrance",
+    "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+    "speaker": "Ronald Reagan",
+    "source_group": "reagan-challenger-19860128",
+    "split": "test",
+    "source_offset_seconds": 0.4802,
+    "source_end_seconds": 24.4297,
+    "transcript": "Ladies and gentlemen, I'd planned to speak to you tonight to report on the state of the Union, but the events of earlier today have led me to change those plans. Today is a day for mourning and remembering. Nancy and I are pained to the core by the tragedy of the shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss."
+  },
+  {
+    "id": "reagan-families",
+    "title": "Speaking to the families",
+    "description": "Public-domain archive excerpt with labelled generated delivery changes.",
+    "speaker": "Ronald Reagan",
+    "source_group": "reagan-challenger-19860128",
+    "split": "test",
+    "source_offset_seconds": 64.4403,
+    "source_end_seconds": 86.4524,
+    "transcript": "For the families of the seven, we cannot bear, as you do, the full impact of this tragedy. But we feel the loss, and we're thinking about you so very much. Your loved ones were daring and brave, and they had that special grace, that special spirit that says, ``Give me a challenge, and I'll meet it with joy."
+  }
+]

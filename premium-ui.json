@@ -1,0 +1,19 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["web"],
+  "locale": "en-US",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": ["Form", "Scrollbar", "Toast"],
+  "requiredCommands": ["syntax", "diagnosticsSyntax", "unit", "accessibility", "browser"],
+  "commands": {
+    "syntax": "node --check web/app.js",
+    "diagnosticsSyntax": "node --check web/diagnostics.js",
+    "unit": "node --test web/core.test.cjs web/diagnostics.test.cjs",
+    "accessibility": "python web/check_ui.py",
+    "browser": "node scripts/browser_smoke.cjs"
+  },
+  "evidence": {
+    "failurePaths": "reports/browser-smoke.json",
+    "accessibility": "docs/frontend-verification.md"
+  }
+}

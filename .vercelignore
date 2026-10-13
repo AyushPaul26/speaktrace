@@ -1,0 +1,17 @@
+.git
+.venv
+.cache
+.models
+.runtime
+runtime
+__pycache__
+.pytest_cache
+node_modules
+data/raw
+dist
+tmp
+reports/browser-smoke-failure.jpg
+reports/tests-current.txt
+.env
+.env.*
+*.log

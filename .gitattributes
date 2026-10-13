@@ -1,0 +1,6 @@
+# Preserve exact bytes across platforms: dataset and evaluation files record hashes.
+* -text
+*.pdf binary
+*.wav binary
+*.jpg binary
+*.png binary

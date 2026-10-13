@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef3f5">
+  <meta name="description" content="Compare two readings through real audio alignment, measured differences and playable evidence. Transparent speech comparison with local and hosted CPU options.">
+  <title>Analysis studio · SpeakTrace</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23087d77'/%3E%3Cpath d='M9 17v6m6-12v18m5-23v28m5-20v14m6-11v8' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/web/tokens.css">
+  <link rel="stylesheet" href="/web/styles.css">
+  <script src="/web/core.js" defer></script>
+  <script src="/web/hosted.js" defer></script>
+  <script src="/web/diagnostics.js" defer></script>
+  <script src="/web/app.js" defer></script>
+</head>
+<body>
+  <noscript><p class="notice">SpeakTrace needs JavaScript to analyze audio. Enable JavaScript in your browser and reload.</p></noscript>
+  <a class="skip-link" href="#workspace">Skip to analysis</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="SpeakTrace home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 13v6m5-11v16m6-21v26m6-20v14m5-10v6"/></svg></span><span>Speak<span class="brand-light">Trace</span></span><span class="prototype-label" id="deployment-label">ANALYSIS STUDIO</span></a>
+    <div class="topbar-right"><span id="connection-status" class="connection"><span class="status-dot"></span>Connecting to studio</span><button disabled type="button" class="button ghost compact" id="methodology-button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.5"/></svg>How it works</button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="library" aria-label="Recording library">
+      <div class="library-heading"><span class="eyebrow">YOUR WORKSPACE</span><span class="library-symbol" aria-hidden="true">↗</span></div>
+      <button disabled type="button" class="workspace-nav selected" id="demo-mode" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6v14H4zm10 0h6v14h-6M7 9v6m10-6v6"/></svg>Explore examples<span id="demo-count" class="count">—</span></button>
+      <button disabled type="button" class="workspace-nav" id="upload-mode" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg>Your recordings</button>
+      <div class="library-section-title"><h2>Example library</h2><button disabled class="icon-button" type="button" id="refresh-library" aria-label="Refresh example library"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a8 8 0 1 0 0 8M20 3v5h-5"/></svg></button></div>
+      <div id="library-notice" class="small muted library-notice" role="status">Loading available recordings…</div>
+      <div id="demo-list" class="demo-list"></div>
+      <div class="library-foot"><div class="local-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M8 10V7a4 4 0 0 1 8 0v3M6 10h12v11H6z"/></svg></div><h3 id="privacy-heading">Know where your audio goes.</h3><p id="privacy-summary">Connecting to check how this studio processes audio.</p><button disabled class="text-button" type="button" id="privacy-button">About audio processing <span aria-hidden="true">↗</span></button></div>
+    </aside>
+    <main id="workspace" class="workspace" tabindex="-1">
+      <div class="workspace-intro"><div><p class="eyebrow">THE ANALYSIS STUDIO</p><h1>Hear it. See it. Refine it.</h1><p class="intro-copy">A closer look at the pace, pauses, and energy behind a reading.</p></div><span class="local-badge"><span class="status-dot"></span><span id="device-badge">CONNECTING</span></span></div>
+      <div class="workspace-grid">
+        <div class="analysis-column">
+          <section class="setup panel" id="setup-panel" aria-labelledby="comparison-title">
+            <div class="section-heading"><div><p class="eyebrow">COMPARISON</p><h2 id="comparison-title">Choose a recording to begin</h2></div><div class="section-actions"><button type="button" class="text-button small" id="edit-comparison" aria-expanded="false" disabled hidden>Edit inputs</button><span id="comparison-kind" class="subtle-tag">EXAMPLE</span></div></div>
+            <p id="completed-selection" class="small muted" hidden></p>
+            <div id="demo-setup"><p class="muted" id="demo-description">Explore a real archive recording and compare a controlled variation.</p><div class="source-line" id="source-line"></div><fieldset id="variant-fieldset" class="variant-fieldset"><legend>Compare with</legend><div id="variant-options" class="variant-options"></div></fieldset><p id="variant-note" class="small muted variant-note">Generated variations are labelled separately from analysis findings.</p></div>
+            <form id="upload-form" novalidate hidden>
+              <p class="muted">Two readings. One shared transcript. Start with short, clear recordings.</p>
+              <p id="privacy-notice" class="notice" hidden>Cloud analysis: clicking Analyze sends both recordings and the transcript to this Vercel service. Temporary server audio is removed after the request. Only upload audio you have permission to share. For audio that must stay on your computer, use the local app.</p>
+              <div class="upload-grid">
+                <div class="file-field" id="reference-drop"><label class="field-label" for="reference-file">Reference recording</label><input id="reference-file" name="reference" type="file" accept=".wav,.flac,.ogg,.mp3" aria-describedby="audio-help reference-error"><div class="file-meta"><span id="reference-file-name">No recording selected</span><button disabled type="button" class="text-button" id="reference-remove" hidden>Remove</button></div><p id="reference-error" class="field-error"></p></div>
+                <div class="file-field" id="participant-drop"><label class="field-label" for="participant-file">Participant recording</label><input id="participant-file" name="participant" type="file" accept=".wav,.flac,.ogg,.mp3" aria-describedby="audio-help participant-error"><div class="file-meta"><span id="participant-file-name">No recording selected</span><button disabled type="button" class="text-button" id="participant-remove" hidden>Remove</button></div><p id="participant-error" class="field-error"></p></div>
+              </div>
+              <p id="audio-help" class="small muted">WAV, FLAC, OGG, or MP3 · 2–60 seconds · up to 20 MB each. You can also drop a file onto either field.</p>
+              <div class="transcript-label"><label for="transcript-input" class="field-label">Shared English transcript</label><span id="word-count" class="small mono muted">0 / 150 words</span></div>
+              <textarea id="transcript-input" name="transcript" class="resize-none" rows="4" maxlength="1600" placeholder="Enter exactly the words spoken in both recordings…" aria-describedby="transcript-help transcript-error"></textarea><p id="transcript-error" class="field-error"></p><p id="transcript-help" class="small muted">Up to 150 words / 1,600 characters. Write numbers as spoken words.</p>
+            </form>
+            <div class="analysis-action"><div class="action-caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 9-13h-7z"/></svg><span id="compute-note">Actual audio alignment. Measured evidence.</span></div><button class="button primary analyze-button" type="button" id="analyze-button" disabled><span class="button-spinner" aria-hidden="true"></span><span>Analyze comparison</span><span aria-hidden="true">↗</span></button></div>
+            <div id="job-status" class="job-status" hidden><div class="job-status-row"><span id="job-stage" role="status">Preparing analysis</span><span id="job-elapsed" class="mono small"></span></div><progress id="job-progress" max="100" aria-label="Analysis stages completed"></progress><div class="job-status-row small muted"><span id="job-help">Stage progress, not a time estimate.</span><button disabled type="button" class="text-button" id="stop-watching">Stop watching</button></div></div>
+            <div id="analysis-notice" class="notice" role="status" hidden><span id="analysis-notice-text"></span><button disabled type="button" class="text-button" id="resume-job" hidden>Resume progress</button></div>
+          </section>
+          <section class="audio-panel panel" aria-labelledby="audio-title">
+            <div class="section-heading"><div><p class="eyebrow">LISTEN & COMPARE</p><h2 id="audio-title">Every difference has a location.</h2></div><span id="audio-state" class="subtle-tag">AWAITING ANALYSIS</span></div>
+            <div class="waveform-legend"><span><i class="legend-dot reference-dot"></i>Reference</span><span><i class="legend-dot participant-dot"></i>Participant</span><span class="axis-note">Each track has its own time axis</span></div>
+            <div id="reference-track" class="audio-track"></div>
+            <div id="participant-track" class="audio-track"></div>
+            <div class="chart-caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13M9 8l12-2"/><ellipse cx="5" cy="18" rx="4" ry="3"/><ellipse cx="17" cy="16" rx="4" ry="3"/></svg><span id="chart-caption">Run a comparison to reveal measured waveforms and word alignment.</span></div>
+          </section>
+          <section class="diagnostics-panel panel" aria-labelledby="diagnostics-title">
+            <div class="section-heading"><div><p class="eyebrow">ACOUSTIC DETAIL</p><h2 id="diagnostics-title">Compare the contours</h2></div></div>
+            <div class="diagnostic-controls" role="group" aria-label="Acoustic feature"><button class="button outline compact" type="button" data-diagnostic="rms_db" aria-pressed="true" disabled>Energy</button><button class="button outline compact" type="button" data-diagnostic="pitch_st" aria-pressed="false" disabled>Pitch</button><button class="button outline compact" type="button" data-diagnostic="spectral_centroid" aria-pressed="false" disabled>Spectrum</button></div>
+            <p id="diagnostic-description" class="small muted">Analyze audio to compare measured acoustic features at corresponding transcript words.</p>
+            <div id="diagnostic-chart"></div>
+            <details class="diagnostic-values" id="diagnostic-values" hidden><summary>Inspect values and seek a word</summary><div class="diagnostic-table-wrap"><table><thead><tr><th scope="col">Word</th><th scope="col">Reference</th><th scope="col">Participant</th></tr></thead><tbody id="diagnostic-table"></tbody></table></div></details>
+          </section>
+          <section class="transcript-panel panel" aria-labelledby="transcript-title"><div class="section-heading"><div><p class="eyebrow">WORD BY WORD</p><h2 id="transcript-title">The shared transcript</h2></div><span class="small muted" id="transcript-action">Select a word after analysis</span></div><div id="transcript-words" class="transcript-words"><p class="muted">Your transcript will appear here.</p></div><div class="transcript-key"><span><i class="legend-dot pacing-dot"></i>Pacing</span><span><i class="legend-dot pauses-dot"></i>Pauses</span><span><i class="legend-dot energy-dot"></i>Energy</span><span>Highlighted words link to measured evidence</span></div></section>
+          <section class="findings-panel panel" aria-labelledby="findings-title"><div class="section-heading"><div><p class="eyebrow">MEASURED DIFFERENCES</p><h2 id="findings-title">Evidence timeline</h2></div><span id="findings-count" class="subtle-tag">0 INTERVALS</span></div><div id="findings-list" class="findings-list"><div class="empty-state"><span class="empty-crosshair" aria-hidden="true">⌖</span><div><h3>Start with the sound.</h3><p>Analyze a comparison to see where delivery changes, and why it was flagged.</p></div></div></div></section>
+        </div>
+        <aside class="inspector-column" aria-label="Analysis summary and evidence">
+          <section class="summary-panel panel" aria-labelledby="summary-title"><div class="section-heading"><h2 id="summary-title">At a glance</h2><span id="result-label" class="tiny-tag">NO RESULT YET</span></div><div class="overall-score"><span id="overall-score">—</span><div><strong>Reference similarity</strong><span id="score-caption">A comparison, not a grade.</span></div></div><div id="dimension-scores" class="dimension-scores"></div><p id="summary-caption" class="summary-caption">Scores appear only after the audio has been aligned and measured.</p><div id="result-warnings" class="result-warnings" hidden></div><div id="result-meta" class="result-meta" hidden></div></section>
+          <section class="evidence-panel panel" aria-labelledby="evidence-title"><div class="section-heading"><h2 id="evidence-title">Inside the evidence</h2><svg class="icon muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6M4 4v6m16-6h-6m6 0v6M4 20h6m-6 0v-6m16 6h-6m6 0v-6M8 12h8m-4-4v8"/></svg></div><div id="evidence-detail"><div class="inspector-empty"><div class="evidence-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><h3>Follow a moment.</h3><p>Select a flagged interval to hear it and inspect the measurements behind it.</p></div></div></section>
+          <section class="rubric-panel panel" aria-labelledby="rubric-title"><div class="section-heading"><h2 id="rubric-title">Your comparison rubric</h2><button disabled type="button" class="text-button small" id="reset-weights">Reset</button></div><p class="small muted">Choose what matters. Weights are normalized for each analysis.</p><div id="rubric-weights"></div><p id="weight-error" class="field-error" role="status"></p><div id="weight-note" class="small muted">Applied on the next analysis.</div></section>
+          <section class="export-panel" aria-label="Report exports"><button type="button" class="button outline" id="download-json" disabled><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></svg>Download analysis JSON</button><button type="button" class="button ghost" id="print-report" disabled><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H3V8h18v9h-4M7 14h10v7H7zM17 11h1"/></svg>Open printable report <span aria-hidden="true">↗</span></button><p class="small muted">Includes evidence, rubric, and provenance.</p></section>
+        </aside>
+      </div>
+      <footer class="workspace-footer"><span>Built around evidence. Designed for practice.</span><span id="deployment-footer">English · Reference-relative</span></footer>
+    </main>
+  </div>
+  <dialog id="methodology-dialog" aria-labelledby="methodology-title"><div class="dialog-heading"><div><p class="eyebrow">BEHIND THE ANALYSIS</p><h2 id="methodology-title">Evidence, with context.</h2></div><button disabled type="button" class="icon-button" id="close-methodology" aria-label="Close methodology"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 12 6"/></svg></button></div><div class="dialog-body"><p class="dialog-lead">SpeakTrace compares two readings of the same words. It shows how they differ, without pretending there is one right way to speak.</p><div class="method-grid"><div><span class="method-number">01</span><h3>Align the words</h3><p id="method-alignment">A pretrained English speech model locates words in each recording. Poor alignment can cause scoring to be withheld.</p></div><div><span class="method-number">02</span><h3>Measure the difference</h3><p>A fixed rubric compares local pace, pauses, and relative energy. Findings are tied to audio intervals and measurements.</p></div><div><span class="method-number">03</span><h3>Listen with context</h3><p>Replay each interval. A flagged difference is a practice cue, not a diagnosis, emotion label, or universal quality judgment.</p></div></div><h3 id="method-privacy-title">How recordings are processed</h3><p id="method-privacy-text">Connecting to check this studio’s deployment and storage policy. Analysis is enabled after the connection is verified.</p><h3>How to read the evidence</h3><p>Energy is relative to each recording's voiced median, not calibrated loudness. Different recording durations have separate time axes. Generated demo variations are identified as controlled examples; their labels do not enter inference.</p><div id="methodology-server" class="methodology-server"><p class="small muted">Loading the versioned rubric…</p></div></div><div class="dialog-footer"><button disabled type="button" class="button primary" id="methodology-done">Back to the studio</button></div></dialog>
+  <div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

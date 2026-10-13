@@ -1,0 +1,158 @@
+{
+  "started_at": "2026-10-13T11:36:03.903Z",
+  "target": "http://127.0.0.1:8765",
+  "passed": true,
+  "browser": "Headless installed Chrome; fresh nonpersistent context; no personal profile",
+  "controls": [
+    "For stopped-job regression tests only, GET /api/jobs/* requests are held before forwarding, then released after editing. All POSTs create real local analyses. No analysis values, findings, or scores are stubbed."
+  ],
+  "steps": [
+    {
+      "name": "Initial no-result state and disabled diagnostics",
+      "passed": true
+    },
+    {
+      "name": "Real severe-pause demo displays a measured excess pause",
+      "passed": true,
+      "excess_seconds": 1.79,
+      "score": 94.5,
+      "rubric": "reference-relative-1.1.0"
+    },
+    {
+      "name": "Energy toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Pitch toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Spectrum toggle renders real contours and exact word values",
+      "passed": true,
+      "rows": 41,
+      "measured_words": 40
+    },
+    {
+      "name": "Diagnostic table seeks each recording to its own word timestamp",
+      "passed": true,
+      "reference": 14.169,
+      "participant": 15.9694
+    },
+    {
+      "name": "390 px responsive diagnostics, table seek and wrapping",
+      "passed": true,
+      "width": 390,
+      "scrollWidth": 380,
+      "captionWidth": 306
+    },
+    {
+      "name": "Stop watching then edit transcript invalidates the old job",
+      "passed": true,
+      "real_job_id": "79ab60dabb3c4904a98f12d2cf321491",
+      "polling_control": "GET held, then aborted/released; real POST and completed server result"
+    },
+    {
+      "name": "Stop watching then edit file invalidates the old job",
+      "passed": true,
+      "real_job_id": "bc9791938ce84cb08d2eab4a7658b4c0",
+      "polling_control": "GET held, then aborted/released; real POST and completed server result"
+    },
+    {
+      "name": "Displayed device agrees with actual selected local backend",
+      "passed": true,
+      "text": "Model ready · local CPU",
+      "device": "cpu"
+    },
+    {
+      "name": "No page or console errors",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "artifacts": [
+    "reports/studio-final-narrow.jpg",
+    "reports/studio-final.jpg"
+  ],
+  "limitations": [
+    "This run verifies the selected local backend; it does not establish GPU execution or speed."
+  ],
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "requested_device": "cpu",
+    "device": "cpu",
+    "device_name": "CPU",
+    "precision": "float32",
+    "torch_version": "2.8.0+cpu",
+    "cuda_version": null,
+    "fallback_reason": null,
+    "warnings": [],
+    "demo_count": 4,
+    "version": "0.1.0"
+  },
+  "pause_result": {
+    "id": "425b2f9c2485450da99fedd2a62302dc",
+    "rubric": "reference-relative-1.1.0",
+    "score": 94.5,
+    "compute": {
+      "requested_device": "cpu",
+      "device": "cpu",
+      "device_name": "CPU",
+      "precision": "float32",
+      "torch_version": "2.8.0+cpu",
+      "cuda_version": null,
+      "fallback_reason": null,
+      "warnings": [],
+      "runtime_device": "cpu",
+      "alignment_runs": {
+        "reference": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": [],
+          "cached": false
+        },
+        "participant": {
+          "requested_device": "cpu",
+          "device": "cpu",
+          "device_name": "CPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cpu",
+          "cuda_version": null,
+          "fallback_reason": null,
+          "warnings": [],
+          "cached": false
+        }
+      },
+      "feature_device": "cpu",
+      "alignment": "wav2vec2-ctc",
+      "seconds": 8.04,
+      "model": "facebook/wav2vec2-base-960h",
+      "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+      "cached_alignment": false
+    },
+    "findings": [
+      {
+        "type": "pauses",
+        "start": 8.11469,
+        "end": 9.90469,
+        "evidence": {
+          "measurement": "Longest quiet interval between reliable word anchors",
+          "reference": 0,
+          "participant": 1.79,
+          "unit": "s"
+        }
+      }
+    ]
+  },
+  "finished_at": "2026-10-13T11:36:27.052Z"
+}

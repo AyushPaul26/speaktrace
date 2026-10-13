@@ -1,0 +1,30 @@
+/* Generated from DESIGN.md by web/check_ui.py --write-tokens. Do not edit. */
+:root {
+  --color-background: #eef3f5;
+  --color-surface: #ffffff;
+  --color-ink: #152f43;
+  --color-muted: #587082;
+  --color-primary: #08766f;
+  --color-primary-hover: #06665f;
+  --color-primary-soft: #e2f3ef;
+  --color-border: #d6e1e6;
+  --color-pacing: #346cb4;
+  --color-pauses: #a26714;
+  --color-energy: #8160a8;
+  --color-danger: #b53c36;
+  --color-danger-soft: #fff0ee;
+  --color-warning-soft: #fff5df;
+  --color-scrollbar-thumb: #a5b8c4;
+  --color-scrollbar-track: #eef3f5;
+  --color-scrollbar-hover: #718e9f;
+  --color-scrollbar-active: #587082;
+  --font-display: Bahnschrift, Arial Narrow, sans-serif;
+  --font-body: Segoe UI, Helvetica Neue, Arial, sans-serif;
+  --font-mono: Cascadia Code, Consolas, monospace;
+  --radius-control: 0.5rem;
+  --radius-panel: 0.875rem;
+  --radius-pill: 999px;
+  --space-unit: 0.25rem;
+  --space-panel: 1.5rem;
+  --space-section: 2rem;
+}

@@ -1,0 +1,39 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+markers = ["model: requires the downloaded local acoustic model"]
+
+[project]
+name = "speaktrace"
+version = "0.1.0"
+description = "Local speech comparison with timestamped acoustic evidence and optional GPU acceleration"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "fastapi==0.116.1",
+  "uvicorn==0.35.0",
+  "python-multipart==0.0.20",
+  "numpy==2.2.6",
+  "scipy==1.15.3",
+  "soundfile==0.13.1",
+  "transformers==4.57.1",
+  "huggingface-hub==0.36.0",
+  "torch==2.8.0+cpu",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.vercel]
+entrypoint = "api.index:app"
+
+[tool.vercel.scripts]
+build = "python scripts/build_hosted.py"

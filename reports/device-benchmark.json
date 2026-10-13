@@ -1,0 +1,812 @@
+{
+  "created_at": "2026-10-13T11:39:08.475852+00:00",
+  "devices": {
+    "cpu": {
+      "requested_device": "cpu",
+      "compute": {
+        "requested_device": "cpu",
+        "device": "cpu",
+        "device_name": "CPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cu126",
+        "cuda_version": "12.6",
+        "fallback_reason": null,
+        "warnings": []
+      },
+      "source": "reagan-families",
+      "source_audio": "data/references/reagan-families.wav",
+      "source_duration_seconds": 22.0120625,
+      "cache_enabled": false,
+      "cold_alignment_seconds": 20.1322,
+      "warm_alignment_seconds": [
+        1.8125,
+        1.7468,
+        1.7921
+      ],
+      "warm_median_seconds": 1.7921,
+      "alignment": {
+        "words": [
+          {
+            "word": "for",
+            "start": 0.1401,
+            "end": 0.6404,
+            "score": 0.6639
+          },
+          {
+            "word": "the",
+            "start": 1.841,
+            "end": 1.9211,
+            "score": 0.9589
+          },
+          {
+            "word": "families",
+            "start": 1.9611,
+            "end": 2.3413,
+            "score": 0.9939
+          },
+          {
+            "word": "of",
+            "start": 2.4013,
+            "end": 2.4413,
+            "score": 0.9988
+          },
+          {
+            "word": "the",
+            "start": 2.4814,
+            "end": 2.5614,
+            "score": 0.996
+          },
+          {
+            "word": "seven",
+            "start": 2.6214,
+            "end": 2.9216,
+            "score": 0.9932
+          },
+          {
+            "word": "we",
+            "start": 3.9822,
+            "end": 4.0622,
+            "score": 0.9999
+          },
+          {
+            "word": "cannot",
+            "start": 4.1423,
+            "end": 4.4624,
+            "score": 0.9991
+          },
+          {
+            "word": "bear",
+            "start": 4.5425,
+            "end": 4.8026,
+            "score": 0.9894
+          },
+          {
+            "word": "as",
+            "start": 4.9227,
+            "end": 4.9827,
+            "score": 0.9702
+          },
+          {
+            "word": "you",
+            "start": 5.0428,
+            "end": 5.1428,
+            "score": 0.9999
+          },
+          {
+            "word": "do",
+            "start": 5.2429,
+            "end": 5.3429,
+            "score": 0.9999
+          },
+          {
+            "word": "the",
+            "start": 5.463,
+            "end": 5.543,
+            "score": 0.9991
+          },
+          {
+            "word": "full",
+            "start": 5.6031,
+            "end": 5.8232,
+            "score": 0.9834
+          },
+          {
+            "word": "impact",
+            "start": 6.1434,
+            "end": 6.5236,
+            "score": 0.9981
+          },
+          {
+            "word": "of",
+            "start": 6.6036,
+            "end": 6.6436,
+            "score": 0.9994
+          },
+          {
+            "word": "this",
+            "start": 6.6837,
+            "end": 6.8037,
+            "score": 0.9979
+          },
+          {
+            "word": "tragedy",
+            "start": 6.8838,
+            "end": 7.304,
+            "score": 0.9562
+          },
+          {
+            "word": "but",
+            "start": 8.4246,
+            "end": 8.5247,
+            "score": 0.9997
+          },
+          {
+            "word": "we",
+            "start": 8.5847,
+            "end": 8.6647,
+            "score": 1.0
+          },
+          {
+            "word": "feel",
+            "start": 8.7648,
+            "end": 8.9649,
+            "score": 0.9997
+          },
+          {
+            "word": "the",
+            "start": 9.0249,
+            "end": 9.085,
+            "score": 0.7089
+          },
+          {
+            "word": "loss",
+            "start": 9.145,
+            "end": 9.4052,
+            "score": 0.995
+          },
+          {
+            "word": "and",
+            "start": 9.7854,
+            "end": 9.8654,
+            "score": 0.9648
+          },
+          {
+            "word": "we're",
+            "start": 9.9054,
+            "end": 10.0455,
+            "score": 0.9677
+          },
+          {
+            "word": "thinking",
+            "start": 10.0655,
+            "end": 10.3257,
+            "score": 0.9919
+          },
+          {
+            "word": "about",
+            "start": 10.4057,
+            "end": 10.5858,
+            "score": 0.9997
+          },
+          {
+            "word": "you",
+            "start": 10.6458,
+            "end": 10.7659,
+            "score": 0.9633
+          },
+          {
+            "word": "so",
+            "start": 11.1061,
+            "end": 11.2061,
+            "score": 0.9994
+          },
+          {
+            "word": "very",
+            "start": 11.3062,
+            "end": 11.5063,
+            "score": 0.9434
+          },
+          {
+            "word": "much",
+            "start": 11.5663,
+            "end": 11.7664,
+            "score": 0.9996
+          },
+          {
+            "word": "your",
+            "start": 13.0672,
+            "end": 13.1872,
+            "score": 0.9854
+          },
+          {
+            "word": "loved",
+            "start": 13.2272,
+            "end": 13.4073,
+            "score": 0.9938
+          },
+          {
+            "word": "ones",
+            "start": 13.5074,
+            "end": 13.6275,
+            "score": 0.9856
+          },
+          {
+            "word": "were",
+            "start": 13.6875,
+            "end": 13.8276,
+            "score": 0.9997
+          },
+          {
+            "word": "daring",
+            "start": 13.9076,
+            "end": 14.2678,
+            "score": 0.9991
+          },
+          {
+            "word": "and",
+            "start": 14.3279,
+            "end": 14.4079,
+            "score": 0.9994
+          },
+          {
+            "word": "brave",
+            "start": 14.4679,
+            "end": 14.8281,
+            "score": 0.9254
+          },
+          {
+            "word": "and",
+            "start": 16.0288,
+            "end": 16.0888,
+            "score": 0.9874
+          },
+          {
+            "word": "they",
+            "start": 16.1288,
+            "end": 16.2089,
+            "score": 0.9991
+          },
+          {
+            "word": "had",
+            "start": 16.2689,
+            "end": 16.349,
+            "score": 0.9975
+          },
+          {
+            "word": "that",
+            "start": 16.409,
+            "end": 16.5291,
+            "score": 0.9984
+          },
+          {
+            "word": "special",
+            "start": 16.6891,
+            "end": 17.0894,
+            "score": 0.9416
+          },
+          {
+            "word": "grace",
+            "start": 17.1694,
+            "end": 17.4696,
+            "score": 0.9713
+          },
+          {
+            "word": "that",
+            "start": 17.8698,
+            "end": 17.9899,
+            "score": 0.8456
+          },
+          {
+            "word": "special",
+            "start": 18.0699,
+            "end": 18.4301,
+            "score": 0.9946
+          },
+          {
+            "word": "spirit",
+            "start": 18.5302,
+            "end": 18.8703,
+            "score": 0.9987
+          },
+          {
+            "word": "that",
+            "start": 18.9104,
+            "end": 19.0104,
+            "score": 0.9863
+          },
+          {
+            "word": "says",
+            "start": 19.0705,
+            "end": 19.2906,
+            "score": 0.9487
+          },
+          {
+            "word": "give",
+            "start": 19.3906,
+            "end": 19.5307,
+            "score": 0.9998
+          },
+          {
+            "word": "me",
+            "start": 19.5907,
+            "end": 19.6508,
+            "score": 1.0
+          },
+          {
+            "word": "a",
+            "start": 19.7308,
+            "end": 19.7508,
+            "score": 0.9985
+          },
+          {
+            "word": "challenge",
+            "start": 19.8109,
+            "end": 20.1911,
+            "score": 0.9999
+          },
+          {
+            "word": "and",
+            "start": 20.8514,
+            "end": 20.9315,
+            "score": 0.9651
+          },
+          {
+            "word": "i'll",
+            "start": 20.9715,
+            "end": 21.1116,
+            "score": 0.9867
+          },
+          {
+            "word": "meet",
+            "start": 21.1316,
+            "end": 21.2717,
+            "score": 0.963
+          },
+          {
+            "word": "it",
+            "start": 21.3317,
+            "end": 21.3717,
+            "score": 0.9989
+          },
+          {
+            "word": "with",
+            "start": 21.4317,
+            "end": 21.5318,
+            "score": 0.9994
+          },
+          {
+            "word": "joy",
+            "start": 21.5918,
+            "end": 21.832,
+            "score": 0.9995
+          }
+        ],
+        "confidence": 0.9746,
+        "coverage": 1.0,
+        "recognized_text": "TION TOGETHER THE FAMILIES OF THE SEVEN WE CANNOT BEAR AS YOU DO THE FULL IMPACT OF THIS TRAGEDY BUT WE FEEL THE LOSS AND WE'RE THINKING ABOUT YOU SO VERY MUCH YOUR LOVED ONES WERE DARING AND BRAVE AND THEY HAD THAT SPECIAL GRACE THAT SPECIAL SPIRIT THAT SAYS GIVE ME A CHALLENGE AND I'LL MEET IT WITH JOY",
+        "transcript_agreement": 0.9667
+      },
+      "memory_before": null
+    },
+    "cuda": {
+      "requested_device": "cuda",
+      "compute": {
+        "requested_device": "cuda",
+        "device": "cuda",
+        "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+        "precision": "float32",
+        "torch_version": "2.8.0+cu126",
+        "cuda_version": "12.6",
+        "fallback_reason": null,
+        "warnings": []
+      },
+      "source": "reagan-families",
+      "source_audio": "data/references/reagan-families.wav",
+      "source_duration_seconds": 22.0120625,
+      "cache_enabled": false,
+      "cold_alignment_seconds": 15.4856,
+      "warm_alignment_seconds": [
+        0.2141,
+        0.1842,
+        0.1783
+      ],
+      "warm_median_seconds": 0.1842,
+      "alignment": {
+        "words": [
+          {
+            "word": "for",
+            "start": 0.1401,
+            "end": 0.6404,
+            "score": 0.6639
+          },
+          {
+            "word": "the",
+            "start": 1.841,
+            "end": 1.9211,
+            "score": 0.9589
+          },
+          {
+            "word": "families",
+            "start": 1.9611,
+            "end": 2.3413,
+            "score": 0.9939
+          },
+          {
+            "word": "of",
+            "start": 2.4013,
+            "end": 2.4413,
+            "score": 0.9988
+          },
+          {
+            "word": "the",
+            "start": 2.4814,
+            "end": 2.5614,
+            "score": 0.996
+          },
+          {
+            "word": "seven",
+            "start": 2.6214,
+            "end": 2.9216,
+            "score": 0.9932
+          },
+          {
+            "word": "we",
+            "start": 3.9822,
+            "end": 4.0622,
+            "score": 0.9999
+          },
+          {
+            "word": "cannot",
+            "start": 4.1423,
+            "end": 4.4624,
+            "score": 0.9991
+          },
+          {
+            "word": "bear",
+            "start": 4.5425,
+            "end": 4.8026,
+            "score": 0.9894
+          },
+          {
+            "word": "as",
+            "start": 4.9227,
+            "end": 4.9827,
+            "score": 0.9702
+          },
+          {
+            "word": "you",
+            "start": 5.0428,
+            "end": 5.1428,
+            "score": 0.9999
+          },
+          {
+            "word": "do",
+            "start": 5.2429,
+            "end": 5.3429,
+            "score": 0.9999
+          },
+          {
+            "word": "the",
+            "start": 5.463,
+            "end": 5.543,
+            "score": 0.9991
+          },
+          {
+            "word": "full",
+            "start": 5.6031,
+            "end": 5.8232,
+            "score": 0.9834
+          },
+          {
+            "word": "impact",
+            "start": 6.1434,
+            "end": 6.5236,
+            "score": 0.9981
+          },
+          {
+            "word": "of",
+            "start": 6.6036,
+            "end": 6.6436,
+            "score": 0.9994
+          },
+          {
+            "word": "this",
+            "start": 6.6837,
+            "end": 6.8037,
+            "score": 0.9979
+          },
+          {
+            "word": "tragedy",
+            "start": 6.8838,
+            "end": 7.304,
+            "score": 0.9562
+          },
+          {
+            "word": "but",
+            "start": 8.4246,
+            "end": 8.5247,
+            "score": 0.9997
+          },
+          {
+            "word": "we",
+            "start": 8.5847,
+            "end": 8.6647,
+            "score": 1.0
+          },
+          {
+            "word": "feel",
+            "start": 8.7648,
+            "end": 8.9649,
+            "score": 0.9997
+          },
+          {
+            "word": "the",
+            "start": 9.0249,
+            "end": 9.085,
+            "score": 0.7089
+          },
+          {
+            "word": "loss",
+            "start": 9.145,
+            "end": 9.4052,
+            "score": 0.995
+          },
+          {
+            "word": "and",
+            "start": 9.7854,
+            "end": 9.8654,
+            "score": 0.9648
+          },
+          {
+            "word": "we're",
+            "start": 9.9054,
+            "end": 10.0455,
+            "score": 0.9677
+          },
+          {
+            "word": "thinking",
+            "start": 10.0655,
+            "end": 10.3257,
+            "score": 0.9919
+          },
+          {
+            "word": "about",
+            "start": 10.4057,
+            "end": 10.5858,
+            "score": 0.9997
+          },
+          {
+            "word": "you",
+            "start": 10.6458,
+            "end": 10.7659,
+            "score": 0.9633
+          },
+          {
+            "word": "so",
+            "start": 11.1061,
+            "end": 11.2061,
+            "score": 0.9994
+          },
+          {
+            "word": "very",
+            "start": 11.3062,
+            "end": 11.5063,
+            "score": 0.9434
+          },
+          {
+            "word": "much",
+            "start": 11.5663,
+            "end": 11.7664,
+            "score": 0.9996
+          },
+          {
+            "word": "your",
+            "start": 13.0672,
+            "end": 13.1872,
+            "score": 0.9854
+          },
+          {
+            "word": "loved",
+            "start": 13.2272,
+            "end": 13.4073,
+            "score": 0.9938
+          },
+          {
+            "word": "ones",
+            "start": 13.5074,
+            "end": 13.6275,
+            "score": 0.9856
+          },
+          {
+            "word": "were",
+            "start": 13.6875,
+            "end": 13.8276,
+            "score": 0.9997
+          },
+          {
+            "word": "daring",
+            "start": 13.9076,
+            "end": 14.2678,
+            "score": 0.9991
+          },
+          {
+            "word": "and",
+            "start": 14.3279,
+            "end": 14.4079,
+            "score": 0.9994
+          },
+          {
+            "word": "brave",
+            "start": 14.4679,
+            "end": 14.8281,
+            "score": 0.9254
+          },
+          {
+            "word": "and",
+            "start": 16.0288,
+            "end": 16.0888,
+            "score": 0.9874
+          },
+          {
+            "word": "they",
+            "start": 16.1288,
+            "end": 16.2089,
+            "score": 0.9991
+          },
+          {
+            "word": "had",
+            "start": 16.2689,
+            "end": 16.349,
+            "score": 0.9975
+          },
+          {
+            "word": "that",
+            "start": 16.409,
+            "end": 16.5291,
+            "score": 0.9984
+          },
+          {
+            "word": "special",
+            "start": 16.6891,
+            "end": 17.0894,
+            "score": 0.9416
+          },
+          {
+            "word": "grace",
+            "start": 17.1694,
+            "end": 17.4696,
+            "score": 0.9713
+          },
+          {
+            "word": "that",
+            "start": 17.8698,
+            "end": 17.9899,
+            "score": 0.8456
+          },
+          {
+            "word": "special",
+            "start": 18.0699,
+            "end": 18.4301,
+            "score": 0.9946
+          },
+          {
+            "word": "spirit",
+            "start": 18.5302,
+            "end": 18.8703,
+            "score": 0.9987
+          },
+          {
+            "word": "that",
+            "start": 18.9104,
+            "end": 19.0104,
+            "score": 0.9863
+          },
+          {
+            "word": "says",
+            "start": 19.0705,
+            "end": 19.2906,
+            "score": 0.9487
+          },
+          {
+            "word": "give",
+            "start": 19.3906,
+            "end": 19.5307,
+            "score": 0.9998
+          },
+          {
+            "word": "me",
+            "start": 19.5907,
+            "end": 19.6508,
+            "score": 1.0
+          },
+          {
+            "word": "a",
+            "start": 19.7308,
+            "end": 19.7508,
+            "score": 0.9985
+          },
+          {
+            "word": "challenge",
+            "start": 19.8109,
+            "end": 20.1911,
+            "score": 0.9999
+          },
+          {
+            "word": "and",
+            "start": 20.8514,
+            "end": 20.9315,
+            "score": 0.9651
+          },
+          {
+            "word": "i'll",
+            "start": 20.9715,
+            "end": 21.1116,
+            "score": 0.9867
+          },
+          {
+            "word": "meet",
+            "start": 21.1316,
+            "end": 21.2717,
+            "score": 0.963
+          },
+          {
+            "word": "it",
+            "start": 21.3317,
+            "end": 21.3717,
+            "score": 0.9989
+          },
+          {
+            "word": "with",
+            "start": 21.4317,
+            "end": 21.5318,
+            "score": 0.9994
+          },
+          {
+            "word": "joy",
+            "start": 21.5918,
+            "end": 21.832,
+            "score": 0.9995
+          }
+        ],
+        "confidence": 0.9746,
+        "coverage": 1.0,
+        "recognized_text": "TION TOGETHER THE FAMILIES OF THE SEVEN WE CANNOT BEAR AS YOU DO THE FULL IMPACT OF THIS TRAGEDY BUT WE FEEL THE LOSS AND WE'RE THINKING ABOUT YOU SO VERY MUCH YOUR LOVED ONES WERE DARING AND BRAVE AND THEY HAD THAT SPECIAL GRACE THAT SPECIAL SPIRIT THAT SAYS GIVE ME A CHALLENGE AND I'LL MEET IT WITH JOY",
+        "transcript_agreement": 0.9667
+      },
+      "memory_before": {
+        "free_mib": 3245.1,
+        "total_mib": 4093.5
+      },
+      "clip_peak_allocated_mib": 646.5,
+      "clip_peak_reserved_mib": 814.0,
+      "maximum_length_memory_check": {
+        "description": "60-second tiled excerpt; inference memory stress only, not speech-quality validation.",
+        "audio_seconds": 60.0,
+        "seconds": 0.4506,
+        "emission_frames": 2999,
+        "compute": {
+          "requested_device": "cuda",
+          "device": "cuda",
+          "device_name": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+          "precision": "float32",
+          "torch_version": "2.8.0+cu126",
+          "cuda_version": "12.6",
+          "fallback_reason": null,
+          "warnings": []
+        },
+        "peak_allocated_mib": 1122.7,
+        "peak_reserved_mib": 1566.0,
+        "completed_on_gpu": true
+      }
+    }
+  },
+  "scope": "One real public-domain clip, repeated uncached alignment. No independent human validation; speed depends on hardware and load.",
+  "comparison": {
+    "both_used_requested_backend": true,
+    "same_word_sequence": true,
+    "same_greedy_transcription": true,
+    "maximum_word_boundary_difference_seconds": 0.0,
+    "maximum_word_confidence_difference": 0.0,
+    "warm_alignment_speedup": 9.73
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 300,
+      "includeFiles": ".models/**",
+      "excludeFiles": "{tests/**,reports/**,docs/**,output/**,data/raw/**,.runtime/**,.cache/**,.venv/**,dist/**,tmp/**}"
+    }
+  },
+  "env": {
+    "SPEAKTRACE_DEVICE": "cpu",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "HF_HUB_DISABLE_TELEMETRY": "1"
+  },
+  "build": {
+    "env": {
+      "VERCEL_SUPPORT_LARGE_FUNCTIONS": "1"
+    }
+  }
+}

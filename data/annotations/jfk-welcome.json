@@ -1,0 +1,259 @@
+{
+  "purpose": "Generator region selection only; never inference input",
+  "words": [
+    {
+      "word": "distinguished",
+      "start": 0.1401,
+      "end": 0.6604,
+      "score": 0.9653
+    },
+    {
+      "word": "guests",
+      "start": 0.6804,
+      "end": 0.9806,
+      "score": 0.9823
+    },
+    {
+      "word": "ladies",
+      "start": 1.6811,
+      "end": 1.9612,
+      "score": 0.98
+    },
+    {
+      "word": "and",
+      "start": 2.0013,
+      "end": 2.0813,
+      "score": 0.9898
+    },
+    {
+      "word": "gentlemen",
+      "start": 2.1013,
+      "end": 2.4816,
+      "score": 0.9917
+    },
+    {
+      "word": "it",
+      "start": 4.683,
+      "end": 4.743,
+      "score": 0.9988
+    },
+    {
+      "word": "is",
+      "start": 4.8431,
+      "end": 4.9031,
+      "score": 0.9999
+    },
+    {
+      "word": "with",
+      "start": 4.9632,
+      "end": 5.0832,
+      "score": 0.9976
+    },
+    {
+      "word": "great",
+      "start": 5.1233,
+      "end": 5.3034,
+      "score": 0.9873
+    },
+    {
+      "word": "pride",
+      "start": 5.4034,
+      "end": 5.7637,
+      "score": 0.9621
+    },
+    {
+      "word": "that",
+      "start": 7.0645,
+      "end": 7.1646,
+      "score": 0.9761
+    },
+    {
+      "word": "i",
+      "start": 7.2446,
+      "end": 7.2646,
+      "score": 0.9999
+    },
+    {
+      "word": "participate",
+      "start": 7.3647,
+      "end": 7.9851,
+      "score": 0.9799
+    },
+    {
+      "word": "in",
+      "start": 8.0451,
+      "end": 8.0851,
+      "score": 0.9989
+    },
+    {
+      "word": "this",
+      "start": 8.1252,
+      "end": 8.2452,
+      "score": 0.9928
+    },
+    {
+      "word": "ceremony",
+      "start": 8.3053,
+      "end": 8.8056,
+      "score": 0.9771
+    },
+    {
+      "word": "of",
+      "start": 8.8857,
+      "end": 8.9257,
+      "score": 0.9993
+    },
+    {
+      "word": "the",
+      "start": 8.9457,
+      "end": 9.0057,
+      "score": 0.9975
+    },
+    {
+      "word": "american",
+      "start": 9.0458,
+      "end": 9.386,
+      "score": 0.9821
+    },
+    {
+      "word": "university",
+      "start": 9.466,
+      "end": 9.9663,
+      "score": 0.9795
+    },
+    {
+      "word": "sponsored",
+      "start": 11.2672,
+      "end": 11.6674,
+      "score": 0.6962
+    },
+    {
+      "word": "by",
+      "start": 11.7275,
+      "end": 11.8075,
+      "score": 0.9999
+    },
+    {
+      "word": "the",
+      "start": 11.8475,
+      "end": 11.9076,
+      "score": 0.9987
+    },
+    {
+      "word": "methodist",
+      "start": 11.9676,
+      "end": 12.3679,
+      "score": 0.9899
+    },
+    {
+      "word": "church",
+      "start": 12.4479,
+      "end": 12.7681,
+      "score": 0.9734
+    },
+    {
+      "word": "founded",
+      "start": 14.169,
+      "end": 14.5292,
+      "score": 0.9783
+    },
+    {
+      "word": "by",
+      "start": 14.5893,
+      "end": 14.6893,
+      "score": 1.0
+    },
+    {
+      "word": "bishop",
+      "start": 14.7694,
+      "end": 15.0296,
+      "score": 0.9615
+    },
+    {
+      "word": "john",
+      "start": 15.1296,
+      "end": 15.3898,
+      "score": 0.9707
+    },
+    {
+      "word": "fletcher",
+      "start": 15.5299,
+      "end": 15.8901,
+      "score": 0.9686
+    },
+    {
+      "word": "hurst",
+      "start": 15.9702,
+      "end": 16.3304,
+      "score": 0.9145
+    },
+    {
+      "word": "and",
+      "start": 17.5111,
+      "end": 17.5912,
+      "score": 0.9953
+    },
+    {
+      "word": "first",
+      "start": 17.6712,
+      "end": 17.9114,
+      "score": 0.9997
+    },
+    {
+      "word": "opened",
+      "start": 18.0515,
+      "end": 18.2916,
+      "score": 0.9335
+    },
+    {
+      "word": "by",
+      "start": 18.3317,
+      "end": 18.4517,
+      "score": 0.9999
+    },
+    {
+      "word": "president",
+      "start": 18.6118,
+      "end": 18.932,
+      "score": 0.9999
+    },
+    {
+      "word": "woodrow",
+      "start": 18.9721,
+      "end": 19.2322,
+      "score": 0.8127
+    },
+    {
+      "word": "wilson",
+      "start": 19.3123,
+      "end": 19.6325,
+      "score": 0.9795
+    },
+    {
+      "word": "in",
+      "start": 20.8533,
+      "end": 20.8933,
+      "score": 0.9997
+    },
+    {
+      "word": "nineteen",
+      "start": 20.9533,
+      "end": 21.2735,
+      "score": 0.9591
+    },
+    {
+      "word": "fourteen",
+      "start": 21.3536,
+      "end": 21.9339,
+      "score": 0.9089
+    }
+  ],
+  "confidence": 0.9702,
+  "coverage": 1.0,
+  "recognized_text": "DISTINGUISHED GUESTS LADIES AND GENTLEMEN IT IS WITH GREAT PRIDE THAT I PARTICIPATE IN THIS CEREMONY OF THE AMERICAN UNIVERSITY RESPONSEED BY THE METHODIST CHURCH FOUNDED BY BISHOP JOHN FLETCHER HURST AND FIRST OPENED BY PRESIDENT WOODRO WILSON IN NINETEEN FOURTEEN",
+  "transcript_agreement": 0.9512,
+  "model": "facebook/wav2vec2-base-960h",
+  "revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "alignment_version": "ctc-viterbi-1",
+  "cached": false
+}

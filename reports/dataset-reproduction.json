@@ -1,0 +1,9 @@
+{
+  "offline_regeneration": "passed",
+  "reference_count": 4,
+  "variant_count": 40,
+  "manifest_byte_identical": true,
+  "all_variant_bytes_identical": true,
+  "model_inference_used": false,
+  "network_used": false
+}
